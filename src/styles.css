@@ -1,0 +1,10 @@
+
+
+
+.topics li:first-of-type {
+
+background-image: url(./assets/bildung.png);
+width: 6em;
+aspect-ratio: 1;
+
+}
