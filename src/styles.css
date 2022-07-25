@@ -3,14 +3,28 @@
     margin: 0;
 }
 
-
+main {
+    background: linear-gradient(to right,hsla(30, 100%, 97%,.5) 66%, #C8F2EF );
+    height: 80vh;
+}
 .main-nav {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     height: 10vh;
+    background-color: #68A7AD;
    
 
+}
+
+footer {
+    background-color: #68A7AD;
+    height: 7vh;
+}
+
+.main-grid {
+
+    height: 80vh;
 }
 
 .main-nav ul {
@@ -22,8 +36,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
-    margin-top: 9rem
+    /* border: 1px solid black; */
 }
 
 
@@ -51,12 +64,13 @@
 }
 
 .education{
-background-image: url(./assets/bildung.png);
+background-image: url(./assets/graduation-cap.svg);
 background-size: 80%;
 background-repeat: no-repeat;
 background-position: center;
 transform: translate(18rem);
 text-align: center;
+background-color: orange;
 
 }
 
