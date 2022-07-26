@@ -1,24 +1,170 @@
+/*                              */
+/*      Custom properties       */
+/*           start              */
+
+
+:root {
+
+    /* colors */
+
+    --clr-light: 30, 100%, 97%;
+    --clr-light-high: 0, 0%, 100%;
+    --clr-light-low: ;
+    --clr-dark: 185, 30%, 54%;
+    --clr-dark-low: 176, 62%, 87%;
+    --clr-dark-high: 0, 0%, 0%;
+
+
+
+    /* font-families */
+
+
+    
+
+
+}
+
+/*                              */
+/*      Custom properties       */
+/*         end                  */
+
+
+/*                   */
+/*      Reset        */
+/*       start       */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+
+
+/*  Box sizing */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+
+    margin: 0;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: 400;
+}
+
+/*  set up the body */
+
+body {
+    font-family: var(--ff-sans-normal,sans-serif);
+    font-size: var(--fs-400,1rem);
+    background-color: hsl(var(--clr-dark));
+    color: hsl(var(--clr-light-high));
+    line-height: 1.5;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: min-content 1fr;
+
+    overflow-x: hidden;
+
+}
+
+/* makes img easier to work with */
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+
+picture[hidden] {
+
+    display: none;
+}
+
+
+/* make form elements easier to work with */
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+
+/* remove animations for people who turned them off*/
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+}
+
+
+/*                   */
+/*      Reset        */
+/*       end       */
+
+
+
 * {
     box-sizing: border-box;
     margin: 0;
 }
 
 main {
-    background: linear-gradient(to right,hsla(30, 100%, 97%,.5) 66%, #C8F2EF );
+    background: linear-gradient(to right, hsla(var(--clr-dark-low,#C8F2EF),0.5) 66%, #C8F2EF );
     height: 80vh;
 }
-.main-nav {
+.primary-navigation {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     height: 10vh;
-    background-color: #68A7AD;
+    background-color: hsl(var(--clr-dark,#68A7AD));
    
 
 }
 
+@supports (backdrop-filter: blur(25px)) {
+
+    .primary-navigation {
+
+        background-color: hsla(var(--clr-light-high) / .12);
+        backdrop-filter: blur(25px);
+
+    }
+
+}
+
 footer {
-    background-color: #68A7AD;
+    background-color: hsl(var(--clr-dark,#68A7AD));
     height: 7vh;
 }
 
@@ -27,7 +173,7 @@ footer {
     height: 80vh;
 }
 
-.main-nav ul {
+.primary-navigation ul {
     display: flex;
     justify-content: space-evenly;
     width: 66%;
