@@ -1,8 +1,9 @@
 const pres = document.querySelector(".presentation-wrapper");
 const mainGrid = document.querySelector("#main");
 const animNameMoveIcons = "icons-move";
-const topics = document.querySelector('.topics');
+const topics = document.querySelector(".topics");
 const topicsItems = document.querySelectorAll(".topics li");
+const shortDescription = document.querySelector(".short-description");
 
 const manipulateCustomProperties = () => {
   for (let i = 0; i <= topicsItems.length / 2; i++) {
@@ -18,11 +19,15 @@ const manipulateCustomProperties = () => {
 };
 
 const changeTopicsSizePosition = () => {
-  pres.classList.add('anim-grid-change');
+  pres.classList.add("anim-grid-change");
   // const topicsBox = topics.getBoundingClientRect();
   // const topicsWidth = topicsBox.right - topicsBox.left;
-  topics.style.setProperty('transform', 'scale(0.8)');
+  topics.style.setProperty("transform", "scale(0.8)");
+};
 
+const showShortDescription = () => {
+  shortDescription.style.setProperty("transition", "left 700ms ease-in");
+  shortDescription.style.setProperty("left", "45vw");
 };
 
 const orderListItems = (startDegree, degreeArea, distance) => {
@@ -38,10 +43,31 @@ const orderListItems = (startDegree, degreeArea, distance) => {
     );
 };
 
+const hideTopicsItems = () => {
+  let screenWidth = window.innerWidth;
+
+  if (screenWidth < 720) {
+    for (let item of topicsItems) {
+      item.classList.add("hide");
+    }
+  }else if(screenWidth >720) {
+    for (let item of topicsItems) {
+      item.classList.remove("hide");
+  }
+  }
+};
+
+const changeOpacity = (element, opValue) => {
+  const elArr = [...element];
+  elArr.forEach((el) => el.style.setProperty("opacity", opValue));
+};
+
 window.addEventListener("load", () => {
   manipulateCustomProperties();
   orderListItems(180, 180, 20);
 });
+
+window.addEventListener('resize', hideTopicsItems);
 
 const triggerNextAnimation = (event) => {
   setTimeout(() => {
@@ -56,6 +82,9 @@ const triggerNextAnimation = (event) => {
       if (currentIndex === 1) {
         orderListItems(270, 180, 20);
         changeTopicsSizePosition();
+        // setTimeout(() => showShortDescription(), 800);
+        showShortDescription();
+        changeOpacity(topicsItems, 0.15);
       }
     }
   }, 200);
