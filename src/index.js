@@ -43,7 +43,6 @@ const positionShortDescription = () => {
   );
   let mediaQueryWidth1 = fontSize * 35;
   let mediaQueryWidth2 = fontSize * 45;
- 
 
   if (screenWidth >= mediaQueryWidth1) {
     shortDescription.style.setProperty("left", "45vw");
@@ -56,7 +55,7 @@ const positionShortDescription = () => {
 
 const showShortDescription = () => {
   shortDescription.style.setProperty("transition", "left 1200ms ease-in-out");
-  shortDescription.style.setProperty('left', 'var(--left)');
+  shortDescription.style.setProperty("left", "var(--left)");
 };
 
 const orderListItems = (startDegree, degreeArea, distance) => {
@@ -91,7 +90,6 @@ const changeOpacity = (element, opValue) => {
   elArr.forEach((el) => el.style.setProperty("opacity", opValue));
 };
 
-
 const triggerNextAnimation = (event) => {
   setTimeout(() => {
     let currentIndex = -1;
@@ -104,7 +102,7 @@ const triggerNextAnimation = (event) => {
       );
       if (currentIndex === 2) {
         shortDescription.style.setProperty("display", "block");
-        shortDescription.style.setProperty('left', '200vw');
+        shortDescription.style.setProperty("left", "200vw");
       }
       if (currentIndex === 1) {
         orderListItems(270, 180, 20);
@@ -116,7 +114,6 @@ const triggerNextAnimation = (event) => {
     }
   }, 200);
 };
-
 
 const findIndexInNodeArray = (nodeArray, targetDiv) => {
   const currentIndex = Array.prototype.indexOf.call(nodeArray, targetDiv);
@@ -155,13 +152,9 @@ const focusOnTarget = (event) => {
   }
 };
 
-const assignNewDataPosition = (event) => {};
-
-const moveDataPositionScroll = (event) => {
-  // event.stopPropagation();
-  event.preventDefault();
+const assignNewDataPosition = (eventTrigger) => {
   let currentDataPosition;
-  if (event.deltaY > 0) {
+  if (eventTrigger > 0) {
     for (let i = 0; i < 7; i++) {
       currentDataPosition = shortDescNavItems[i].getAttribute("data-position");
       if (currentDataPosition - 1 < 1) {
@@ -173,7 +166,7 @@ const moveDataPositionScroll = (event) => {
         );
       }
     }
-  } else if (event.deltaY < 0) {
+  } else if (eventTrigger < 0) {
     for (let i = 0; i < 7; i++) {
       currentDataPosition = shortDescNavItems[i].getAttribute("data-position");
       if (+currentDataPosition + 1 > 7) {
@@ -190,10 +183,28 @@ const moveDataPositionScroll = (event) => {
   document.querySelector('div[data-position="4"]').focus();
 };
 
-const moveDataPositionKey = (event) => {
+const moveDataPositionScroll = (event) => {
+  // event.stopPropagation();
   event.preventDefault();
+  assignNewDataPosition(event.deltaY);
 };
 
+const moveDataPositionArrow = (event) => {
+  event.preventDefault();
+  let pressedKey = event.key;
+  let trigger = null;
+  if (pressedKey === "ArrowLeft") {
+    trigger = -1;
+  } else if (pressedKey === "ArrowRight") {
+    trigger = 1;
+  }
+
+  if (trigger && (trigger === 1 || trigger === -1)) {
+    assignNewDataPosition(trigger);
+  } else {
+    return;
+  }
+};
 
 window.addEventListener("load", () => {
   manipulateCustomProperties();
@@ -201,8 +212,6 @@ window.addEventListener("load", () => {
 });
 
 window.addEventListener("resize", hideTopicsItems);
-
-
 
 topicsItems.forEach((item) =>
   item.addEventListener("click", (event) => {
@@ -217,8 +226,8 @@ topicsItems.forEach((item) =>
 shortDescNav.addEventListener("wheel", moveDataPositionScroll, {
   passive: false,
 });
+shortDescNav.addEventListener("keydown", moveDataPositionArrow);
+
 shortDescNavItems.forEach((item) => {
   item.addEventListener("click", focusOnTarget);
-  // item.addEventListener("wheel", moveDataPositionScroll);
-  item.addEventListener("keypress", moveDataPositionKey);
 });
