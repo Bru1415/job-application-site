@@ -9,6 +9,7 @@ const shortDescNavItems = document.querySelectorAll(
 );
 const shortDescNav = document.querySelector(".short-description-nav");
 const middleDescNavItem = document.querySelector('div[data-position = "4"]');
+const descriptionHeading = document.querySelector(".description-heading");
 
 const manipulateCustomProperties = () => {
   for (let i = 0; i <= topicsItems.length / 2; i++) {
@@ -152,6 +153,12 @@ const focusOnTarget = (event) => {
   }
 };
 
+const showHeadingOfFocused = () => {
+  let focusedTopic = document.querySelector('div[data-position="4"]');
+  focusedTopic.focus();
+  descriptionHeading.textContent = focusedTopic.textContent;
+};
+
 const assignNewDataPosition = (eventTrigger) => {
   let currentDataPosition;
   if (eventTrigger > 0) {
@@ -180,7 +187,20 @@ const assignNewDataPosition = (eventTrigger) => {
     }
   }
 
-  document.querySelector('div[data-position="4"]').focus();
+  // let focusedTopic = document.querySelector('div[data-position="4"]');
+  // focusedTopic.focus();
+  // descriptionHeading.textContent = focusedTopic.textContent;
+
+  showHeadingOfFocused();
+};
+
+const showHeading = (event) => {
+  event.stopPropagation();
+  const hoveredTopic =
+    event.target.querySelector("span") ||
+    event.target.parentNode.querySelector("span") ||
+    event.target.parentNode.parentNode.querySelector("span");
+  descriptionHeading.textContent = hoveredTopic.textContent;
 };
 
 const moveDataPositionScroll = (event) => {
@@ -190,7 +210,7 @@ const moveDataPositionScroll = (event) => {
 };
 
 const moveDataPositionArrow = (event) => {
-  event.preventDefault();
+  // event.preventDefault();
   let pressedKey = event.key;
   let trigger = null;
   if (pressedKey === "ArrowLeft") {
@@ -230,4 +250,6 @@ shortDescNav.addEventListener("keydown", moveDataPositionArrow);
 
 shortDescNavItems.forEach((item) => {
   item.addEventListener("click", focusOnTarget);
+  item.addEventListener("mouseover", showHeading);
+  item.addEventListener("mouseleave", showHeadingOfFocused);
 });
