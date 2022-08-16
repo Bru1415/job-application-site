@@ -38,72 +38,72 @@
         <ul class="topics">
           <li>
             <span>Skills</span
-            ><img src="./assets/repair-fix-repairing.svg" alt="" />
+            ><img data-topicarea="technical" src="./assets/repair-fix-repairing.svg" alt="" />
           </li>
           <li>
             <span>Portfolio</span
-            ><img src="./assets/work-experience.svg" alt="" />
+            ><img data-topicarea="technical" src="./assets/work-experience.svg" alt="" />
           </li>
           <li>
             <span>Workplan</span
-            ><img src="./assets/stair-climbing.svg" alt="" />
+            ><img data-topicarea="technical" src="./assets/stair-climbing.svg" alt="" />
           </li>
-          <li><span>CV</span><img src="./assets/resume-cv.svg" alt="" /></li>
+          <li><span>CV</span><img data-topicarea="personal" src="./assets/resume-cv.svg" alt="" /></li>
           <li class="education">
             <span>Education</span
-            ><img src="./assets/graduation-cap.svg" alt="" />
+            ><img data-topicarea="personal" src="./assets/graduation-cap.svg" alt="" />
           </li>
           <li>
-            <span>About me</span><img src="./assets/about-me.svg" alt="" />
+            <span>About me</span><img data-topicarea="personal" src="./assets/about-me.svg" alt="" />
           </li>
           <li>
-            <span>Contact</span><img src="./assets/contact-us.svg" alt="" />
+            <span>Contact</span><img data-topicarea="personal" src="./assets/contact-us.svg" alt="" />
           </li>
         </ul>
       </div>
       <div class="short-description">
-        <div class="flex short-description-nav" aria-label="tabindex">
-          <div>
-            <button>
+        <div class="grid short-description-nav" role="tablist" aria-label="topics list">
+          <div data-position="1" role="tab" aria-controls="skills-tab" tabindex="-1">
+            <button data-topicarea="technical">
               <img src="./assets/repair-fix-repairing.svg" alt="" />
             </button>
-            <span aria-hidden="true">Skills</span>
+            <span class="sr-only">Skills</span>
           </div>
-          <div>
-            <button>
+          <div data-position="2" role="tab" aria-controls="protfolio-tab" tabindex="-1">
+            <button data-topicarea="technical">
               <img src="./assets/work-experience.svg" alt="" />
             </button>
-            <span>Portfolio</span>
+            <span class="sr-only">Portfolio</span>
           </div>
-          <div>
-            <button>
+          <div data-position="3" role="tab" aria-controls="workplan-tab" tabindex="-1">
+            <button data-topicarea="technical">
               <img src="./assets/stair-climbing.svg" alt="" />
             </button>
-            <span>Workplan</span>
+            <span class="sr-only">Workplan</span>
           </div>
-          <div>
-            <button>
+          <div data-position="4" role="tab" aria-controls="cv-tab" tabindex="0">
+            <button data-topicarea="personal">
               <img src="./assets/resume-cv.svg" alt="" />
             </button>
-            <span>CV</span>
+            <span class="sr-only">CV</span>
           </div>
-          <div>
-            <button>
+          <div data-position="5" role="tab" aria-controls="education-tab" tabindex="-1">
+            <button data-topicarea="personal">
               <img src="./assets/graduation-cap.svg" alt="" />
             </button>
-            <span>Education</span>
+            <span class="sr-only">Education</span>
           </div>
-          <div>
-            <button>
+          <div data-position="6" role="tab" aria-controls="about_me-tab" tabindex="-1">
+            <button data-topicarea="personal">
               <img src="./assets/about-me.svg" alt="" />
             </button>
-            <span>About me</span>
+            <span class="sr-only">About me</span>
           </div>
-          <div>
-            <button>
+          <div data-position="7" role="tab" aria-controls="contact-tab" tabindex="-1">
+            <button data-topicarea="personal">
               <img src="./assets/contact-us.svg" alt="" />
             </button>
-            <span>Contact</span>
+            <span class="sr-only">Contact</span>
           </div>
         </div>
         <h2 class="description-heading"></h2>

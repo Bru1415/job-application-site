@@ -4,6 +4,11 @@ const animNameMoveIcons = "icons-move";
 const topics = document.querySelector(".topics");
 const topicsItems = document.querySelectorAll(".topics li");
 const shortDescription = document.querySelector(".short-description");
+const shortDescNavItems = document.querySelectorAll(
+  ".short-description-nav > div"
+);
+const shortDescNav = document.querySelector(".short-description-nav");
+const middleDescNavItem = document.querySelector('div[data-position = "4"]');
 
 const manipulateCustomProperties = () => {
   for (let i = 0; i <= topicsItems.length / 2; i++) {
@@ -25,9 +30,33 @@ const changeTopicsSizePosition = () => {
   topics.style.setProperty("transform", "scale(0.8)");
 };
 
+const positionShortDescription = () => {
+  let screenWidth =
+    window.innerWidth ||
+    document.documentElement.clientWidth ||
+    document.body.clientWidth;
+
+  let fontSize = parseFloat(
+    getComputedStyle(document.querySelector("html")).getPropertyValue(
+      "font-size"
+    )
+  );
+  let mediaQueryWidth1 = fontSize * 35;
+  let mediaQueryWidth2 = fontSize * 45;
+ 
+
+  if (screenWidth >= mediaQueryWidth1) {
+    shortDescription.style.setProperty("left", "45vw");
+  } else if (screenWidth >= mediaQueryWidth2) {
+    shortDescription.style.setProperty("left", "30vw");
+  } else {
+    shortDescription.style.setProperty("left", "15vw");
+  }
+};
+
 const showShortDescription = () => {
-  shortDescription.style.setProperty("transition", "left 700ms ease-in");
-  shortDescription.style.setProperty("left", "45vw");
+  shortDescription.style.setProperty("transition", "left 1200ms ease-in-out");
+  shortDescription.style.setProperty('left', 'var(--left)');
 };
 
 const orderListItems = (startDegree, degreeArea, distance) => {
@@ -50,10 +79,10 @@ const hideTopicsItems = () => {
     for (let item of topicsItems) {
       item.classList.add("hide");
     }
-  }else if(screenWidth >720) {
+  } else if (screenWidth > 720) {
     for (let item of topicsItems) {
       item.classList.remove("hide");
-  }
+    }
   }
 };
 
@@ -62,12 +91,6 @@ const changeOpacity = (element, opValue) => {
   elArr.forEach((el) => el.style.setProperty("opacity", opValue));
 };
 
-window.addEventListener("load", () => {
-  manipulateCustomProperties();
-  orderListItems(180, 180, 20);
-});
-
-window.addEventListener('resize', hideTopicsItems);
 
 const triggerNextAnimation = (event) => {
   setTimeout(() => {
@@ -79,6 +102,10 @@ const triggerNextAnimation = (event) => {
         "animationstart",
         triggerNextAnimation
       );
+      if (currentIndex === 2) {
+        shortDescription.style.setProperty("display", "block");
+        shortDescription.style.setProperty('left', '200vw');
+      }
       if (currentIndex === 1) {
         orderListItems(270, 180, 20);
         changeTopicsSizePosition();
@@ -90,6 +117,93 @@ const triggerNextAnimation = (event) => {
   }, 200);
 };
 
+
+const findIndexInNodeArray = (nodeArray, targetDiv) => {
+  const currentIndex = Array.prototype.indexOf.call(nodeArray, targetDiv);
+
+  return currentIndex;
+};
+
+const findTargetDiv = (target, attribute) => {
+  let targetDiv = target;
+  if (!targetDiv.getAttribute(attribute)) {
+    targetDiv = target.parentNode;
+  }
+  while (!targetDiv.getAttribute(attribute)) {
+    targetDiv = targetDiv.parentNode;
+  }
+
+  return targetDiv;
+};
+
+const focusOnTarget = (event) => {
+  const targetDiv = findTargetDiv(event.target, "data-position");
+  const indexOfDiv = findIndexInNodeArray(shortDescNavItems, targetDiv);
+  const difference = 4 - (indexOfDiv + 1);
+  let newDataPosition;
+  for (let i = 0; i < 7; i++) {
+    if (i + 1 + difference < 1) {
+      newDataPosition = 7 - (Math.abs(difference) - (i + 1));
+      shortDescNavItems[i].setAttribute("data-position", newDataPosition);
+    } else if (i + 1 + difference > 7) {
+      newDataPosition = Math.abs(difference) - (7 - (i + 1));
+      shortDescNavItems[i].setAttribute("data-position", newDataPosition);
+    } else {
+      newDataPosition = i + 1 + difference;
+      shortDescNavItems[i].setAttribute("data-position", newDataPosition);
+    }
+  }
+};
+
+const assignNewDataPosition = (event) => {};
+
+const moveDataPositionScroll = (event) => {
+  // event.stopPropagation();
+  event.preventDefault();
+  let currentDataPosition;
+  if (event.deltaY > 0) {
+    for (let i = 0; i < 7; i++) {
+      currentDataPosition = shortDescNavItems[i].getAttribute("data-position");
+      if (currentDataPosition - 1 < 1) {
+        shortDescNavItems[i].setAttribute("data-position", "7");
+      } else {
+        shortDescNavItems[i].setAttribute(
+          "data-position",
+          currentDataPosition - 1
+        );
+      }
+    }
+  } else if (event.deltaY < 0) {
+    for (let i = 0; i < 7; i++) {
+      currentDataPosition = shortDescNavItems[i].getAttribute("data-position");
+      if (+currentDataPosition + 1 > 7) {
+        shortDescNavItems[i].setAttribute("data-position", "1");
+      } else {
+        shortDescNavItems[i].setAttribute(
+          "data-position",
+          +currentDataPosition + 1
+        );
+      }
+    }
+  }
+
+  document.querySelector('div[data-position="4"]').focus();
+};
+
+const moveDataPositionKey = (event) => {
+  event.preventDefault();
+};
+
+
+window.addEventListener("load", () => {
+  manipulateCustomProperties();
+  orderListItems(180, 180, 20);
+});
+
+window.addEventListener("resize", hideTopicsItems);
+
+
+
 topicsItems.forEach((item) =>
   item.addEventListener("click", (event) => {
     topicsItems[topicsItems.length - 1].classList.add(animNameMoveIcons);
@@ -99,3 +213,12 @@ topicsItems.forEach((item) =>
     );
   })
 );
+
+shortDescNav.addEventListener("wheel", moveDataPositionScroll, {
+  passive: false,
+});
+shortDescNavItems.forEach((item) => {
+  item.addEventListener("click", focusOnTarget);
+  // item.addEventListener("wheel", moveDataPositionScroll);
+  item.addEventListener("keypress", moveDataPositionKey);
+});
