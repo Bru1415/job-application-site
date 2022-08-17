@@ -109,8 +109,9 @@ const triggerNextAnimation = (event) => {
         orderListItems(270, 180, 20);
         changeTopicsSizePosition();
         // setTimeout(() => showShortDescription(), 800);
-        showShortDescription();
         changeOpacity(topicsItems, 0.15);
+        
+        showShortDescription();
       }
     }
   }, 200);
@@ -134,9 +135,9 @@ const findTargetDiv = (target, attribute) => {
   return targetDiv;
 };
 
-const focusOnTarget = (event) => {
+const focusOnTarget = (event, referenceNodeArray) => {
   const targetDiv = findTargetDiv(event.target, "data-position");
-  const indexOfDiv = findIndexInNodeArray(shortDescNavItems, targetDiv);
+  const indexOfDiv = findIndexInNodeArray(referenceNodeArray, targetDiv);
   const difference = 4 - (indexOfDiv + 1);
   let newDataPosition;
   for (let i = 0; i < 7; i++) {
@@ -240,6 +241,7 @@ topicsItems.forEach((item) =>
       "animationstart",
       triggerNextAnimation
     );
+    focusOnTarget(event, topicsItems);
   })
 );
 
@@ -249,7 +251,8 @@ shortDescNav.addEventListener("wheel", moveDataPositionScroll, {
 shortDescNav.addEventListener("keydown", moveDataPositionArrow);
 
 shortDescNavItems.forEach((item) => {
-  item.addEventListener("click", focusOnTarget);
+  // item.addEventListener("click", (event) => focusOnTarget(event, shortDescNavItems));
+  item.addEventListener("click", (event) => focusOnTarget(event, shortDescNavItems));
   item.addEventListener("mouseover", showHeading);
   item.addEventListener("mouseleave", showHeadingOfFocused);
 });
