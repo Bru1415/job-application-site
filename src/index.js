@@ -11,6 +11,7 @@ const shortDescNav = document.querySelector(".short-description-nav");
 const middleDescNavItem = document.querySelector('div[data-position = "4"]');
 const descriptionHeading = document.querySelector(".description-heading");
 
+
 const manipulateCustomProperties = () => {
   for (let i = 0; i <= topicsItems.length / 2; i++) {
     topicsItems[i].style.setProperty(
@@ -28,31 +29,37 @@ const changeTopicsSizePosition = () => {
   pres.classList.add("anim-grid-change");
   // const topicsBox = topics.getBoundingClientRect();
   // const topicsWidth = topicsBox.right - topicsBox.left;
-  topics.style.setProperty("transform", "scale(0.8)");
+  // topics.style.setProperty("transform", "scale(0.75)");
 };
 
-const positionShortDescription = () => {
-  let screenWidth =
-    window.innerWidth ||
-    document.documentElement.clientWidth ||
-    document.body.clientWidth;
+const changePositionDependView = (element) => {
+  if (shortDescription.style.getPropertyValue("display")) {
+    element.style.setProperty("--left", "var(--left-splitted-view)");
+    element.style.setProperty('z-index', '200');
+    element.style.setProperty('--top', 'var(--top-splitted-view');
+  }
 
-  let fontSize = parseFloat(
-    getComputedStyle(document.querySelector("html")).getPropertyValue(
-      "font-size"
-    )
-  );
-  let mediaQueryWidth1 = fontSize * 35;
-  let mediaQueryWidth2 = fontSize * 45;
+  if (!shortDescription.style.getPropertyValue("display")) {
+    element.style.setProperty("--left", "var(--left-full-view)");
+    element.style.setProperty('--top', 'var(--top-full-view');
 
-  if (screenWidth >= mediaQueryWidth1) {
-    shortDescription.style.setProperty("left", "45vw");
-  } else if (screenWidth >= mediaQueryWidth2) {
-    shortDescription.style.setProperty("left", "30vw");
-  } else {
-    shortDescription.style.setProperty("left", "15vw");
+
   }
 };
+
+const changeSizeDependView = (element) => {
+
+  if (shortDescription.style.getPropertyValue("display")) {
+    element.style.setProperty("--scale-factor", "var(--scale-splitted-view)");
+  }
+
+  if (!shortDescription.style.getPropertyValue("display")) {
+    element.style.setProperty("--scale-factor", "var(--scale-full-view)");
+
+  }
+};
+
+
 
 const showShortDescription = () => {
   shortDescription.style.setProperty("transition", "left 1200ms ease-in-out");
@@ -74,14 +81,17 @@ const orderListItems = (startDegree, degreeArea, distance) => {
 
 const hideTopicsItems = () => {
   let screenWidth = window.innerWidth;
+  console.log();
 
-  if (screenWidth < 720) {
-    for (let item of topicsItems) {
-      item.classList.add("hide");
-    }
-  } else if (screenWidth > 720) {
-    for (let item of topicsItems) {
-      item.classList.remove("hide");
+  if (shortDescription.style.getPropertyValue("display")) {
+    if (screenWidth < 1040) {
+      for (let item of topicsItems) {
+        item.classList.add("hide");
+      }
+    } else if (screenWidth > 1040) {
+      for (let item of topicsItems) {
+        item.classList.remove("hide");
+      }
     }
   }
 };
@@ -108,10 +118,12 @@ const triggerNextAnimation = (event) => {
       if (currentIndex === 1) {
         orderListItems(270, 180, 20);
         changeTopicsSizePosition();
-        // setTimeout(() => showShortDescription(), 800);
         changeOpacity(topicsItems, 0.15);
-        
         showShortDescription();
+        changeSizeDependView(topics);
+        changePositionDependView(topics);
+        changeSizeDependView(shortDescNav);
+        hideTopicsItems();
       }
     }
   }, 200);
@@ -152,6 +164,8 @@ const focusOnTarget = (event, referenceNodeArray) => {
       shortDescNavItems[i].setAttribute("data-position", newDataPosition);
     }
   }
+  shortDescription.focus();
+  showHeadingOfFocused();
 };
 
 const showHeadingOfFocused = () => {
@@ -230,9 +244,16 @@ const moveDataPositionArrow = (event) => {
 window.addEventListener("load", () => {
   manipulateCustomProperties();
   orderListItems(180, 180, 20);
+  changeSizeDependView(topics);
+  changePositionDependView(topics);
 });
 
-window.addEventListener("resize", hideTopicsItems);
+window.addEventListener("resize", () => {
+  hideTopicsItems();
+  changeSizeDependView(topics);
+  changePositionDependView(topics);
+  changeSizeDependView(shortDescNav);
+});
 
 topicsItems.forEach((item) =>
   item.addEventListener("click", (event) => {
@@ -242,6 +263,7 @@ topicsItems.forEach((item) =>
       triggerNextAnimation
     );
     focusOnTarget(event, topicsItems);
+    hideTopicsItems();
   })
 );
 
@@ -251,8 +273,9 @@ shortDescNav.addEventListener("wheel", moveDataPositionScroll, {
 shortDescNav.addEventListener("keydown", moveDataPositionArrow);
 
 shortDescNavItems.forEach((item) => {
-  // item.addEventListener("click", (event) => focusOnTarget(event, shortDescNavItems));
-  item.addEventListener("click", (event) => focusOnTarget(event, shortDescNavItems));
+  item.addEventListener("click", (event) =>
+    focusOnTarget(event, shortDescNavItems)
+  );
   item.addEventListener("mouseover", showHeading);
   item.addEventListener("mouseleave", showHeadingOfFocused);
 });
