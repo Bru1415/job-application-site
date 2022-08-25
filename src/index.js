@@ -11,7 +11,6 @@ const shortDescNav = document.querySelector(".short-description-nav");
 const middleDescNavItem = document.querySelector('div[data-position = "4"]');
 const descriptionHeading = document.querySelector(".description-heading");
 
-
 const manipulateCustomProperties = () => {
   for (let i = 0; i <= topicsItems.length / 2; i++) {
     topicsItems[i].style.setProperty(
@@ -35,31 +34,25 @@ const changeTopicsSizePosition = () => {
 const changePositionDependView = (element) => {
   if (shortDescription.style.getPropertyValue("display")) {
     element.style.setProperty("--left", "var(--left-splitted-view)");
-    element.style.setProperty('z-index', '200');
-    element.style.setProperty('--top', 'var(--top-splitted-view');
+    element.style.setProperty("z-index", "200");
+    element.style.setProperty("--top", "var(--top-splitted-view");
   }
 
   if (!shortDescription.style.getPropertyValue("display")) {
     element.style.setProperty("--left", "var(--left-full-view)");
-    element.style.setProperty('--top', 'var(--top-full-view');
-
-
+    element.style.setProperty("--top", "var(--top-full-view)");
   }
 };
 
 const changeSizeDependView = (element) => {
-
   if (shortDescription.style.getPropertyValue("display")) {
     element.style.setProperty("--scale-factor", "var(--scale-splitted-view)");
   }
 
   if (!shortDescription.style.getPropertyValue("display")) {
     element.style.setProperty("--scale-factor", "var(--scale-full-view)");
-
   }
 };
-
-
 
 const showShortDescription = () => {
   shortDescription.style.setProperty("transition", "left 1200ms ease-in-out");

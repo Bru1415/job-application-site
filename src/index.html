@@ -23,10 +23,13 @@
     <script src="./index.js" defer></script>
   </head>
   <body class="overview">
-    <header>
-      <nav class="primary-navigation">
-        <div class="logo"><img src="./assets/coding.png" alt="" /></div>
-        <ul class="underline-indicators">
+    <header class="flex">
+      <button data-close-icon="false" class="mobile-nav-toggle burger-icon" aria-controls="primary-navigation">
+        <span class="sr-only" aria-expanded="false">Menu</span>
+    </button>
+    <div class="logo"><img src="./assets/coding.png" alt="" /></div>
+      <nav>
+        <ul class="primary-navigation underline-indicators">
           <li><a href="./pages/overview.html">Overview</a></li>
           <li><a href="./pages/technical.html">Technical area</a></li>
           <li><a href="./pages/personal.html">Personal area</a></li>
