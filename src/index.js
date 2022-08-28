@@ -1,8 +1,10 @@
 const pres = document.querySelector(".presentation-wrapper");
 const mainGrid = document.querySelector("#main");
 const animNameMoveIcons = "icons-move";
-const topics = document.querySelector(".topics");
+const topics = document.querySelector("#topics");
 const topicsItems = document.querySelectorAll(".topics li");
+const topicItem = document.querySelector(".topics li");
+const profilePhoto = document.querySelector('.profile-photo');
 const shortDescription = document.querySelector(".short-description");
 const shortDescNavItems = document.querySelectorAll(
   ".short-description-nav > div"
@@ -24,70 +26,36 @@ const manipulateCustomProperties = () => {
   }
 };
 
-const changeTopicsSizePosition = () => {
+const changeTopicsGridPosition = () => {
   pres.classList.add("anim-grid-change");
-  // const topicsBox = topics.getBoundingClientRect();
-  // const topicsWidth = topicsBox.right - topicsBox.left;
-  // topics.style.setProperty("transform", "scale(0.75)");
-};
-
-const changePositionDependView = (element) => {
-  if (shortDescription.style.getPropertyValue("display")) {
-    element.style.setProperty("--left", "var(--left-splitted-view)");
-    element.style.setProperty("z-index", "200");
-    element.style.setProperty("--top", "var(--top-splitted-view");
-  }
-
-  if (!shortDescription.style.getPropertyValue("display")) {
-    element.style.setProperty("--left", "var(--left-full-view)");
-    element.style.setProperty("--top", "var(--top-full-view)");
-  }
-};
-
-const changeSizeDependView = (element) => {
-  if (shortDescription.style.getPropertyValue("display")) {
-    element.style.setProperty("--scale-factor", "var(--scale-splitted-view)");
-  }
-
-  if (!shortDescription.style.getPropertyValue("display")) {
-    element.style.setProperty("--scale-factor", "var(--scale-full-view)");
-  }
 };
 
 const showShortDescription = () => {
-  shortDescription.style.setProperty("transition", "left 1200ms ease-in-out");
+  shortDescription.style.setProperty("transition", "left 1000ms ease-in-out");
   shortDescription.style.setProperty("left", "var(--left)");
 };
 
-const orderListItems = (startDegree, degreeArea, distance) => {
-  const degreeSpan = (360 - degreeArea) / (topicsItems.length - 1);
+const orderListItems = (startDegree, degreeArea) => {
+  let distance = `calc(var(--topics-width) * 0.5 + var(--topics-width) * var(--topics-item--scale) * 0.55)`;
+
+  const degreeSpan = degreeArea / (topicsItems.length - 1);
   for (let i = 0; i < topicsItems.length; i++)
     topicsItems[i].style.setProperty(
       "transform",
       `rotate(${
         startDegree + i * degreeSpan
-      }deg) translate(${distance}em) rotate(-${
-        startDegree + i * degreeSpan
-      }deg)`
+      }deg) translate(${distance}) rotate(-${startDegree + i * degreeSpan}deg)`
     );
 };
 
-const hideTopicsItems = () => {
-  let screenWidth = window.innerWidth;
-  console.log();
 
-  if (shortDescription.style.getPropertyValue("display")) {
-    if (screenWidth < 1040) {
-      for (let item of topicsItems) {
-        item.classList.add("hide");
-      }
-    } else if (screenWidth > 1040) {
-      for (let item of topicsItems) {
-        item.classList.remove("hide");
-      }
-    }
-  }
-};
+
+const hideTopicsDependScreen = () => {
+  topics.setAttribute('data-screen', 'half');
+  profilePhoto.setAttribute('data-screen', 'half');
+}
+
+
 
 const changeOpacity = (element, opValue) => {
   const elArr = [...element];
@@ -109,14 +77,11 @@ const triggerNextAnimation = (event) => {
         shortDescription.style.setProperty("left", "200vw");
       }
       if (currentIndex === 1) {
-        orderListItems(270, 180, 20);
-        changeTopicsSizePosition();
-        changeOpacity(topicsItems, 0.15);
+        orderListItems(270, 180);
+        changeTopicsGridPosition();
+        changeOpacity(topicsItems, 0.1);
         showShortDescription();
-        changeSizeDependView(topics);
-        changePositionDependView(topics);
-        changeSizeDependView(shortDescNav);
-        hideTopicsItems();
+        hideTopicsDependScreen();
       }
     }
   }, 200);
@@ -234,18 +199,51 @@ const moveDataPositionArrow = (event) => {
   }
 };
 
+let isGreater720 = null;
+
 window.addEventListener("load", () => {
+  let screenWidth =
+    window.innerWidth ||
+    document.documentElement.clientWidth ||
+    document.body.clientWidth;
+
+  if (screenWidth >= 720) {
+    isGreater720 = true;
+    orderListItems(170, 200);
+  }
+
+  if (screenWidth < 720) {
+    isGreater720 = false;
+    orderListItems(120, 300);
+  }
+
   manipulateCustomProperties();
-  orderListItems(180, 180, 20);
-  changeSizeDependView(topics);
-  changePositionDependView(topics);
 });
 
 window.addEventListener("resize", () => {
-  hideTopicsItems();
-  changeSizeDependView(topics);
-  changePositionDependView(topics);
-  changeSizeDependView(shortDescNav);
+  let screenWidth =
+    window.innerWidth ||
+    document.documentElement.clientWidth ||
+    document.body.clientWidth;
+
+  if (
+    screenWidth >= 720 &&
+    !isGreater720 &&
+    !shortDescription.style.getPropertyValue("display")
+  ) {
+    isGreater720 = true;
+    orderListItems(170, 200);
+  }
+
+  if (
+    screenWidth < 720 &&
+    isGreater720 &&
+    !shortDescription.style.getPropertyValue("display")
+  ) {
+    isGreater720 = false;
+    orderListItems(120, 300);
+  }
+
 });
 
 topicsItems.forEach((item) =>
@@ -256,7 +254,7 @@ topicsItems.forEach((item) =>
       triggerNextAnimation
     );
     focusOnTarget(event, topicsItems);
-    hideTopicsItems();
+    // hideTopicsItems();
   })
 );
 

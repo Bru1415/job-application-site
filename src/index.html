@@ -7,7 +7,8 @@
     <link
       rel="icon"
       type="image/png"
-      href="./assets/Bildschirmfoto vom 2022-07-23 14-48-55.png" style="border-radius: 60%"
+      href="./assets/Bildschirmfoto vom 2022-07-23 14-48-55.png"
+      style="border-radius: 60%"
     />
     <title>self-introduction</title>
     <!-- Google fonts -->
@@ -24,10 +25,14 @@
   </head>
   <body class="overview">
     <header class="flex">
-      <button data-close-icon="false" class="mobile-nav-toggle burger-icon" aria-controls="primary-navigation">
+      <button
+        data-close-icon="false"
+        class="mobile-nav-toggle burger-icon"
+        aria-controls="primary-navigation"
+      >
         <span class="sr-only" aria-expanded="false">Menu</span>
-    </button>
-    <div class="logo"><img src="./assets/coding.png" alt="" /></div>
+      </button>
+      <div class="logo"><img src="./assets/coding.png" alt="" /></div>
       <nav>
         <ul class="primary-navigation underline-indicators">
           <li><a href="./pages/overview.html">Overview</a></li>
@@ -38,47 +43,104 @@
     </header>
     <main id="main" class="main-grid grid">
       <div class="presentation-wrapper">
-        <ul class="topics">
-          <li data-position="1">
+        <picture class="profile-photo" data-screen="full"
+          ><img
+            src="./assets/Bildschirmfoto vom 2022-07-23 14-48-55.png"
+            alt=""
+        /></picture>
+        <ul id="topics" class="topics" data-screen="full">
+          <li data-position="1" data-title="Skills">
             <span>Skills</span
-            ><img data-topicarea="technical" src="./assets/repair-fix-repairing.svg" alt="" />
+            ><img
+              data-topicarea="technical"
+              src="./assets/repair-fix-repairing.svg"
+              alt=""
+            />
           </li>
-          <li data-position="2">
+          <li data-position="2" data-title="Portfolio">
             <span>Portfolio</span
-            ><img data-topicarea="technical" src="./assets/work-experience.svg" alt="" />
+            ><img
+              data-topicarea="technical"
+              src="./assets/work-experience.svg"
+              alt=""
+            />
           </li>
-          <li data-position="3">
+          <li data-position="3" data-title="Workplan">
             <span>Workplan</span
-            ><img data-topicarea="technical" src="./assets/stair-climbing.svg" alt="" />
+            ><img
+              data-topicarea="technical"
+              src="./assets/stair-climbing.svg"
+              alt=""
+            />
           </li>
-          <li data-position="4"><span>CV</span><img data-topicarea="personal" src="./assets/resume-cv.svg" alt="" /></li>
-          <li data-position="5">
+          <li data-position="4" data-title="CV">
+            <span>CV</span
+            ><img
+              data-topicarea="personal"
+              src="./assets/resume-cv.svg"
+              alt=""
+            />
+          </li>
+          <li data-position="5" data-title="Education">
             <span>Education</span
-            ><img data-topicarea="personal" src="./assets/graduation-cap.svg" alt="" />
+            ><img
+              data-topicarea="personal"
+              src="./assets/graduation-cap.svg"
+              alt=""
+            />
           </li>
-          <li data-position="6">
-            <span>About me</span><img data-topicarea="personal" src="./assets/about-me.svg" alt="" />
+          <li data-position="6" data-title="About me">
+            <span>About me</span
+            ><img
+              data-topicarea="personal"
+              src="./assets/about-me.svg"
+              alt=""
+            />
           </li>
-          <li data-position="7">
-            <span>Contact</span><img data-topicarea="personal" src="./assets/contact-us.svg" alt="" />
+          <li data-position="7" data-title="Contact">
+            <span>Contact</span
+            ><img
+              data-topicarea="personal"
+              src="./assets/contact-us.svg"
+              alt=""
+            />
           </li>
         </ul>
       </div>
       <div class="short-description">
-        <div class="grid short-description-nav" role="tablist" aria-label="topics list">
-          <div data-position="1" role="tab" aria-controls="skills-tab" tabindex="-1">
+        <div
+          class="grid short-description-nav"
+          role="tablist"
+          aria-label="topics list"
+        >
+          <div
+            data-position="1"
+            role="tab"
+            aria-controls="skills-tab"
+            tabindex="-1"
+          >
             <button data-topicarea="technical">
               <img src="./assets/repair-fix-repairing.svg" alt="" />
             </button>
             <span class="sr-only">Skills</span>
           </div>
-          <div data-position="2" role="tab" aria-controls="protfolio-tab" tabindex="-1">
+          <div
+            data-position="2"
+            role="tab"
+            aria-controls="protfolio-tab"
+            tabindex="-1"
+          >
             <button data-topicarea="technical">
               <img src="./assets/work-experience.svg" alt="" />
             </button>
             <span class="sr-only">Portfolio</span>
           </div>
-          <div data-position="3" role="tab" aria-controls="workplan-tab" tabindex="-1">
+          <div
+            data-position="3"
+            role="tab"
+            aria-controls="workplan-tab"
+            tabindex="-1"
+          >
             <button data-topicarea="technical">
               <img src="./assets/stair-climbing.svg" alt="" />
             </button>
@@ -90,19 +152,34 @@
             </button>
             <span class="sr-only">CV</span>
           </div>
-          <div data-position="5" role="tab" aria-controls="education-tab" tabindex="-1">
+          <div
+            data-position="5"
+            role="tab"
+            aria-controls="education-tab"
+            tabindex="-1"
+          >
             <button data-topicarea="personal">
               <img src="./assets/graduation-cap.svg" alt="" />
             </button>
             <span class="sr-only">Education</span>
           </div>
-          <div data-position="6" role="tab" aria-controls="about_me-tab" tabindex="-1">
+          <div
+            data-position="6"
+            role="tab"
+            aria-controls="about_me-tab"
+            tabindex="-1"
+          >
             <button data-topicarea="personal">
               <img src="./assets/about-me.svg" alt="" />
             </button>
             <span class="sr-only">About me</span>
           </div>
-          <div data-position="7" role="tab" aria-controls="contact-tab" tabindex="-1">
+          <div
+            data-position="7"
+            role="tab"
+            aria-controls="contact-tab"
+            tabindex="-1"
+          >
             <button data-topicarea="personal">
               <img src="./assets/contact-us.svg" alt="" />
             </button>
