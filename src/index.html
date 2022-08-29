@@ -34,7 +34,7 @@
       </button>
       <div class="logo"><img src="./assets/coding.png" alt="" /></div>
       <nav>
-        <ul class="primary-navigation underline-indicators">
+        <ul class="primary-navigation underline-indicators" data-is-expanded="false">
           <li><a href="./pages/overview.html">Overview</a></li>
           <li><a href="./pages/technical.html">Technical area</a></li>
           <li><a href="./pages/personal.html">Personal area</a></li>
@@ -49,7 +49,15 @@
             alt=""
         /></picture>
         <ul id="topics" class="topics" data-screen="full">
-          <li data-position="1" data-title="Skills">
+          <li data-position="1" data-title="About me">
+            <span>About me</span
+            ><img
+              data-topicarea="personal"
+              src="./assets/about-me.svg"
+              alt=""
+            />
+          </li>
+          <li data-position="2" data-title="Skills">
             <span>Skills</span
             ><img
               data-topicarea="technical"
@@ -57,7 +65,7 @@
               alt=""
             />
           </li>
-          <li data-position="2" data-title="Portfolio">
+          <li data-position="3" data-title="Portfolio">
             <span>Portfolio</span
             ><img
               data-topicarea="technical"
@@ -65,19 +73,11 @@
               alt=""
             />
           </li>
-          <li data-position="3" data-title="Workplan">
+          <li data-position="4" data-title="Workplan">
             <span>Workplan</span
             ><img
               data-topicarea="technical"
               src="./assets/stair-climbing.svg"
-              alt=""
-            />
-          </li>
-          <li data-position="4" data-title="CV">
-            <span>CV</span
-            ><img
-              data-topicarea="personal"
-              src="./assets/resume-cv.svg"
               alt=""
             />
           </li>
@@ -89,11 +89,11 @@
               alt=""
             />
           </li>
-          <li data-position="6" data-title="About me">
-            <span>About me</span
+          <li data-position="6" data-title="CV">
+            <span>CV</span
             ><img
               data-topicarea="personal"
-              src="./assets/about-me.svg"
+              src="./assets/resume-cv.svg"
               alt=""
             />
           </li>
@@ -113,8 +113,19 @@
           role="tablist"
           aria-label="topics list"
         >
-          <div
+        <div
             data-position="1"
+            role="tab"
+            aria-controls="about_me-tab"
+            tabindex="-1"
+          >
+            <button data-topicarea="personal">
+              <img src="./assets/about-me.svg" alt="" />
+            </button>
+            <span class="sr-only">About me</span>
+          </div>
+          <div
+            data-position="2"
             role="tab"
             aria-controls="skills-tab"
             tabindex="-1"
@@ -125,7 +136,7 @@
             <span class="sr-only">Skills</span>
           </div>
           <div
-            data-position="2"
+            data-position="3"
             role="tab"
             aria-controls="protfolio-tab"
             tabindex="-1"
@@ -136,7 +147,7 @@
             <span class="sr-only">Portfolio</span>
           </div>
           <div
-            data-position="3"
+            data-position="4"
             role="tab"
             aria-controls="workplan-tab"
             tabindex="-1"
@@ -145,12 +156,6 @@
               <img src="./assets/stair-climbing.svg" alt="" />
             </button>
             <span class="sr-only">Workplan</span>
-          </div>
-          <div data-position="4" role="tab" aria-controls="cv-tab" tabindex="0">
-            <button data-topicarea="personal">
-              <img src="./assets/resume-cv.svg" alt="" />
-            </button>
-            <span class="sr-only">CV</span>
           </div>
           <div
             data-position="5"
@@ -163,16 +168,11 @@
             </button>
             <span class="sr-only">Education</span>
           </div>
-          <div
-            data-position="6"
-            role="tab"
-            aria-controls="about_me-tab"
-            tabindex="-1"
-          >
+          <div data-position="6" role="tab" aria-controls="cv-tab" tabindex="0">
             <button data-topicarea="personal">
-              <img src="./assets/about-me.svg" alt="" />
+              <img src="./assets/resume-cv.svg" alt="" />
             </button>
-            <span class="sr-only">About me</span>
+            <span class="sr-only">CV</span>
           </div>
           <div
             data-position="7"
@@ -187,6 +187,8 @@
           </div>
         </div>
         <h2 class="description-heading"></h2>
+        <section class="short-content"><p></p></section>
+        <section class="side-information"><p></p></section>
       </div>
     </main>
     <!-- <footer></footer> -->

@@ -4,7 +4,7 @@ const animNameMoveIcons = "icons-move";
 const topics = document.querySelector("#topics");
 const topicsItems = document.querySelectorAll(".topics li");
 const topicItem = document.querySelector(".topics li");
-const profilePhoto = document.querySelector('.profile-photo');
+const profilePhoto = document.querySelector(".profile-photo");
 const shortDescription = document.querySelector(".short-description");
 const shortDescNavItems = document.querySelectorAll(
   ".short-description-nav > div"
@@ -12,6 +12,8 @@ const shortDescNavItems = document.querySelectorAll(
 const shortDescNav = document.querySelector(".short-description-nav");
 const middleDescNavItem = document.querySelector('div[data-position = "4"]');
 const descriptionHeading = document.querySelector(".description-heading");
+const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
+const primaryNav = document.querySelector(".primary-navigation");
 
 const manipulateCustomProperties = () => {
   for (let i = 0; i <= topicsItems.length / 2; i++) {
@@ -48,19 +50,20 @@ const orderListItems = (startDegree, degreeArea) => {
     );
 };
 
-
-
 const hideTopicsDependScreen = () => {
-  topics.setAttribute('data-screen', 'half');
-  profilePhoto.setAttribute('data-screen', 'half');
-}
-
-
+  topics.setAttribute("data-screen", "half");
+  profilePhoto.setAttribute("data-screen", "half");
+};
 
 const changeOpacity = (element, opValue) => {
   const elArr = [...element];
   elArr.forEach((el) => el.style.setProperty("opacity", opValue));
 };
+
+const changeZetIndex = (element, zIndex) => {
+  const elArr = [...element];
+  elArr.forEach((el) => el.style.setProperty("z-index", zIndex));
+}
 
 const triggerNextAnimation = (event) => {
   setTimeout(() => {
@@ -80,6 +83,7 @@ const triggerNextAnimation = (event) => {
         orderListItems(270, 180);
         changeTopicsGridPosition();
         changeOpacity(topicsItems, 0.1);
+        changeZetIndex(topicsItems,-1);
         showShortDescription();
         hideTopicsDependScreen();
       }
@@ -243,7 +247,6 @@ window.addEventListener("resize", () => {
     isGreater720 = false;
     orderListItems(120, 300);
   }
-
 });
 
 topicsItems.forEach((item) =>
@@ -269,4 +272,19 @@ shortDescNavItems.forEach((item) => {
   );
   item.addEventListener("mouseover", showHeading);
   item.addEventListener("mouseleave", showHeadingOfFocused);
+});
+
+mobileNavToggle.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  let isPrimaryNavExpanded = primaryNav.getAttribute("data-is-expanded");
+
+  if (isPrimaryNavExpanded === "true") {
+    mobileNavToggle.setAttribute("aria-expanded", "false");
+    primaryNav.setAttribute("data-is-expanded", "false");
+  } else if (isPrimaryNavExpanded === "false") {
+    mobileNavToggle.setAttribute("aria-expanded", "true");
+    primaryNav.setAttribute("data-is-expanded", "true");
+  }
+  // mobileNavToggle.setAttribute("data-close-icon", `${!isToggleExpanded}`);
 });
