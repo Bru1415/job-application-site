@@ -14,6 +14,8 @@ const middleDescNavItem = document.querySelector('div[data-position = "4"]');
 const descriptionHeading = document.querySelector(".description-heading");
 const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
 const primaryNav = document.querySelector(".primary-navigation");
+const shortDescHeading = document.querySelector(".description-heading");
+const shortContent = document.querySelector(".short-content");
 
 const manipulateCustomProperties = () => {
   for (let i = 0; i <= topicsItems.length / 2; i++) {
@@ -63,7 +65,7 @@ const changeOpacity = (element, opValue) => {
 const changeZetIndex = (element, zIndex) => {
   const elArr = [...element];
   elArr.forEach((el) => el.style.setProperty("z-index", zIndex));
-}
+};
 
 const triggerNextAnimation = (event) => {
   setTimeout(() => {
@@ -83,7 +85,7 @@ const triggerNextAnimation = (event) => {
         orderListItems(270, 180);
         changeTopicsGridPosition();
         changeOpacity(topicsItems, 0.1);
-        changeZetIndex(topicsItems,-1);
+        changeZetIndex(topicsItems, -1);
         showShortDescription();
         hideTopicsDependScreen();
       }
@@ -131,8 +133,9 @@ const focusOnTarget = (event, referenceNodeArray) => {
 };
 
 const showHeadingOfFocused = () => {
-  let focusedTopic = document.querySelector('div[data-position="4"]');
-  focusedTopic.focus();
+  let focusedTopic = document.querySelector('div[data-position="4"] span');
+  let focusedDiv = document.querySelector('div[data-position="4"]');
+  focusedDiv.focus();
   descriptionHeading.textContent = focusedTopic.textContent;
 };
 
@@ -183,7 +186,9 @@ const showHeading = (event) => {
 const moveDataPositionScroll = (event) => {
   // event.stopPropagation();
   event.preventDefault();
+  // shortDescription.focus();
   assignNewDataPosition(event.deltaY);
+  getShortDescContent();
 };
 
 const moveDataPositionArrow = (event) => {
@@ -198,14 +203,74 @@ const moveDataPositionArrow = (event) => {
 
   if (trigger && (trigger === 1 || trigger === -1)) {
     assignNewDataPosition(trigger);
+    getShortDescContent();
   } else {
     return;
   }
 };
 
-let isGreater720 = null;
+const translateLayoutData = (numberCode) => {};
 
-window.addEventListener("load", () => {
+const addLayoutData = (rawData) => {
+  const htmlElement = layoutKeyData.htmlElement.find(
+    (element) => element[0] === rawData.htmlElement
+  )[1];
+  let cssClasses = [];
+  for (let classCode of rawData.classes) {
+    cssClasses.push(
+      layoutKeyData.classes.find((element) => element[0] === classCode)[1]
+    );
+  }
+  const cssClassList = cssClasses.join(" ");
+  let textContent = rawData.textContent;
+
+
+  let htmlAttributesArr = rawData.attributes;
+
+
+
+  return { textContent, htmlElement, cssClassList, htmlAttributesArr };
+};
+
+const getShortDescContent = async () => {
+  // const response = await fetch("../data.json");
+  // const data = await response.json();
+  // const shortDescContent = data.shortDescription;
+  // console.log(Object.entries(data.shortDescription[`${topic}`]));
+
+  let heading = shortDescHeading.textContent.replace(/\s+/g, "").toLowerCase();
+  shortContent.textContent = "";
+  for (let topic in shortDescData) {
+    if (topic.toLowerCase() === heading) {
+      // console.log("in if");
+      for (let i = 0; i < shortDescData[topic].length; i++) {
+        // let htmlElement = shortDescData[topic][i].htmlElement;
+        let {
+          textContent,
+          htmlElement: htmlTagName,
+          cssClassList,
+          htmlAttributesArr
+        } = addLayoutData(shortDescData[topic][i]);
+        
+        let htmlElement = document.createElement(htmlTagName);
+        htmlElement.className = cssClassList;
+        htmlElement.textContent = textContent;
+
+        for(let attribute of htmlAttributesArr) {
+          htmlElement.setAttribute(attribute[0], attribute[1]);
+        }
+        shortContent.appendChild(htmlElement);
+
+      }
+    }
+  }
+};
+
+let isGreater720 = null;
+let shortDescData = null;
+let layoutKeyData = null;
+
+window.addEventListener("load", async () => {
   let screenWidth =
     window.innerWidth ||
     document.documentElement.clientWidth ||
@@ -222,6 +287,11 @@ window.addEventListener("load", () => {
   }
 
   manipulateCustomProperties();
+
+  const response = await fetch("../data.json");
+  const data = await response.json();
+  shortDescData = data.englishVersion.shortDescription;
+  layoutKeyData = data.layoutKeys;
 });
 
 window.addEventListener("resize", () => {
@@ -270,8 +340,14 @@ shortDescNavItems.forEach((item) => {
   item.addEventListener("click", (event) =>
     focusOnTarget(event, shortDescNavItems)
   );
-  item.addEventListener("mouseover", showHeading);
-  item.addEventListener("mouseleave", showHeadingOfFocused);
+  item.addEventListener("mouseover", (event) => {
+    showHeading(event);
+    // getShortDescContent();
+  });
+  item.addEventListener("mouseleave", () => {
+    showHeadingOfFocused();
+    getShortDescContent();
+  });
 });
 
 mobileNavToggle.addEventListener("click", (event) => {

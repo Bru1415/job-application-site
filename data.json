@@ -1,0 +1,173 @@
+{
+  "germanVersion": {
+    "shortDescription": {
+      "aboutMe": [["aj", "hvb", "11"]],
+      "skills": [["sk", "vhgv", "22"]],
+      "portfolio": [["p", "gh", "001"]],
+      "workplan": [
+        ["learning", "November-Juni", "11"],
+        ["job", "nmklnkl", "22"]
+      ],
+      "education": [
+        ["school", "Herder Schule", "02"],
+        ["university", "Leuphana University", "02"]
+      ],
+      "cv": [["cv", "01"]],
+      "contact": [
+        ["E-Mail", "bruno.m.schuster@gmail.com", "00"],
+        ["linkedIn", "still hav to create an account", "00"],
+        ["phoneNumber", "017621532863", "00"]
+      ]
+    }
+  },
+  "englishVersion": {
+    "shortDescription": {
+      "aboutMe": [
+        {
+          "textContent": "Bruno-Martin Schuster",
+          "classes": ["01"],
+          "htmlElement": "104",
+          "attributes": []
+        },
+        {
+          "textContent": "blabla",
+          "classes": [],
+          "htmlElement": "103",
+          "attributes": []
+        }
+      ],
+      "skills": [
+        {
+          "textContent": "school",
+          "classes": ["01"],
+          "htmlElement": "104",
+          "attributes": []
+        }
+      ],
+      "portfolio": [
+        {
+          "textContent": "school",
+          "classes": ["01"],
+          "htmlElement": "104",
+          "attributes": []
+        }
+      ],
+      "workplan": [
+        {
+          "textContent": "learning",
+          "classes": ["01"],
+          "htmlElement": "104",
+          "attributes": []
+        },
+        {
+          "textContent": "November-Juni",
+          "classes": [],
+          "htmlElement": "103",
+          "attributes": []
+        },
+        {
+          "textContent": "job",
+          "classes": ["01"],
+          "htmlElement": "104",
+          "attributes": []
+        },
+        {
+          "textContent": "nmklnkl",
+          "classes": [],
+          "htmlElement": "103",
+          "attributes": []
+        }
+      ],
+      "education": [
+        {
+          "textContent": "school",
+          "classes": ["01"],
+          "htmlElement": "104",
+          "attributes": []
+        },
+        {
+          "textContent": "Herder Schule",
+          "classes": [],
+          "htmlElement": "103",
+          "attributes": []
+        },
+        {
+          "textContent": "university",
+          "classes": [],
+          "htmlElement": "103",
+          "attributes": []
+        },
+        {
+          "textContent": "Leuphana University",
+          "classes": ["01"],
+          "htmlElement": "103",
+          "attributes": []
+        }
+      ],
+      "cv": [
+        {
+          "textContent": "cv",
+          "classes": ["01"],
+          "htmlElement": "104",
+          "attributes": []
+        }
+      ],
+      "contact": [
+        {
+          "textContent": "E-Mail",
+          "classes": ["01"],
+          "htmlElement": "104",
+          "attributes": []
+        },
+        {
+          "textContent": "bruno.m.schuster@gmail.com",
+          "classes": [],
+          "htmlElement": "101",
+          "attributes": [["href","mailto:bruno.m.schuster@gmail.com"]]
+        },
+        {
+          "textContent": "linkedIn",
+          "classes": ["01"],
+          "htmlElement": "104",
+          "attributes": []
+        },
+        {
+          "textContent": "still hav to create an account",
+          "classes": [],
+          "htmlElement": "101",
+          "attributes": [["href","https://de.linkedin.com/"]]
+        },
+        {
+          "textContent": "phoneNumber",
+          "classes": ["01"],
+          "htmlElement": "104",
+          "attributes": []
+        },
+        {
+          "textContent": "017621532863",
+          "classes": [],
+          "htmlElement": "101",
+          "attributes": [["href","https://de.linkedin.com/"]]
+        }
+      ]
+    }
+  },
+  "layoutKeys": {
+    "classes": [
+      ["00", ".colon"],
+      ["01", "hr"],
+      ["02", ".ul"],
+      ["10", ".table"],
+      ["11", ".table-header"],
+      ["12", ".table-row"],
+      ["13", ".table-footer"],
+      ["20", ".grid-json"]
+    ],
+    "htmlElement": [
+      ["101", "a"],
+      ["102", "span"],
+      ["103", "p"],
+      ["104", "h3"]
+    ]
+  }
+}
