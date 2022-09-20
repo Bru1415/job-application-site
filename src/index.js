@@ -1,3 +1,4 @@
+
 const pres = document.querySelector(".presentation-wrapper");
 const mainGrid = document.querySelector("#main");
 const animNameMoveIcons = "icons-move";
@@ -180,7 +181,8 @@ const showHeading = (event) => {
     event.target.querySelector("span") ||
     event.target.parentNode.querySelector("span") ||
     event.target.parentNode.parentNode.querySelector("span");
-  descriptionHeading.textContent = hoveredTopic.textContent;
+  // descriptionHeading.textContent = hoveredTopic.textContent;
+  hoveredTopic.style.setAttribute('transform', 'scale(1)');
 };
 
 const moveDataPositionScroll = (event) => {
@@ -188,7 +190,6 @@ const moveDataPositionScroll = (event) => {
   event.preventDefault();
   // shortDescription.focus();
   assignNewDataPosition(event.deltaY);
-  getShortDescContent();
 };
 
 const moveDataPositionArrow = (event) => {
@@ -203,68 +204,11 @@ const moveDataPositionArrow = (event) => {
 
   if (trigger && (trigger === 1 || trigger === -1)) {
     assignNewDataPosition(trigger);
-    getShortDescContent();
   } else {
     return;
   }
 };
 
-const translateLayoutData = (numberCode) => {};
-
-const addLayoutData = (rawData) => {
-  const htmlElement = layoutKeyData.htmlElement.find(
-    (element) => element[0] === rawData.htmlElement
-  )[1];
-  let cssClasses = [];
-  for (let classCode of rawData.classes) {
-    cssClasses.push(
-      layoutKeyData.classes.find((element) => element[0] === classCode)[1]
-    );
-  }
-  const cssClassList = cssClasses.join(" ");
-  let textContent = rawData.textContent;
-
-
-  let htmlAttributesArr = rawData.attributes;
-
-
-
-  return { textContent, htmlElement, cssClassList, htmlAttributesArr };
-};
-
-const getShortDescContent = async () => {
-  // const response = await fetch("../data.json");
-  // const data = await response.json();
-  // const shortDescContent = data.shortDescription;
-  // console.log(Object.entries(data.shortDescription[`${topic}`]));
-
-  let heading = shortDescHeading.textContent.replace(/\s+/g, "").toLowerCase();
-  shortContent.textContent = "";
-  for (let topic in shortDescData) {
-    if (topic.toLowerCase() === heading) {
-      // console.log("in if");
-      for (let i = 0; i < shortDescData[topic].length; i++) {
-        // let htmlElement = shortDescData[topic][i].htmlElement;
-        let {
-          textContent,
-          htmlElement: htmlTagName,
-          cssClassList,
-          htmlAttributesArr
-        } = addLayoutData(shortDescData[topic][i]);
-        
-        let htmlElement = document.createElement(htmlTagName);
-        htmlElement.className = cssClassList;
-        htmlElement.textContent = textContent;
-
-        for(let attribute of htmlAttributesArr) {
-          htmlElement.setAttribute(attribute[0], attribute[1]);
-        }
-        shortContent.appendChild(htmlElement);
-
-      }
-    }
-  }
-};
 
 let isGreater720 = null;
 let shortDescData = null;
@@ -342,11 +286,9 @@ shortDescNavItems.forEach((item) => {
   );
   item.addEventListener("mouseover", (event) => {
     showHeading(event);
-    // getShortDescContent();
   });
   item.addEventListener("mouseleave", () => {
     showHeadingOfFocused();
-    getShortDescContent();
   });
 });
 
