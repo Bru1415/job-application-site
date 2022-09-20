@@ -1,4 +1,3 @@
-
 const pres = document.querySelector(".presentation-wrapper");
 const mainGrid = document.querySelector("#main");
 const animNameMoveIcons = "icons-move";
@@ -15,6 +14,7 @@ const middleDescNavItem = document.querySelector('div[data-position = "4"]');
 const descriptionHeading = document.querySelector(".description-heading");
 const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
 const primaryNav = document.querySelector(".primary-navigation");
+const primaryNavChildren = primaryNav.querySelectorAll('li');
 const shortDescHeading = document.querySelector(".description-heading");
 const shortContent = document.querySelector(".short-content");
 
@@ -182,7 +182,7 @@ const showHeading = (event) => {
     event.target.parentNode.querySelector("span") ||
     event.target.parentNode.parentNode.querySelector("span");
   // descriptionHeading.textContent = hoveredTopic.textContent;
-  hoveredTopic.style.setAttribute('transform', 'scale(1)');
+  hoveredTopic.style.setAttribute("transform", "scale(1)");
 };
 
 const moveDataPositionScroll = (event) => {
@@ -208,7 +208,6 @@ const moveDataPositionArrow = (event) => {
     return;
   }
 };
-
 
 let isGreater720 = null;
 let shortDescData = null;
@@ -306,3 +305,15 @@ mobileNavToggle.addEventListener("click", (event) => {
   }
   // mobileNavToggle.setAttribute("data-close-icon", `${!isToggleExpanded}`);
 });
+
+
+
+primaryNavChildren.forEach((item) =>
+  item.addEventListener("click", (event) => {
+    event.target.firstElementChild.click();
+    console.log("click");
+  })
+);
+
+
+// console.log('primaryNavs children: ' + primaryNav.children );
