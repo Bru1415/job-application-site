@@ -5,11 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>personal area</title>
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,400;0,700;1,400&family=Barlow:wght@400;700&family=Libre+Baskerville:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- custom css -->
     <link rel="stylesheet" href="../styles.css" />
+    <!-- JS -->
+    <!-- <script src="../index.js" defer></script> -->
+    <script src="./pages.js" defer></script>
   </head>
-  <body class="personal">
-    <header class="flex">
-        <div class="header_bg"></div>
+  <body class="personal basic">
+    <header class="flex sticky">
+      <div class="header_photo">
+        <img
+          src="/src/assets/Bildschirmfoto vom 2022-07-23 14-48-55.png"
+          alt="picture of bruno-martin schuster"
+        />
+        <span>Bruno-Martin Schuster</span>
+      </div>
+      <div class="header_bg"></div>
       <button
         data-close-icon="false"
         class="mobile-nav-toggle burger-icon"
@@ -17,20 +53,261 @@
       >
         <span class="sr-only" aria-expanded="false">Menu</span>
       </button>
-      <div class="logo"><img src="../assets/coding.png" alt="" /></div>
+      <div class="logo">
+        <img src="../assets/coding.png" alt="coding-symbol as logo" />
+      </div>
       <nav>
         <ul
           class="primary-navigation underline-indicators"
           data-is-expanded="false"
         >
-          <li><a href="../index.html">Overview</a></li>
-          <li><a href="./technical.html">Technical area</a></li>
-          <li><a href="./personal.html">Personal area</a></li>
+          <li><a href="../index.html">overview</a></li>
+          <li><a href="./technical.html">job-relevant</a></li>
+          <li class="active"><a href="./personal.html">personal</a></li>
         </ul>
       </nav>
+      <div class="lang-dropdown">
+        <div class="dropdown-current">EN</div>
+        <div class="dropdown-content">
+          <div><a href="./personal-de.html"> DE</a></div>
+        </div>
+      </div>
     </header>
     <main>
-      <article class="resume" data-title="CV"></article>
+      <section class="resume flex" data-title="resume">
+        <article class="about flex col-row col-row-md">
+          <div class="about_me person_half">
+            <h2>About me</h2>
+            <p class="ff-serif2 fs-400">
+              I am a calm person who is enthusiastic about learning. In groups I
+              generally do not take the leading part, but always try to push
+              when there is a goal to reach.
+              <br />
+              <br />
+              One of my greatest strengths is my frustration tolerance, which I
+              think is an important ability for a programmer. I usually try to
+              consider problems from different point of views. That, on the one
+              hand takes more time, on the other hand is less superficial.
+            </p>
+          </div>
+          <div class="contact person_half">
+            <h2>Contact</h2>
+            <div class="grid contact_table">
+              <div>AGE:</div>
+              <div>39</div>
+              <div>EMAIL:</div>
+              <div class="overflow-any">bruno.m.schuster@gmail.de</div>
+              <div>PHONE:</div>
+              <div>017621532863</div>
+              <div>ADDRESS:</div>
+              <div>Lüneburg, Germany</div>
+            </div>
+          </div>
+        </article>
+        <!-- 
+                vernetztes denken - connected thinking,
+                 kreativität - creativity,
+                  flexibilität bei problemlösungen - flexibility,
+                 analytisches denken - analytical thinking,
+
+                  teamfähigkeit - teamwork, 
+                empathie - empathy,
+                  lernbereitschaft - eagerness to learn,
+                   frustrationstoleranz - frustration competence,
+            -->
+        <article class="skills">
+          <div class="flex col-row col-row-md skills__non-professional">
+            <div>
+              <h2>languages</h2>
+              <ul class="skills-languages">
+                <li>
+                  <div>english</div>
+                  <div class="languages__english_stars"><span>★★★★</span>★</div>
+                </li>
+                <li>
+                  <div>spanish</div>
+                  <div class="languages__spanish_stars"><span>★★</span>★★★</div>
+                </li>
+                <li>
+                  <div>french</div>
+                  <div class="languages__french_stars"><span>★★</span>★★★</div>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2>personality</h2>
+              <div class="personality-graphic"></div>
+            </div>
+          </div>
+          <div class="skills__transferable">
+            <h2>transferable skills</h2>
+            <div class="flex skills__list col-row col-row-sm">
+              <div class="skills__list_half flex col">
+                <span>connected thinking</span>
+                <div class="skills__list_item flex">
+                  <div
+                    class="skills__list_item--fill"
+                    style="--skill-fill: 80%"
+                  ></div>
+                </div>
+                <span>analytical thinking</span>
+                <div class="skills__list_item flex">
+                  <div
+                    class="skills__list_item--fill"
+                    style="--skill-fill: 75%"
+                  ></div>
+                </div>
+                <span>creativity in problem solving</span>
+                <div class="skills__list_item flex">
+                  <div
+                    class="skills__list_item--fill"
+                    style="--skill-fill: 80%"
+                  ></div>
+                </div>
+              </div>
+              <div class="skills__list_half flex col">
+                <span>frustration competence</span>
+                <div class="skills__list_item flex">
+                  <div
+                    class="skills__list_item--fill"
+                    style="--skill-fill: 85%"
+                  ></div>
+                </div>
+                <span>eagerness to learn</span>
+                <div class="skills__list_item flex">
+                  <div
+                    class="skills__list_item--fill"
+                    style="--skill-fill: 85%"
+                  ></div>
+                </div>
+                <span>flexibility</span>
+                <div class="skills__list_item flex">
+                  <div
+                    class="skills__list_item--fill"
+                    style="--skill-fill: 75%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="cv flex">
+          <h2>curriculum vitae</h2>
+          <div class="curriculum ff-serif2 overflow-word workplan__content">
+            <div>
+              <h3>work life</h3>
+              <div class="worklife">
+                <div class="timeline success">
+                  <h5>tutor</h5>
+                  <span>as a freelancer</span>
+                  <div><span class="date-range">2013 - 2021</span></div>
+                  <p>
+                    Working as a Tutor for mathematics, physics and english. In
+                    more than 90% of the cases it was mathematics. The classes
+                    were at the student's home. Mainly in private lessons but
+                    also in small groups of two students. One of my greatest
+                    successes were two students who were in their final class
+                    for their general qualification for university entrance. We
+                    started lessons one year before and in their final class
+                    they both decided to switch their examination subject to
+                    mathematics.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <h3>education</h3>
+            <div class="education">
+              <div>
+                <div class="timeline">
+                  <h5>master's programme</h5>
+                  <span>at Leuphana University Lüneburg</span>
+                  <div>
+                    <span class="date-range">October 2010 - May 2013</span>
+                  </div>
+                  <div class="master">
+                    <div class="grid curriculum__specification">
+                      <div>degree program:</div>
+                      <div>Management and Engineering</div>
+                      <div>intermediate grade:</div>
+                      <div>1.92</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="timeline success">
+                  <h5>
+                    Further Education: "Coaching and psychological counseling"
+                  </h5>
+                  <span>at "Integra Heilpraktikerschule"</span>
+                  <div>
+                    <span class="date-range">June 2010 - January 2012</span>
+                  </div>
+                  <p>
+                    This training was offered on weekends so I could do it
+                    parallel to my studies. I decided to take part in it because
+                    I thought I would benefit both in my studies as well as for
+                    my side job as a tutor.
+                  </p>
+                  <div class="grid curriculum__specification">
+                    <div>Main topics:</div>
+                    <div>
+                      communication theory, different counseling approaches
+                    </div>
+                  </div>
+                </div>
+                <div class="timeline success">
+                  <h5>Bachelor of engineering</h5>
+                  <span>from Leuphana University Lüneburg</span>
+                  <div>
+                    <span class="date-range"
+                      >October 2006 - September 2010</span
+                    >
+                  </div>
+                  <div class="grid curriculum__specification">
+                    <div>degree program:</div>
+                    <div>Applied automation technology</div>
+                    <div>final grade:</div>
+                    <div>2.3</div>
+                  </div>
+                </div>
+                <div class="timeline success">
+                  <h5>general qualification for university entrance</h5>
+                  <span>from Herder Schule Lüneburg</span>
+                  <div><span class="date-range"> - 2004</span></div>
+                  <div class="grid curriculum__specification">
+                    <div>Examination subjects:</div>
+                    <div>
+                      mathematics (advanced course), physics (advanced course),
+                      english
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h3>relevant/transferable side jobs</h3>
+            <div class="worklife side-jobs">
+              <div>
+                <div>
+                  <h5>tutor</h5>
+                  <span>for diverse employers as freelancer</span>
+                  <div><span class="date-range">2009 - 2013</span></div>
+                  <p>
+                    I started the job as side job to earn some money parallel to
+                    my studies. However, I already discovered that the work was
+                    a great joy to me.
+                  </p>
+                </div>
+                <div>
+                  <h5>Social listening analysis</h5>
+                  <span>at Brandwatch</span>
+                  <div><span class="date-range">2011 - 2013</span></div>
+                  <p>Tasks: query creation, translations</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
     </main>
   </body>
 </html>

@@ -1,0 +1,26 @@
+<svg width="580" height="425" xmlns="http://www.w3.org/2000/svg">
+ <g id="Layer_1">
+  <title>Layer 1</title>
+  <path stroke="#000" id="svg_1" d="m0.93775,0.46271l579.25789,0l0,424.32556l-579.25789,0l0,-424.32556z" opacity="undefined" fill="#fff"/>
+  <line transform="rotate(0.50867 289.116 211.958)" stroke="#000" id="svg_4" y2="423.90776" x2="291.00324" y1="0.00839" x1="287.22967" fill="none"/>
+  <line id="svg_5" y2="211.48436" x2="579.48627" y1="211.91171" x1="0" stroke="#000" fill="none"/>
+  <text font-style="normal" font-weight="normal" xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="25" id="svg_8" y="203.27705" x="8.68429" stroke="#000" fill="#000000">task</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="25" id="svg_9" y="238.33452" x="6.84942" stroke="#000" fill="#000000">oriented</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="25" id="svg_10" y="203.27705" x="453.75445" stroke="#000" fill="#000000">relationship</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="25" id="svg_11" y="235.46096" x="489.27591" stroke="#000" fill="#000000">oriented</text>
+  <text transform="rotate(-89.6215 300.386 67.4234)" style="cursor: move;" xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="25" id="svg_12" y="75.68028" x="243.29888" stroke="#000" fill="#000000">extroverted</text>
+  <text transform="rotate(-90.0781 302.102 359.741)" style="cursor: move;" xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="25" id="svg_13" y="367.99814" x="247.08987" stroke="#000" fill="#000000">introverted</text>
+  <text font-style="italic" xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="22" id="svg_14" y="415.57802" x="5.58927" stroke="#56aaff" fill="#56aaff">conscientiousness</text>
+  <text font-style="italic" xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="22" id="svg_15" y="415.2353" x="482.49008" stroke="#00bf00" fill="#00ff00">steadiness</text>
+  <text font-style="italic" xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="22" id="svg_16" y="25.11611" x="6.39598" stroke="#bf0000" fill="#ff0000">dominance</text>
+  <text font-style="italic" xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="22" id="svg_17" y="22.92799" x="494.55905" stroke="#bfbf00" fill="#ffff00">initiative</text>
+  <ellipse stroke="#000" ry="65.8046" rx="68.96552" id="svg_18" cy="304.71384" cx="395.47647" fill="#7df28b"/>
+  <ellipse stroke="#000" ry="57.75862" rx="58.04598" id="svg_19" cy="321.38051" cx="181.10863" fill="#70b2f4"/>
+  <ellipse stroke="#000" ry="44.82759" rx="49.13793" id="svg_20" cy="132.58738" cx="483.69486" fill="#fcfc5f"/>
+  <ellipse stroke="#000" ry="37.35632" rx="39.65518" id="svg_21" cy="161.89773" cx="224.21208" fill="#e26f6f"/>
+  <text xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="22" id="svg_23" y="314.1966" x="389.15463" stroke="#000" fill="#000000">1</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="22" id="svg_24" y="330.28855" x="174.7868" stroke="#000" fill="#000000">2</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="22" id="svg_25" y="140.63336" x="476.51096" stroke="#000" fill="#000000">3</text>
+  <text xml:space="preserve" text-anchor="start" font-family="Noto Sans JP" font-size="22" id="svg_26" y="168.79428" x="217.31554" stroke="#000" fill="#000000">4</text>
+ </g>
+</svg>

@@ -11,12 +11,15 @@ const shortDescNavItems = document.querySelectorAll(
 );
 const shortDescNav = document.querySelector(".short-description-nav");
 const middleDescNavItem = document.querySelector('div[data-position = "4"]');
+const shortNavArrows = document.querySelectorAll(".navigation__arrow");
 const descriptionHeading = document.querySelector(".description-heading");
 const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
 const primaryNav = document.querySelector(".primary-navigation");
-const primaryNavChildren = primaryNav.querySelectorAll('li');
+const primaryNavChildren = primaryNav.querySelectorAll("li");
 const shortDescHeading = document.querySelector(".description-heading");
 const shortContent = document.querySelector(".short-content");
+
+const headerPhoto = document.querySelector(".header_photo img");
 
 const manipulateCustomProperties = () => {
   for (let i = 0; i <= topicsItems.length / 2; i++) {
@@ -100,6 +103,20 @@ const findIndexInNodeArray = (nodeArray, targetDiv) => {
   return currentIndex;
 };
 
+// ------------------------------------------------------------------------------------------------------------
+
+const showTabpanel = (tabpanelContainer, tabListContainer, attributeOfTab) => {
+  const tabPanelList = tabpanelContainer.querySelectorAll('[role="tabpanel"]');
+  const targetTab = tabListContainer.querySelector(`${attributeOfTab}`);
+  const targetTabName = targetTab.getAttribute("aria-controls");
+  const targetTabPanel = tabpanelContainer.querySelector(`#${targetTabName}`);
+  tabPanelList.forEach((item) => item.setAttribute("hidden", "true"));
+  targetTabPanel.removeAttribute("hidden");
+  targetTab.setAttribute("aria-selected", "true");
+};
+
+// ------------------------------------------------------------------------------------------------------------
+
 const findTargetDiv = (target, attribute) => {
   let targetDiv = target;
   if (!targetDiv.getAttribute(attribute)) {
@@ -117,12 +134,12 @@ const focusOnTarget = (event, referenceNodeArray) => {
   const indexOfDiv = findIndexInNodeArray(referenceNodeArray, targetDiv);
   const difference = 4 - (indexOfDiv + 1);
   let newDataPosition;
-  for (let i = 0; i < 7; i++) {
+  for (let i = 0; i < 6; i++) {
     if (i + 1 + difference < 1) {
-      newDataPosition = 7 - (Math.abs(difference) - (i + 1));
+      newDataPosition = 6 - (Math.abs(difference) - (i + 1));
       shortDescNavItems[i].setAttribute("data-position", newDataPosition);
-    } else if (i + 1 + difference > 7) {
-      newDataPosition = Math.abs(difference) - (7 - (i + 1));
+    } else if (i + 1 + difference > 6) {
+      newDataPosition = Math.abs(difference) - (6 - (i + 1));
       shortDescNavItems[i].setAttribute("data-position", newDataPosition);
     } else {
       newDataPosition = i + 1 + difference;
@@ -131,11 +148,16 @@ const focusOnTarget = (event, referenceNodeArray) => {
   }
   shortDescription.focus();
   showHeadingOfFocused();
+  showTabpanel(shortContent, shortDescNav, '[data-position="4"]');
 };
 
 const showHeadingOfFocused = () => {
-  let focusedTopic = document.querySelector('div[data-position="4"] span');
-  let focusedDiv = document.querySelector('div[data-position="4"]');
+  let focusedTopic = document.querySelector(
+    '.short-description-nav div[data-position="4"] span'
+  );
+  let focusedDiv = document.querySelector(
+    '.short-description-nav div[data-position="4"]'
+  );
   focusedDiv.focus();
   descriptionHeading.textContent = focusedTopic.textContent;
 };
@@ -143,10 +165,10 @@ const showHeadingOfFocused = () => {
 const assignNewDataPosition = (eventTrigger) => {
   let currentDataPosition;
   if (eventTrigger > 0) {
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 6; i++) {
       currentDataPosition = shortDescNavItems[i].getAttribute("data-position");
       if (currentDataPosition - 1 < 1) {
-        shortDescNavItems[i].setAttribute("data-position", "7");
+        shortDescNavItems[i].setAttribute("data-position", "6");
       } else {
         shortDescNavItems[i].setAttribute(
           "data-position",
@@ -155,9 +177,9 @@ const assignNewDataPosition = (eventTrigger) => {
       }
     }
   } else if (eventTrigger < 0) {
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 6; i++) {
       currentDataPosition = shortDescNavItems[i].getAttribute("data-position");
-      if (+currentDataPosition + 1 > 7) {
+      if (+currentDataPosition + 1 > 6) {
         shortDescNavItems[i].setAttribute("data-position", "1");
       } else {
         shortDescNavItems[i].setAttribute(
@@ -173,6 +195,7 @@ const assignNewDataPosition = (eventTrigger) => {
   // descriptionHeading.textContent = focusedTopic.textContent;
 
   showHeadingOfFocused();
+  showTabpanel(shortContent, shortDescNav, '[data-position="4"]');
 };
 
 const showHeading = (event) => {
@@ -182,7 +205,7 @@ const showHeading = (event) => {
     event.target.parentNode.querySelector("span") ||
     event.target.parentNode.parentNode.querySelector("span");
   // descriptionHeading.textContent = hoveredTopic.textContent;
-  hoveredTopic.style.setAttribute("transform", "scale(1)");
+  hoveredTopic.setAttribute("style", "transform: scale(1)");
 };
 
 const moveDataPositionScroll = (event) => {
@@ -270,6 +293,7 @@ topicsItems.forEach((item) =>
       triggerNextAnimation
     );
     focusOnTarget(event, topicsItems);
+    showTabpanel(shortContent, shortDescNav, '[data-position="4"]');
     // hideTopicsItems();
   })
 );
@@ -278,6 +302,18 @@ shortDescNav.addEventListener("wheel", moveDataPositionScroll, {
   passive: false,
 });
 shortDescNav.addEventListener("keydown", moveDataPositionArrow);
+
+shortNavArrows.forEach((item) =>
+  item.addEventListener("click", (event) => {
+    if (item.classList.contains("arrow-left")) {
+      assignNewDataPosition(-1);
+    } else if (item.classList.contains("arrow-right")) {
+      assignNewDataPosition(1);
+    } else {
+      console.log("Arrow clicked. Something went wrong");
+    }
+  })
+);
 
 shortDescNavItems.forEach((item) => {
   item.addEventListener("click", (event) =>
@@ -306,14 +342,12 @@ mobileNavToggle.addEventListener("click", (event) => {
   // mobileNavToggle.setAttribute("data-close-icon", `${!isToggleExpanded}`);
 });
 
-
-
 primaryNavChildren.forEach((item) =>
   item.addEventListener("click", (event) => {
     event.target.firstElementChild.click();
-    console.log("click");
   })
 );
+
 
 
 // console.log('primaryNavs children: ' + primaryNav.children );
