@@ -318,6 +318,9 @@ select {
 .d-block {
   display: block;
 }
+.pos-relative {
+  position: relative;
+}
 
 .hide {
   visibility: hidden;
@@ -444,6 +447,7 @@ header {
 }
 .lang-dropdown div {
   padding: 5px 9px;
+  z-index: 10000;
 }
 
 .dropdown-current::after {
@@ -687,7 +691,7 @@ header {
   width: 100vw;
   top: 0;
   bottom: 0;
-  backdrop-filter: blur(9px);
+  /* backdrop-filter: blur(9px); */
   color: hsl(var(--clr-dark-high));
   /* overflow-y: scroll; */
   padding-top: 1em;
@@ -1074,7 +1078,7 @@ body.basic::after {
 .technical__resume article {
   /* background-color: hsla(137, 55%, 90%,1); */
   background-color: hsl(var(--clr-light-high));
-  border-radius: 6px;
+  border-radius: 2px;
   box-shadow: 0 2px 12px hsl(var(--clr-dark-high) / 0.4);
   padding: 1.5em;
   /* color: hsl(var(--clr-light-high) / 1) */
@@ -1426,14 +1430,14 @@ span.date-range {
 }
 
 .portfolio__categories h4 {
-  font-weight: bold;
   font-size: 1.2em;
   margin-bottom: 2em;
   margin-top: 12px;
   padding-bottom: 5px;
   margin-inline: auto;
-  max-width: 20%;
-  border-bottom: 2px solid black;
+  font-family: var(--ff-serif3);
+  max-width: 90%;
+  border-bottom: 1px solid black;
   color: hsl(var(--clr-dark-high));
 }
 
@@ -1598,10 +1602,91 @@ span.date-range {
   transform: scale(1.01);
 }
 
+.gallery__element figure figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: hsl(var(--clr-dark-high) / 0.3);
+  backdrop-filter: blur(10px);
+  color: hsl(var(--clr-light-high));
+  transform-origin: 0 0;
+}
+
+.gallery__element figure figcaption::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  /* backdrop-filter: blur(10px); */
+  background-color: hsl(var(--clr-dark-high) / 0.1);
+  transform-origin: 100% 0;
+}
+
+.gallery__element figure figcaption,
+.gallery__element figure figcaption::before {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scale(0, 0);
+  transition: opacity 500ms ease-out, transform 300ms ease-in-out;
+  transition-delay: 100ms;
+}
+
+.gallery__element figure:hover figcaption,
+.gallery__element:hover figcaption,
+.gallery__element figure:hover figcaption::before,
+.gallery__element:hover figcaption::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.gallery__element figure figcaption p {
+  margin-top: 10%;
+  margin-bottom: 3%;
+  font-family: var(--ff-sans-cond2);
+  font-size: var(--fs-200);
+  /* color: hsl(var(--clr-dark)); */
+}
+
+.gallery__element figure figcaption h5 {
+  font-size: var(--fs-450);
+}
+
+@media (min-width: 25em) {
+  .gallery__element figure figcaption p {
+    /* font-weight: 600; */
+    font-size: var(--fs-300);
+  }
+  .gallery__element figure figcaption h5 {
+    font-size: var(--fs-700);
+    font-weight: 600;
+  }
+}
+
 .portfolio_a-tag {
   display: block;
   width: 100%;
   /* height: 200px; */
+}
+
+.git-repo-link {
+  background-color: hsl(var(--clr-dark) / 0.7);
+  width: 70%;
+  margin: auto;
+}
+
+.git-repo-link:hover {
+  transform: scale(1.05);
+  width: 95%;
+}
+
+.git-repo-link:hover a {
+  transform: scale(1.3);
+}
+.git-repo-link a {
+  text-decoration: none;
+  display: block;
+  color: hsl(var(--clr-light-high));
 }
 
 .fcc-ctrl {
