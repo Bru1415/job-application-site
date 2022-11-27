@@ -719,8 +719,10 @@ header {
 
 .short-content {
   height: 66%;
-  padding: 5em 3em;
+  padding: 2.5em 3em;
   overflow-y: scroll;
+  /* border-top: 9px solid hsl(var(--clr-dark) / 0.1); */
+  /* margin-top: 30px; */
 }
 
 .short-content .about_me p {
@@ -820,7 +822,7 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1em;
+  margin-bottom: 1.7em;
   padding-inline: 1em;
   /* margin-top: 1em; */
 }
@@ -1131,6 +1133,14 @@ article div[class*="half"] {
 .contact_table {
   grid-template-columns: 1fr;
   gap: 2px;
+}
+
+.short-content #contact-tab {
+  padding-top: 2em;
+}
+
+#contact-tab .short-info {
+  margin-top: 6em;
 }
 
 .contact_table > div:nth-of-type(2n + 1) {
@@ -1593,6 +1603,10 @@ span.date-range {
   row-gap: 30px;
 }
 
+.short-content .gallery > div {
+  text-align: center;
+}
+
 .gallery__element {
   outline: 3px solid hsl(var(--clr-dark-high) / 0.25);
   box-shadow: 1px 1px 9px;
@@ -1609,7 +1623,7 @@ span.date-range {
   background-color: hsl(var(--clr-dark-high) / 0.3);
   backdrop-filter: blur(10px);
   color: hsl(var(--clr-light-high));
-  transform-origin: 0 0;
+  transform-origin: top left;
 }
 
 .gallery__element figure figcaption::before {
@@ -1619,7 +1633,7 @@ span.date-range {
   top: 0;
   /* backdrop-filter: blur(10px); */
   background-color: hsl(var(--clr-dark-high) / 0.1);
-  transform-origin: 100% 0;
+  transform-origin: top right;
 }
 
 .gallery__element figure figcaption,
