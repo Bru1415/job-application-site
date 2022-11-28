@@ -476,7 +476,7 @@ header {
 }
 
 .lang-dropdown:hover .dropdown-current::after {
-  transform: translateY(4px);
+  transform: translateY(7px);
 }
 
 .lang-dropdown a {

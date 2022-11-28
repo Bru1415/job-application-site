@@ -10,7 +10,7 @@
       href="./assets/Bildschirmfoto vom 2022-07-23 14-48-55.png"
       style="border-radius: 60%"
     />
-    <title>self-introduction</title>
+    <title>überblick Bewerbung</title>
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -42,7 +42,7 @@
     <script src="./index.js" defer></script>
     <script src="../jsonData.js" type="module" defer></script>
   </head>
-  <body class="overview">
+  <body id="english-version" class="overview">
     <header class="flex">
       <button
         data-close-icon="false"
@@ -60,8 +60,8 @@
           data-is-expanded="false"
         >
           <li class="active"><a href="./index.html">überblick</a></li>
-          <li><a href="./pages/technical.html">job-relevant</a></li>
-          <li><a href="./pages/personal.html">persönlich</a></li>
+          <li><a href="./pages/technical-de.html">job-relevant</a></li>
+          <li><a href="./pages/personal-de.html">persönlich</a></li>
         </ul>
       </nav>
       <div class="lang-dropdown">
@@ -79,16 +79,16 @@
             alt="picture of bruno-martin schuster"
         /></picture>
         <ul id="topics" class="topics" data-screen="full">
-          <li data-position="1" data-title="About me">
-            <span>About me</span
+          <li data-position="1" data-title="Über mich">
+            <span>Über mich</span
             ><img
               data-topicarea="personal"
               src="./assets/about-me.svg"
-              alt="grafik mit personenumriss und infosymbol"
+              alt="graphic showing outline of a person with in i representing information"
             />
           </li>
-          <li data-position="2" data-title="Skills">
-            <span>Skills</span>
+          <li data-position="2" data-title="Kenntnisse">
+            <span>Kenntnisse</span>
             <img
               data-topicarea="technical"
               src="./assets/repair-fix-repairing.svg"
@@ -103,24 +103,24 @@
               alt="graphic showing a gearwheel and a briefcase"
             />
           </li>
-          <li data-position="4" data-title="Workplan">
-            <span>Workplan</span
+          <li data-position="4" data-title="Zeitplan">
+            <span>Zeitplan</span
             ><img
               data-topicarea="technical"
               src="./assets/stair-climbing.svg"
               alt="graphic showing a person climbing up stairs"
             />
           </li>
-          <li data-position="5" data-title="CV">
-            <span>CV</span
+          <li data-position="5" data-title="Lebenslauf">
+            <span>Lebenslauf</span
             ><img
               data-topicarea="personal"
               src="./assets/resume-cv.svg"
               alt="graphic showing a resume"
             />
           </li>
-          <li data-position="6" data-title="Contact">
-            <span>Contact</span
+          <li data-position="6" data-title="Kontakt">
+            <span>Kontakt</span
             ><img
               data-topicarea="personal"
               src="./assets/contact-us.svg"
@@ -149,7 +149,7 @@
                 alt="graphic showing outline of a person with in i representing information"
               />
             </button>
-            <span class="sr-only">About me</span>
+            <span class="sr-only">Über mich</span>
           </div>
           <div
             data-position="2"
@@ -164,7 +164,7 @@
                 alt="graphic showing a gearwheel and a hand holding a spanner"
               />
             </button>
-            <span class="sr-only">Skills</span>
+            <span class="sr-only">Fähigkeiten</span>
           </div>
           <div
             data-position="3"
@@ -194,7 +194,7 @@
                 alt="graphic showing a person climbing up stairs"
               />
             </button>
-            <span class="sr-only">Workplan</span>
+            <span class="sr-only">Zeitplan</span>
           </div>
           <div
             data-position="5"
@@ -209,7 +209,7 @@
                 alt="graphic showing a resume"
               />
             </button>
-            <span class="sr-only">CV</span>
+            <span class="sr-only">Lebenslauf</span>
           </div>
           <div
             data-position="6"
@@ -224,7 +224,7 @@
                 alt="graphic showing a phone and a envelope"
               />
             </button>
-            <span class="sr-only">Contact</span>
+            <span class="sr-only">Kontakt</span>
           </div>
         </div>
         <!-- ShortContent ------------------------------------------------------------------- -->
@@ -245,29 +245,43 @@
           >
             <div class="about_me flex col">
               <!-- <h2>About me</h2> -->
-              <h3>personal</h3>
-              <p>
-                I am a calm person who is enthusiastic about learning. In groups
-                I generally do not take the leading part, but always try to push
-                when there is a goal to reach.
+              <h3>persönlich</h3>
+              <p class="ff-serif2 fs-400">
+                Ich bin eine ruhige Peson und liebe es neue Sachen dazuzulernen.
+                In teams nehme ich normalerweise nicht die führende Rolle ein,
+                gehöre aber meist zu den treibenden Kräften, wenn es darum geht
+                ein Ziel zu erreichen.
                 <br />
-                One of my greatest strengths is my frustration tolerance, which
-                I think is an important ability for a programmer. I usually try
-                to consider problems from different point of views. That, on the
-                one hand takes more time, on the other hand is less superficial.
+                <br />
+                Eine meiner größten Stärken ist meine Frustrationstoleranz. Was,
+                wie ich glaube, eine der wichtigsten Eigenschaften für einen
+                Programmierer ist. Gewöhnlich versuche ich Aufgaben aus
+                verschiedenen Blickwinkeln zu betrachten. Was einerseits
+                zeitintensiver, jedoch auf der anderen Seite auch weniger
+                oberflächlich ist.
               </p>
+              <div class="short-info">
+                Das ist eine kurzer Überblick. Für mehr Details besuchen Sie
+                <a href="./pages/personal.html">personal</a>
+              </div>
               <br />
               <br />
-              <h3>professional</h3>
-              <p>
-                I personally see myself rather working in the backend- than in
-                frontend-development. However, I have not decided definitely. I
-                will anyway first go through the whole MERN-stack to have an
-                overall picture.
+              <h3>fachlich</h3>
+              <p class="ff-serif2 fs-400">
+                Ich sehe mich eher in der Backend- als in der
+                Frontendentwicklung. Ich habe mich jedoch noch nicht definitiv
+                entschieden. Ich werde zunächst den gesamten MERN-Stack lernen
+                um mir einen Überblick über beide Arbeitsbereiche zu
+                verschaffen.
+                <br />
+                <br />
+                Auf dieser Seite beschreibe was ich auf meinem Weg zum
+                Programmierer bis jetzt gemacht habe und meinen Zeitplan für die
+                nächsten Monate.
               </p>
             </div>
             <div class="short-info">
-              This is a brief overview. If you want to see more details got to
+              Das ist eine kurzer Überblick. Für mehr Details besuchen Sie
               <a href="./pages/personal.html">job-relevant</a>
             </div>
           </article>
@@ -281,24 +295,24 @@
             aria-labelledby="skills-tab"
           >
             <div class="skills__transferable">
-              <h3>transferable skills</h3>
+              <h3>relevante Fähigkeiten</h3>
               <div class="flex skills__list col-row col-row-sm">
-                <div class="skills__list_half flex column">
-                  <span>connected thinking</span>
+                <div class="skills__list_half flex col">
+                  <span>vernetztes Denken</span>
                   <div class="skills__list_item flex">
                     <div
                       class="skills__list_item--fill"
                       style="--skill-fill: 80%"
                     ></div>
                   </div>
-                  <span>analytical thinking</span>
+                  <span>analytisches Denken</span>
                   <div class="skills__list_item flex">
                     <div
                       class="skills__list_item--fill"
                       style="--skill-fill: 75%"
                     ></div>
                   </div>
-                  <span>creativity in problem solving</span>
+                  <span>Kreativität / Flexibilität bei Problemlösungen</span>
                   <div class="skills__list_item flex">
                     <div
                       class="skills__list_item--fill"
@@ -306,22 +320,22 @@
                     ></div>
                   </div>
                 </div>
-                <div class="skills__list_half flex column">
-                  <span>frustration competence</span>
+                <div class="skills__list_half flex col">
+                  <span>Frustrationstoleranz</span>
                   <div class="skills__list_item flex">
                     <div
                       class="skills__list_item--fill"
                       style="--skill-fill: 85%"
                     ></div>
                   </div>
-                  <span>eagerness to learn</span>
+                  <span>Lernbereitschaft</span>
                   <div class="skills__list_item flex">
                     <div
                       class="skills__list_item--fill"
                       style="--skill-fill: 85%"
                     ></div>
                   </div>
-                  <span>flexibility</span>
+                  <span>Flexibilität</span>
                   <div class="skills__list_item flex">
                     <div
                       class="skills__list_item--fill"
@@ -332,14 +346,13 @@
               </div>
             </div>
             <div class="short-info">
-              This is a brief overview. If you want to see more details got to
-              <a href="./pages/personal.html">job-relevant</a>
+              Das ist eine kurzer Überblick. Für mehr Details besuchen Sie
+              <a href="./pages/personal.html">personal</a>
             </div>
-
-            <h3>coding skills</h3>
+            <h3>Programmierkenntnisse</h3>
             <div class="skills__coding">
               <div class="flex skills__list flex col-row col-row-sm">
-                <div class="skills__list_half flex column">
+                <div class="skills__list_half flex col">
                   <span>Java Script</span>
                   <div class="skills__list_item flex">
                     <div
@@ -362,7 +375,7 @@
                     ></div>
                   </div>
                 </div>
-                <div class="skills__list_half flex column">
+                <div class="skills__list_half flex col">
                   <span>bootstrap</span>
                   <div class="skills__list_item flex">
                     <div
@@ -388,8 +401,8 @@
               </div>
             </div>
             <div class="short-info">
-              This is a brief overview. If you want to see more details got to
-              <a href="./pages/technical.html">technical</a>
+              Das ist eine kurzer Überblick. Für mehr Details besuchen Sie
+              <a href="./pages/technical.html">job-relevant</a>
             </div>
           </article>
           <!-- Portfolio  --------------------------------------------------------------->
@@ -402,48 +415,94 @@
             id="portfolio-tab"
             aria-labelledby="portfolio-tab"
           >
-            <h3>My four most recent works</h3>
+            <h3>Meine vier aktuellsten Arbeiten</h3>
             <div class="gallery flex">
-              <div class="gallery__element col-row col-row-md">
-                <a
-                  href="https://bru1415.github.io/odin-calculator/"
-                  class="portfolio_a-tag"
-                  ><img
-                    src="/src/assets/odin-calculator.png"
-                    alt="screenshot of calculator project"
-                /></a>
-              </div>
-              <div class="gallery__element col-row col-row-md">
-                <a
-                  href="https://codepen.io/BrCoWeb/pen/ExbvEqm?editors=1111"
-                  class="portfolio_a-tag"
-                  ><img
-                    src="/src/assets/fcc-random-quote-machine.png"
-                    alt="screenshot of random quote machine project"
-                /></a>
-              </div>
-              <div class="gallery__element col-row col-row-md">
+              <div class="gallery__element">
                 <a
                   href="https://bru1415.github.io/fementor-job-listings/"
                   class="portfolio_a-tag"
-                  ><img
-                    src="/src/assets/fementor-job-listings.png"
-                    alt="screenshot of job listings project"
-                /></a>
+                  ><figure class="pos-relative">
+                    <img
+                      src="/src/assets/fementor-job-listings.png"
+                      alt="screenshot of job listings project"
+                    />
+                    <figcaption>
+                      <p>React / JavaScript / CSS / HTML</p>
+                      <h5>fementor-job-listings</h5>
+                    </figcaption>
+                  </figure>
+                </a>
+                <div class="git-repo-link fs-500">
+                  <a href="https://github.com/Bru1415/fementor-job-listings"
+                    >zum github repository</a
+                  >
+                </div>
               </div>
-              <div class="gallery__element col-row col-row-md">
+              <div class="gallery__element">
+                <a
+                  href="https://codepen.io/BrCoWeb/pen/ExbvEqm?editors=1111"
+                  class="portfolio_a-tag"
+                  ><figure class="pos-relative">
+                    <img
+                      src="/src/assets/fcc-random-quote-machine.png"
+                      alt="screenshot of random quote machine project"
+                    />
+                    <figcaption>
+                      <p>React / JavaScript / CSS / HTML</p>
+                      <h5>fcc-random-quote-machine</h5>
+                    </figcaption>
+                  </figure></a
+                >
+              </div>
+              <div class="gallery__element">
+                <a
+                  href="https://bru1415.github.io/odin-calculator/"
+                  class="portfolio_a-tag"
+                  ><figure class="pos-relative">
+                    <img
+                      src="/src/assets/odin-calculator.png"
+                      alt="screenshot of calculator project"
+                    />
+                    <figcaption>
+                      <p>JavaScript / HTML / CSS</p>
+                      <h5>odin-calculator</h5>
+                    </figcaption>
+                  </figure></a
+                >
+                <div class="git-repo-link fs-500">
+                  <a href="https://github.com/Bru1415/odin-calculator"
+                    >zum github repository</a
+                  >
+                </div>
+              </div>
+
+              <div class="gallery__element">
                 <a
                   href="https://bru1415.github.io/odin-etch-a-sketch/"
                   class="portfolio_a-tag portfolio__odin_odin-etch-a-sketch"
-                  ><img
-                    src="/src/assets/odin-etch-a-sketch.png"
-                    alt="screenshot of etch a sketch project"
-                /></a>
+                  ><figure class="pos-relative">
+                    <img
+                      src="/src/assets/odin-etch-a-sketch.png"
+                      alt="screenshot of etch a sketch project"
+                    />
+                    <figcaption>
+                      <p>JavaScript / HTML / CSS</p>
+                      <h5>odin-etch-a-sketch</h5>
+                    </figcaption>
+                  </figure></a
+                >
+                <div class="git-repo-link fs-500">
+                  <a
+                    class=""
+                    href="https://github.com/Bru1415/odin-etch-a-sketch"
+                    >zum github repository</a
+                  >
+                </div>
               </div>
             </div>
             <div class="short-info">
-              This is a brief overview. If you want to see more details got to
-              <a href="./pages/technical.html">technical</a>
+              Das ist eine kurzer Überblick. Für mehr Details besuchen Sie
+              <a href="./pages/technical.html">job-relevant</a>
             </div>
           </article>
           <!-- Workplan  ---------------------------------------------------------------->
@@ -460,95 +519,92 @@
             <article class="technical__workplan flex">
               <article class="workplan__past flex">
                 <div>
-                  <h3>Learning History (Up to the present)</h3>
+                  <h3>Zeitplan (Bis Heute)</h3>
                   <div class="workplan__past__to-present">
                     <div>
                       <div class="timeline process">
-                        <h5>Getting curious</h5>
-                        <div><span class="date-range"> July 2021</span></div>
+                        <h5>Anfangsphase</h5>
+                        <div><span class="date-range"> Juli 2021</span></div>
                       </div>
                       <div class="timeline process">
-                        <h5>Testing phase</h5>
+                        <h5>Testphase</h5>
                         <div>
                           <span class="date-range"
-                            >August 2021 - October 2022</span
+                            >August 2021 - Oktober 2022</span
                           >
                         </div>
                       </div>
                       <div class="timeline process">
-                        <h5>Getting serious</h5>
+                        <h5>Ernsthafter Beginn</h5>
                         <div>
                           <span class="date-range"
-                            >October 2021 - November 2022</span
+                            >Oktober 2021 - November 2022</span
                           >
                         </div>
                       </div>
                       <div class="timeline process">
-                        <h5>diversify sources of learning</h5>
+                        <h5>Diversifizierung der Lernquellen</h5>
                         <div>
-                          <span class="date-range"
-                            >November 2021 - present</span
-                          >
+                          <span class="date-range">November 2021 - Heute</span>
                         </div>
                       </div>
                       <div class="timeline success">
                         <h5>
-                          Finish <em>"The Web Development Bootcamp 2022"</em> by
-                          Colt Steele
+                          <em>"The Web Development Bootcamp 2022"</em> von Colt
+                          Steele abgeschlossen.
                         </h5>
                         <div>
-                          <span class="date-range">16th of January 2021</span>
+                          <span class="date-range">16. of Januar 2021</span>
                         </div>
                       </div>
                       <div class="timeline success">
                         <h5>
-                          Finish freeCodeCamp "JavaScript Algorithms and Data
+                          Abschluss freeCodeCamp "JavaScript Algorithms and Data
                           Structures Certification"
                         </h5>
                         <div>
-                          <span class="date-range">31th of January 2021</span>
+                          <span class="date-range">31. Januar 2021</span>
                         </div>
                       </div>
                       <div class="timeline process">
-                        <h5>Start with react</h5>
+                        <h5>React</h5>
                         <div>
                           <span class="date-range"
-                            >February 2022 - March 2022</span
+                            >Februar 2022 - März 2022</span
                           >
                         </div>
                       </div>
                       <div class="timeline process">
-                        <h5>Deepen knowledge on html and css</h5>
+                        <h5>Vertiefung des Wissens von HTML und CSS</h5>
                         <div>
-                          <span class="date-range">March 2022 - present</span>
+                          <span class="date-range">März 2022 - Heute</span>
                         </div>
                       </div>
                       <div class="timeline process">
-                        <h5>Continue with react</h5>
-                        <div><span class="date-range">July 2022</span></div>
-
-                        <p></p>
+                        <h5>Fortfahren mit React</h5>
+                        <div><span class="date-range">Juli 2022</span></div>
                       </div>
                       <div class="timeline success">
-                        <h5>finish main part of react Tutorial</h5>
+                        <h5>Hauptteil des React-Tutorials abgeschlossen</h5>
                         <div>
-                          <span class="date-range">28th of August 2022</span>
+                          <span class="date-range">28. August 2022</span>
                         </div>
                       </div>
                       <div class="timeline process">
                         <h5>
-                          Deepen knowledge on react and prepare for application
+                          Vertiefung von React und Vorbereitungen für die
+                          Bewerbung
                         </h5>
                         <div>
-                          <span class="date-range"
-                            >September 2022 - present</span
-                          >
+                          <span class="date-range">September 2022 - Heute</span>
                         </div>
                       </div>
                       <div class="timeline success">
-                        <h5>finish first challenge of Frontend Mentor</h5>
+                        <h5>
+                          Erste "challenge" auf Frontend Mentor abgeschlossen
+                        </h5>
                         <div>
-                          <span class="date-range">16th of September 2022</span>
+                          <span class="date-range">16. September 2022</span>
                         </div>
                       </div>
                     </div>
@@ -557,46 +613,37 @@
               </article>
               <article class="workplan__future flex">
                 <div>
-                  <h3>Learning Plan (next steps)</h3>
+                  <h3>Zeitplan (nächste Schritte)</h3>
                   <div class="workplan__future__from-present">
                     <div>
                       <div class="timeline process">
                         <h5>
-                          Deepen knowledge on react and prepare for application
+                          Vertiefung von React und Vorbereitungen für die
+                          Bewerbung
                         </h5>
                         <div>
-                          <span class="date-range">present - January 2023</span>
+                          <span class="date-range">Heute - Januar 2023</span>
                         </div>
                       </div>
                       <div class="timeline process">
-                        <h5>Working on the backend</h5>
+                        <h5>Arbeit am Backend</h5>
                         <div>
                           <span class="date-range"
-                            >January 2023 - March 2022</span
+                            >Januar 2023 - März 2022</span
                           >
                         </div>
                       </div>
                       <div class="timeline process">
-                        <h5>Deepen the MERN-Stack</h5>
+                        <h5>MERN-Stack vertiefen</h5>
                         <div>
-                          <span class="date-range">April 2022 - May 2022</span>
+                          <span class="date-range">April 2022 - Mai 2022</span>
                         </div>
                       </div>
                       <div class="timeline process">
-                        <h5>Continuous Improvement</h5>
+                        <h5>Kontinuierliche Verbesserung</h5>
                         <div>
-                          <span class="date-range">May 2022 - open end</span>
+                          <span class="date-range">Mai 2022 - open end</span>
                         </div>
-                        <ul>
-                          <li>Learn Typescript</li>
-                          <li>Learn to work with a sequel database (SQL)</li>
-                          <li>Deepen knowledge on the command-line</li>
-                          <li>
-                            Learn a second programming language for backend:
-                            probably java or python
-                          </li>
-                          <li>...</li>
-                        </ul>
                       </div>
                     </div>
                   </div>
@@ -604,8 +651,8 @@
               </article>
             </article>
             <div class="short-info">
-              This is a brief overview. If you want to see more details got to
-              <a href="./pages/technical.html">technical</a>
+              Das ist eine kurzer Überblick. Für mehr Details besuchen Sie
+              <a href="./pages/technical.html">job-relevant</a>
             </div>
           </article>
           <!-- CV  ------------------------------------------------------------------------->
@@ -620,105 +667,102 @@
             <article class="cv flex">
               <div class="curriculum">
                 <div>
-                  <h3>work life</h3>
+                  <h3>Arbeitsleben</h3>
                   <div class="worklife">
                     <div class="timeline success">
-                      <h5>tutor</h5>
-                      <span>as a freelancer</span>
-                      <div><span class="date-range">2013 - 2021</span></div>
+                      <h5>Nachhilfelehrer</h5>
+                      <span>als Freiberufler</span>
+                      <div><span class="date-range">2013 - Heute</span></div>
                     </div>
                   </div>
                 </div>
-                <h3>education</h3>
+                <h3>Ausbildung</h3>
                 <div class="education">
                   <div>
                     <div class="timeline">
-                      <h5>master's programme</h5>
-                      <span>at Leuphana University Lüneburg</span>
+                      <h5>Masterstudium</h5>
+                      <span>an der Leuphana University Lüneburg</span>
                       <div>
-                        <span class="date-range">October 2010 - May 2013</span>
+                        <span class="date-range">Oktober 2010 - Mai 2013</span>
                       </div>
                       <div class="master">
                         <div class="grid curriculum__specification">
-                          <div>degree program:</div>
+                          <div>Studiengang:</div>
                           <div>Management and Engineering</div>
-                          <div>intermediate grade:</div>
+                          <div>Zwischennote:</div>
                           <div>1.92</div>
                         </div>
                       </div>
                     </div>
                     <div class="timeline success">
                       <h5>
-                        Further Education: "Coaching and psychological
-                        counseling"
+                        Fortbildung: "Coaching and psychological counseling"
                       </h5>
-                      <span>at "Integra Heilpraktikerschule"</span>
+                      <span>bei "Integra Heilpraktikerschule"</span>
                       <div>
-                        <span class="date-range">June 2010 - January 2012</span>
+                        <span class="date-range">Juni 2010 - Januar 2012</span>
                       </div>
-                      <!-- <p class="education__simultan">
-                        This training was offered on weekends so I could do it
-                        parallel to my studies. I decided to take part in it
-                        because I thought I would benefit both in my studies as
-                        well as for my side job as a tutor.
-                      </p> -->
                       <div class="grid curriculum__specification">
-                        <div>Main topics:</div>
+                        <div>Hauptthemen:</div>
                         <div>
-                          communication theory, different counseling approaches
+                          Kommunikationstheorie, verschiedene
+                          Beratungstechniken- und Ansätze
                         </div>
                       </div>
                     </div>
                     <div class="timeline success">
                       <h5>Bachelor of engineering</h5>
-                      <span>from Leuphana University Lüneburg</span>
+                      <span>von der Leuphana University Lüneburg</span>
                       <div>
                         <span class="date-range"
                           >October 2006 - September 2010</span
                         >
                       </div>
                       <div class="grid curriculum__specification">
-                        <div>degree program:</div>
-                        <div>Applied automation technology</div>
-                        <div>final grade:</div>
+                        <div>Studiengang:</div>
+                        <div>Angewandte Automatisierungstechnik</div>
+                        <div>Abschlussnote:</div>
                         <div>2.3</div>
                       </div>
                     </div>
                     <div class="timeline success">
-                      <h5>general qualification for university entrance</h5>
-                      <span>from Herder Schule Lüneburg</span>
+                      <h5>Abitur</h5>
+                      <span>von der Herder Schule Lüneburg</span>
                       <div><span class="date-range"> - 2004</span></div>
                       <div class="grid curriculum__specification">
-                        <div>Examination subjects:</div>
+                        <div>Prüfungsfächer:</div>
                         <div>
-                          mathematics (advanced course), physics (advanced
-                          course), english
+                          Mathematik (Leistungskurs), Physik (Leistungskurs),
+                          Englisch
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <h3>relevant/transferable side jobs</h3>
+                <h3>relevante Nebenjobs</h3>
                 <div class="worklife side-jobs">
                   <div>
                     <div>
-                      <h5>tutor</h5>
-                      <span>for diverse employers as freelancer</span>
+                      <h5>Nachhilfelehrer</h5>
+                      <span>für verschiedene Arbeitgeber als Freiberufler</span>
                       <div><span class="date-range">2009 - 2013</span></div>
                     </div>
                     <div>
-                      <h5>Social listening analysis</h5>
-                      <span>at Brandwatch</span>
+                      <h5>Social Listening Analyse</h5>
+                      <span>bei Brandwatch</span>
                       <div><span class="date-range">2011 - 2013</span></div>
-                      <p>Tasks: query creation, translations</p>
+                      <p>
+                        Aufgaben: Erstellung automatiserter Suchanfragen,
+                        Übersetzungen
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
             </article>
             <div class="short-info">
-              This is a brief overview. If you want to see more details got to
-              <a href="./pages/personal.html">job-relevant</a>
+              Das ist eine kurzer Überblick. Für mehr Details besuchen Sie
+              <a href="./pages/personal.html">personal</a>
             </div>
           </article>
           <!-- Contact  ------------------------------------------------------------------------->
@@ -732,18 +776,18 @@
             aria-labelledby="contact-tab"
           >
             <div class="grid contact_table">
-              <div>AGE:</div>
+              <div>Alter:</div>
               <div>39</div>
-              <div>EMAIL:</div>
+              <div>Email:</div>
               <div>bruno.m.schuster@gmail.de</div>
-              <div>PHONE:</div>
+              <div>Tel.:</div>
               <div>017621532863</div>
-              <div>ADDRESS:</div>
-              <div>Lüneburg, Germany</div>
+              <div>Adresse:</div>
+              <div>Lüneburg, Deutschland</div>
             </div>
             <div class="short-info">
-              This is a brief overview. If you want to see more details got to
-              <a href="./pages/personal.html">job-relevant</a>
+              Das ist eine kurzer Überblick. Für mehr Details besuchen Sie
+              <a href="./pages/personal.html">personal</a>
             </div>
           </article>
         </section>

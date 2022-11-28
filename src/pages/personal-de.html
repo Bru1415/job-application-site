@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>persönlich</title>
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,400;0,700;1,400&family=Barlow:wght@400;700&family=Libre+Baskerville:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- custom css -->
+    <link rel="stylesheet" href="../styles.css" />
+    <!-- JS -->
+    <!-- <script src="../index.js" defer></script> -->
+    <script src="./pages.js" defer></script>
+  </head>
+  <body class="personal basic">
+    <header class="flex sticky">
+      <div class="header_photo">
+        <img
+          src="/src/assets/Bildschirmfoto vom 2022-07-23 14-48-55.png"
+          alt="picture of bruno-martin schuster"
+        />
+        <span>Bruno-Martin Schuster</span>
+      </div>
+      <div class="header_bg"></div>
+      <button
+        data-close-icon="false"
+        class="mobile-nav-toggle burger-icon"
+        aria-controls="primary-navigation"
+      >
+        <span class="sr-only" aria-expanded="false">Menü</span>
+      </button>
+      <div class="logo">
+        <img src="../assets/coding.png" alt="coding-symbol as logo" />
+      </div>
+      <nav>
+        <ul
+          class="primary-navigation underline-indicators"
+          data-is-expanded="false"
+        >
+          <li><a href="../index-de.html">überblick</a></li>
+          <li><a href="./technical-de.html">job-relevant</a></li>
+          <li class="active"><a href="./personal-de.html">persönlich</a></li>
+        </ul>
+      </nav>
+      <div class="lang-dropdown">
+        <div class="dropdown-current">DE</div>
+        <div class="dropdown-content">
+          <div><a href="./personal.html">EN</a></div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="resume flex" data-title="resume">
+        <article class="about flex col-row col-row-md">
+          <div class="about_me person_half">
+            <h2>Über mich</h2>
+            <p class="ff-serif2 fs-400">
+              Ich bin eine ruhige Peson und liebe es neue Sachen dazuzulernen.
+              In teams nehme ich normalerweise nicht die führende Rolle ein,
+              gehöre aber meist zu den treibenden Kräften, wenn es darum geht
+              ein Ziel zu erreichen.
+              <br />
+              <br />
+              Eine meiner größten Stärken ist meine Frustrationstoleranz. Was,
+              wie ich glaube, eine der wichtigsten Eigenschaften für einen
+              Programmierer ist. Gewöhnlich versuche ich Aufgaben aus
+              verschiedenen Blickwinkeln zu betrachten. Was einerseits
+              zeitintensiver, jedoch auf der anderen Seite auch weniger
+              oberflächlich ist.
+            </p>
+          </div>
+          <div class="contact person_half">
+            <h2>Kontaktdaten</h2>
+            <div class="grid contact_table">
+              <div>Alter:</div>
+              <div>39</div>
+              <div>Email:</div>
+              <div class="overflow-any">bruno.m.schuster@gmail.de</div>
+              <div>Tel.:</div>
+              <div>017621532863</div>
+              <div>Adresse:</div>
+              <div>Lüneburg, Deutschland</div>
+            </div>
+          </div>
+        </article>
+        <article class="skills">
+          <div class="flex col-row col-row-md skills__non-professional">
+            <div>
+              <h2>Sprachen</h2>
+              <ul class="skills-languages">
+                <li>
+                  <div>Englisch</div>
+                  <div class="languages__english_stars"><span>★★★★</span>★</div>
+                </li>
+                <li>
+                  <div>Spanisch</div>
+                  <div class="languages__spanish_stars"><span>★★</span>★★★</div>
+                </li>
+                <li>
+                  <div>Französisch</div>
+                  <div class="languages__french_stars"><span>★★</span>★★★</div>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2>persönlichkeit</h2>
+              <div class="personality-graphic"></div>
+            </div>
+          </div>
+          <div class="skills__transferable">
+            <h2>relevante Fähigkeiten</h2>
+            <div class="flex skills__list col-row col-row-sm">
+              <div class="skills__list_half flex col">
+                <span>vernetztes Denken</span>
+                <div class="skills__list_item flex">
+                  <div
+                    class="skills__list_item--fill"
+                    style="--skill-fill: 80%"
+                  ></div>
+                </div>
+                <span>analytisches Denken</span>
+                <div class="skills__list_item flex">
+                  <div
+                    class="skills__list_item--fill"
+                    style="--skill-fill: 75%"
+                  ></div>
+                </div>
+                <span>Kreativität / Flexibilität bei Problemlösungen</span>
+                <div class="skills__list_item flex">
+                  <div
+                    class="skills__list_item--fill"
+                    style="--skill-fill: 80%"
+                  ></div>
+                </div>
+              </div>
+              <div class="skills__list_half flex col">
+                <span>Frustrationstoleranz</span>
+                <div class="skills__list_item flex">
+                  <div
+                    class="skills__list_item--fill"
+                    style="--skill-fill: 85%"
+                  ></div>
+                </div>
+                <span>Lernbereitschaft</span>
+                <div class="skills__list_item flex">
+                  <div
+                    class="skills__list_item--fill"
+                    style="--skill-fill: 85%"
+                  ></div>
+                </div>
+                <span>Flexibilität</span>
+                <div class="skills__list_item flex">
+                  <div
+                    class="skills__list_item--fill"
+                    style="--skill-fill: 75%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="cv flex">
+          <h2>Lebenslauf</h2>
+          <div class="curriculum ff-serif2 overflow-word workplan__content">
+            <div>
+              <h3>Arbeitsleben</h3>
+              <div class="worklife">
+                <div class="timeline success">
+                  <h5>Nachhilfelehrer</h5>
+                  <span>als Freiberufler</span>
+                  <div><span class="date-range">2013 - Heute</span></div>
+                  <p>
+                    Arbeit als Nachhilfelehrer für Mathematik, Physik und
+                    Englisch. In etwa 90% der Fälle war es Nachhilfe für
+                    Mathematik. Es handelte sich um Heimunterricht.
+                    Hauptsächlich in Einzelnachhilfe aber auch in Zweiergruppen.
+                    Einer meiner größten Erfolge waren zwei Schüler, die sich
+                    aufgrund der Nachhilfe dazu entschieden Mathematik als
+                    Prüfungsfach im Abitur zu wählen.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <h3>Ausbildung</h3>
+            <div class="education">
+              <div>
+                <div class="timeline">
+                  <h5>Masterstudium</h5>
+                  <span>an der Leuphana University Lüneburg</span>
+                  <div>
+                    <span class="date-range">Oktober 2010 - Mai 2013</span>
+                  </div>
+                  <div class="master">
+                    <div class="grid curriculum__specification">
+                      <div>Studiengang:</div>
+                      <div>Management and Engineering</div>
+                      <div>Zwischennote:</div>
+                      <div>1.92</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="timeline success">
+                  <h5>Fortbildung: "Coaching und psychologische Beratung"</h5>
+                  <span>bei "Integra Heilpraktikerschule"</span>
+                  <div>
+                    <span class="date-range">Juni 2010 - Januar 2012</span>
+                  </div>
+                  <p>
+                    Diese Forbildung wurde an Wochenenden angeboten, so konnte
+                    ich sie parallel zu meinem Studium machen. Ich entschied
+                    mich dazu, weil ich mir Vorteile sowohl für mein Studium als
+                    auch für meinen Nebenjob als Nachhilfelehrer davon
+                    versprach.
+                  </p>
+                  <div class="grid curriculum__specification">
+                    <div>Hauptthemen:</div>
+                    <div>
+                      Kommunikationstheorie, verschiedene Beratungstechniken-
+                      und Ansätze
+                    </div>
+                  </div>
+                </div>
+                <div class="timeline success">
+                  <h5>Bachelor of engineering</h5>
+                  <span>von Leuphana University Lüneburg</span>
+                  <div>
+                    <span class="date-range"
+                      >Oktober 2006 - September 2010</span
+                    >
+                  </div>
+                  <div class="grid curriculum__specification">
+                    <div>Studiengang:</div>
+                    <div>Angewandte Automatisierungstechnik</div>
+                    <div>Abschlussnote:</div>
+                    <div>2.3</div>
+                  </div>
+                </div>
+                <div class="timeline success">
+                  <h5>Abitur</h5>
+                  <span>von der Herder Schule Lüneburg</span>
+                  <div><span class="date-range"> - 2004</span></div>
+                  <div class="grid curriculum__specification">
+                    <div>Prüfungsfächer:</div>
+                    <div>
+                      Mathematik (Leistungskurs), Physik (Leistungskurs),
+                      Englisch
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h3>relevante Nebenjobs</h3>
+            <div class="worklife side-jobs">
+              <div>
+                <div>
+                  <h5>Nachhilfelehrer</h5>
+                  <span>für verschiedene Arbeitgeber als Freiberufler</span>
+                  <div><span class="date-range">2009 - 2013</span></div>
+                  <p>
+                    Der Job war zunächst als Nebenerwerb während des Studiums
+                    gedacht. Allerdings merkte ich, dass die Arbeit mir grosse
+                    Freude bereitet.
+                  </p>
+                </div>
+                <div>
+                  <h5>Social Listening Analyse</h5>
+                  <span>bei Brandwatch</span>
+                  <div><span class="date-range">2011 - 2013</span></div>
+                  <p>
+                    Aufgaben: Erstellung automatiserter Suchanfragen,
+                    Übersetzungen
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

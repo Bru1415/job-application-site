@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>job-relevant</title>
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,400;0,700;1,400&family=Barlow:wght@400;700&family=Libre+Baskerville:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- custom css -->
+    <link rel="stylesheet" href="../styles.css" />
+    <!-- JS -->
+    <!-- <script src="../index.js"></script> -->
+    <script src="./pages.js" defer></script>
+  </head>
+  <body class="technical basic">
+    <header class="flex sticky">
+      <div class="header_photo">
+        <img
+          src="/src/assets/Bildschirmfoto vom 2022-07-23 14-48-55.png"
+          alt="picture of bruno-martin schuster"
+        />
+        <span>Bruno-Martin Schuster</span>
+      </div>
+      <div class="header_bg"></div>
+      <button
+        data-close-icon="false"
+        class="mobile-nav-toggle burger-icon"
+        aria-controls="primary-navigation"
+      >
+        <span class="sr-only" aria-expanded="false">Menü</span>
+      </button>
+      <div class="logo">
+        <img src="../assets/coding.png" alt="coding-symbol as logo" />
+      </div>
+      <nav>
+        <ul
+          class="primary-navigation underline-indicators"
+          data-is-expanded="false"
+        >
+          <li><a href="../index-de.html">überblick</a></li>
+          <li class="active"><a href="./technical-de.html">job-relevant</a></li>
+          <li><a href="./personal-de.html">persönlich</a></li>
+        </ul>
+      </nav>
+      <div class="lang-dropdown">
+        <div class="dropdown-current">DE</div>
+        <div class="dropdown-content">
+          <div><a href="./personal.html">EN</a></div>
+        </div>
+      </div>
+    </header>
+    <main class="technical__resume">
+      <section class="technical__about flex">
+        <article>
+          <h2>Über mich</h2>
+          <p class="ff-serif2 fs-400">
+            Ich sehe mich eher in der Backend- als in der Frontendentwicklung.
+            Ich habe mich jedoch noch nicht definitiv entschieden. Ich werde
+            zunächst den gesamten MERN-Stack lernen um mir einen Überblick über
+            beide Arbeitsbereiche zu verschaffen.
+            <br />
+            <br />
+            Auf dieser Seite beschreibe was ich auf meinem Weg zum Programmierer
+            bis jetzt gemacht habe und meinen Zeitplan für die nächsten Monate.
+          </p>
+        </article>
+      </section>
+      <section class="technical__skills flex">
+        <article class="skills__coding">
+          <h2>Programmierkenntnisse</h2>
+          <div class="flex skills__list flex col-row col-row-sm">
+            <div class="skills__list_half flex col">
+              <span>Java Script</span>
+              <div class="skills__list_item flex">
+                <div
+                  class="skills__list_item--fill"
+                  style="--skill-fill: 55%"
+                ></div>
+              </div>
+              <span>css</span>
+              <div class="skills__list_item flex">
+                <div
+                  class="skills__list_item--fill"
+                  style="--skill-fill: 45%"
+                ></div>
+              </div>
+              <span>html</span>
+              <div class="skills__list_item flex">
+                <div
+                  class="skills__list_item--fill"
+                  style="--skill-fill: 45%"
+                ></div>
+              </div>
+            </div>
+            <div class="skills__list_half flex col">
+              <span>bootstrap</span>
+              <div class="skills__list_item flex">
+                <div
+                  class="skills__list_item--fill"
+                  style="--skill-fill: 25%"
+                ></div>
+              </div>
+              <span>figma</span>
+              <div class="skills__list_item flex">
+                <div
+                  class="skills__list_item--fill"
+                  style="--skill-fill: 15%"
+                ></div>
+              </div>
+              <span>java</span>
+              <div class="skills__list_item flex">
+                <div
+                  class="skills__list_item--fill"
+                  style="--skill-fill: 30%"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <!-- sḱills--portfolio ------------------------------------------------------------------ -->
+        <article class="technical__skills__portfolio">
+          <h2>Portfolio</h2>
+          <!-- portfolio--nav -------------------------------------------------------- -->
+          <div
+            class="flex portfolio-nav col-row col-row-sm"
+            role="tablist"
+            aria-label="portfolio list"
+          >
+            <div
+              aria-selected="true"
+              data-position="0"
+              role="tab"
+              aria-controls="odin-tab"
+              tabindex="0"
+              class="odin-ctrl"
+            >
+              <h3>The Odin Project</h3>
+            </div>
+            <div
+              aria-selected="false"
+              data-position="1"
+              role="tab"
+              aria-controls="fcc-tab"
+              tabindex="-1"
+              class="fcc-ctrl"
+            >
+              <h3>free Code Camp</h3>
+            </div>
+            <div
+              aria-selected="false"
+              data-position="2"
+              role="tab"
+              aria-controls="fementor-tab"
+              tabindex="-1"
+              class="fementor-ctrl"
+            >
+              <h3>Frontend Mentor</h3>
+            </div>
+            <div
+              aria-selected="false"
+              data-position="3"
+              role="tab"
+              aria-controls="udemy-tab"
+              tabindex="-1"
+              class="udemy-ctrl"
+            >
+              <h3>Udemy</h3>
+            </div>
+          </div>
+          <!-- portfolio-tabpanel ------------------------------------------- -->
+          <div class="portfolio__categories">
+            <!-- tabpanel--Odin ----------------------------------------------------------------- -->
+            <div
+              data-position="1"
+              role="tabpanel"
+              id="odin-tab"
+              aria-labelledby="odin-tab"
+              tabindex="0"
+            >
+              <h4>Projects</h4>
+              <div class="gallery flex col-row col-row-sm">
+                <div class="gallery__element">
+                  <a
+                    href="https://bru1415.github.io/odin-rock-paper-scissor/"
+                    class="portfolio_a-tag"
+                    ><figure class="pos-relative">
+                      <img
+                        src="/src/assets/odin-rock-paper-scissor.png"
+                        alt="screenshot of rock paper scissor project"
+                      />
+                      <figcaption>
+                        <p>JavaScript / HTML</p>
+                        <h5>odin-rock-paper-scissor</h5>
+                      </figcaption>
+                    </figure></a
+                  >
+                  <div class="git-repo-link fs-500">
+                    <a href="https://github.com/Bru1415/odin-rock-paper-scissor"
+                      >zum github repository</a
+                    >
+                  </div>
+                </div>
+                <div class="gallery__element">
+                  <a
+                    href="https://bru1415.github.io/odin-etch-a-sketch/"
+                    class="portfolio_a-tag portfolio__odin_odin-etch-a-sketch"
+                    ><figure class="pos-relative">
+                      <img
+                        src="/src/assets/odin-etch-a-sketch.png"
+                        alt="screenshot of etch a sketch project"
+                      />
+                      <figcaption>
+                        <p>JavaScript / HTML / CSS</p>
+                        <h5>odin-etch-a-sketch</h5>
+                      </figcaption>
+                    </figure></a
+                  >
+                  <div class="git-repo-link fs-500">
+                    <a
+                      class=""
+                      href="https://github.com/Bru1415/odin-etch-a-sketch"
+                      >zum github repository</a
+                    >
+                  </div>
+                </div>
+                <div class="gallery__element">
+                  <a
+                    href="https://bru1415.github.io/odin-calculator/"
+                    class="portfolio_a-tag"
+                    ><figure class="pos-relative">
+                      <img
+                        src="/src/assets/odin-calculator.png"
+                        alt="screenshot of calculator project"
+                      />
+                      <figcaption>
+                        <p>JavaScript / HTML / CSS</p>
+                        <h5>odin-calculator</h5>
+                      </figcaption>
+                    </figure></a
+                  >
+                  <div class="git-repo-link fs-500">
+                    <a href="https://github.com/Bru1415/odin-calculator"
+                      >zum github repository</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- tabpanel--freeCodeCamp ----------------------------------------------------------------- -->
+            <div
+              data-position="2"
+              role="tabpanel"
+              id="fcc-tab"
+              aria-labelledby="fcc-tab"
+              tabindex="0"
+              hidden
+            >
+              <h4>freeCodeCamp Profile</h4>
+              <div class="gallery flex just-center">
+                <div class="gallery__element">
+                  <a
+                    href="https://www.freecodecamp.org/fcccace9ee3-252f-4b27-be62-61411c33d02b"
+                    class="portfolio_a-tag"
+                    ><img
+                      src="/src/assets/FCC_profile.png"
+                      alt="picture of free code camp profile page"
+                  /></a>
+                </div>
+              </div>
+
+              <br />
+              <hr />
+              <h4>Certificates</h4>
+              <div class="gallery flex col-row col-row-md">
+                <div class="gallery__element">
+                  <a
+                    href="https://www.freecodecamp.org/certification/fcccace9ee3-252f-4b27-be62-61411c33d02b/javascript-algorithms-and-data-structures"
+                    class="portfolio_a-tag"
+                    ><img
+                      src="/src/assets/FCC_JSAlgorCert.png"
+                      alt="picture of Algorithms and Data Structures Certification"
+                  /></a>
+                </div>
+              </div>
+
+              <br />
+              <hr />
+              <h4>Projects</h4>
+              <div class="gallery flex col-row col-row-md">
+                <div class="gallery__element">
+                  <a
+                    href="https://codepen.io/BrCoWeb/pen/ExbvEqm?editors=1111"
+                    class="portfolio_a-tag"
+                    ><figure class="pos-relative">
+                      <img
+                        src="/src/assets/fcc-random-quote-machine.png"
+                        alt="screenshot of random quote machine project"
+                      />
+                      <figcaption>
+                        <p>React / JavaScript / CSS / HTML</p>
+                        <h5>fcc-random-quote-machine</h5>
+                      </figcaption>
+                    </figure></a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- tabpanel--Frontend Mentor ------------------------------------------------------------- -->
+            <div
+              data-position="3"
+              role="tabpanel"
+              id="fementor-tab"
+              aria-labelledby="fementor-tab"
+              tabindex="0"
+              hidden
+            >
+              <h4>Projects</h4>
+              <div class="gallery flex col-row col-row-md">
+                <div class="gallery__element">
+                  <a
+                    href="https://bru1415.github.io/fementor-job-listings/"
+                    class="portfolio_a-tag"
+                    ><figure class="pos-relative">
+                      <img
+                        src="/src/assets/fementor-job-listings.png"
+                        alt="screenshot of job listings project"
+                      />
+                      <figcaption>
+                        <p>React / JavaScript / CSS / HTML</p>
+                        <h5>fementor-job-listings</h5>
+                      </figcaption>
+                    </figure>
+                  </a>
+                  <div class="git-repo-link fs-500">
+                    <a href="https://github.com/Bru1415/fementor-job-listings"
+                      >zum github repository</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- tabpanel--Udemy ----------------------------------------------------------------- -->
+
+            <div
+              data-position="4"
+              role="tabpanel"
+              id="udemy-tab"
+              aria-labelledby="udemy-tab"
+              tabindex="0"
+              hidden
+            >
+              <h4>Certificates</h4>
+              <div class="gallery flex">
+                <div class="gallery__element col-row col-row-md">
+                  <object
+                    data="/src/assets/UC-5e672d27-8a9f-40ba-9baa-8ff1384c9f01.pdf"
+                    type="application/pdf"
+                    height="300px"
+                  >
+                    <a
+                      href="/src/assets/UC-5e672d27-8a9f-40ba-9baa-8ff1384c9f01.pdf"
+                      ><img
+                        src="/src/assets/ColtSteele_WebDevBootCert.png"
+                        alt="picture of course certification"
+                    /></a>
+                  </object>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+      <!-- workplan ----------------------------------------------------------------------- -->
+      <section class="technical__workplan flex">
+        <article class="workplan__past flex">
+          <h2>Zeitplan Vergangenheit</h2>
+          <div class="ff-serif2 workplan__content">
+            <h3>Bis zur Gegenwart</h3>
+            <div class="workplan__past__to-present">
+              <div>
+                <div class="timeline process">
+                  <h5>Anfangsphase</h5>
+                  <div><span class="date-range"> Juli 2021</span></div>
+                  <ul>
+                    <li>
+                      Ein Artikel über Menschen, die während der Pamdemie ihren
+                      Job durch ein Programmier-Bootcamp gewechselt haben,
+                      erregte meine Aufmerksamkeit.
+                    </li>
+                    <li>
+                      Zu der Zeit dachte ich auch über eine Veränderung nach.
+                    </li>
+                    <li>
+                      Zu meiner Studienzeit kam ich schon mit Programmierung in
+                      Berührung. Da ich es damals schon mochte, entschloss ich
+                      mich es zu versuchen.
+                    </li>
+                  </ul>
+                </div>
+                <div class="timeline process">
+                  <h5>Testphase</h5>
+                  <div>
+                    <span class="date-range">August 2021 - Oktober 2022</span>
+                  </div>
+                  <ul>
+                    <li>
+                      Java Videos auf youtube geguckt (etwa drei Wochen lang).
+                    </li>
+                    <li>
+                      Java Programmierkurs(von Tim Buchalka) auf
+                      <strong>Udemy</strong> gekauft.
+                    </li>
+                    <li>
+                      Praktische Erfahrungen durch Nachprogrammierung der
+                      Kurslektionen und Kursaufgaben gesammelt.
+                    </li>
+                  </ul>
+                </div>
+                <div class="timeline process">
+                  <h5>Ernsthafter Beginn</h5>
+                  <div>
+                    <span class="date-range">Oktober 2021 - November 2022</span>
+                  </div>
+                  <ul>
+                    <li>
+                      Erkannte durch die Testphase, dass ich gerne programmiere
+                      und die Tätigkeit als Beruf ausüben könnte.
+                    </li>
+                    <li>
+                      Nach einem Gespräch mit einer Freundin, die als
+                      Programmiererin im Web-Development arbeitet und mir riet
+                      in das Feld zu gehen, da die Industrie mehr und mehr ins
+                      Internet tendiert, beschloss ich meinen Fokus darauf zu
+                      richten.
+                    </li>
+                    <li>
+                      Den <strong>Udemy</strong>-Kurs
+                      <strong
+                        ><em
+                          ><a
+                            href="https://www.udemy.com/course/the-web-developer-bootcamp/"
+                            >"The Web Development Bootcamp 2022"</a
+                          ></em
+                        ></strong
+                      >
+                      gekauft (Ende Oktober).
+                    </li>
+                  </ul>
+                </div>
+                <div class="timeline process">
+                  <h5>Diversifizierung der Lernquellen</h5>
+                  <div>
+                    <span class="date-range">November 2021 - Heute</span>
+                  </div>
+                  <ul>
+                    <li>
+                      Begann mit den Kursen von
+                      <strong
+                        ><a
+                          href="https://www.freecodecamp.org/fcccace9ee3-252f-4b27-be62-61411c33d02b"
+                          >freeCodeCamp</a
+                        ></strong
+                      >
+                      um verschiedene Erklärungenarten und Aufgaben zur
+                      Verfügung zu haben.
+                    </li>
+                    <li>Mit dem <strong>Udemy</strong>-Kurs fortgefahren</li>
+                  </ul>
+                </div>
+                <div class="timeline success">
+                  <h5>
+                    <em>"The Web Development Bootcamp 2022"</em> von Colt Steele
+                    abgeschlossen.
+                  </h5>
+                  <div>
+                    <span class="date-range">16. Januar 2021</span>
+                  </div>
+                </div>
+                <div class="timeline success">
+                  <h5>
+                    Abschluss freeCodeCamp "JavaScript Algorithms and Data Structures
+                    Certification"
+                  </h5>
+                  <div>
+                    <span class="date-range">31th of January 2021</span>
+                  </div>
+                </div>
+                <div class="timeline process">
+                  <h5>React</h5>
+                  <div>
+                    <span class="date-range">Februar 2022 - März 2022</span>
+                  </div>
+                  <ul>
+                    <li>
+                      Mit meinem nächsten <strong>Udemy</strong>-Kurs (<strong
+                        ><em
+                          ><a
+                            href="https://www.udemy.com/course/react-the-complete-guide-incl-redux/"
+                            >"React - The Complete Guide"</a
+                          ></em
+                        ></strong
+                      >
+                      - von Maximilian Schwarzmüller) begonnen.
+                    </li>
+                    <li>
+                      Mit dem
+                      <strong
+                        ><a
+                          href="https://www.freecodecamp.org/fcccace9ee3-252f-4b27-be62-61411c33d02b"
+                          >freeCodeCamp</a
+                        ></strong
+                      >
+                      -Abschnitt
+                      <strong
+                        ><em
+                          ><a
+                            href="https://www.freecodecamp.org/learn/front-end-development-libraries/"
+                            >"Front End Development Libraries"</a
+                          ></em
+                        ></strong
+                      >
+
+                      begonnen.
+                    </li>
+                    <li>
+                      Ich erkannte, dass durch das reine mitprogrammieren der
+                      Kurse meine CSS-Kenntnisse nicht ausreichten um Projekte
+                      ohne stehendes Grundgerüst zu erstellen. Für
+                      JavaScript-Aufgaben konnte ich mir fehlende Informationn
+                      durch eine Internetsuche erarbeiten. Meine CSS-Kenntnisse
+                      reichten dafür nicht aus.
+                    </li>
+                    <li>
+                      Deshalb beschloss ich React zunächst ruhen zu lassen und
+                      einen Schritt zurück zu machen...
+                    </li>
+                  </ul>
+                </div>
+                <div class="timeline process">
+                  <h5>Vertiefung des Wissens von HTML und CSS</h5>
+                  <div>
+                    <span class="date-range">März 2022 - Heute</span>
+                  </div>
+                  <ul>
+                    <li>
+                      <strong>The Odin Project</strong> entdeckt. Was ich als
+                      sehr nützlich empfunden habe, da es den Workflow eines
+                      echten Projektes, mit git und GitHub etc., von Anfang an
+                      einbindet. Ich habe mich hauptsächlich darauf fokussiert.
+                      <strong> Odin Project </strong> until I felt that my css
+                      skills were good enough to proceed
+                    </li>
+                    <li>
+                      Arbeit an <strong>freeCodeCamp</strong> fortgesetzt.
+                    </li>
+                    <li>
+                      Machte den
+                      <strong
+                        ><em>
+                          <a href="https://scrimba.com/learn/spacetravel"
+                            >"Build a space travel website"</a
+                          >
+                        </em>
+                      </strong>
+                      -Kurs von Kevin Powell auf
+                      <strong><a href="https://scrimba.com/">Scrimba</a></strong
+                      >. Dieser Kurs half mir sehr bei CSS weiter.
+                    </li>
+                    <li>
+                      Abschnitte von
+                      <strong
+                        ><em>"The Web Development Bootcamp 2022"</em></strong
+                      >
+                      widerholt
+                    </li>
+                  </ul>
+                </div>
+                <div class="timeline process">
+                  <h5>Fortfahren mit React</h5>
+                  <div><span class="date-range">Juli 2022</span></div>
+                  <ul>
+                    <li>
+                      Mit
+                      <strong><em>"React - The Complete Guide"</em></strong>
+                      fortgefahren.
+                    </li>
+                    <li>
+                      Mit
+                      <strong>The Odin Project</strong> fortgefahren.
+                    </li>
+                    <li>
+                      Abschnitte von
+                      <strong
+                        ><em>"The Web Development Bootcamp 2022"</em></strong
+                      >
+                      widerholt.
+                    </li>
+                  </ul>
+                  <p></p>
+                </div>
+                <div class="timeline success">
+                  <h5>Hauptteil des React-Tutorials abgeschlossen</h5>
+                  <div><span class="date-range">28. August 2022</span></div>
+                  <p>
+                    Kursinhalte vollständig abgeschlossen. Es fehlt lediglich
+                    der Teil mit einer Zusammenfassung und Wiederholung des
+                    Kurses. Den habe ich bewusst als Wiederholung für später
+                    ausgelassen.
+                  </p>
+                </div>
+                <div class="timeline process">
+                  <h5>
+                    Vertiefung von React und Vorbereitungen für die Bewerbung
+                  </h5>
+                  <div>
+                    <span class="date-range">September 2022 - Heute</span>
+                  </div>
+                  <ul>
+                    <li>
+                      Mit "challenges" auf
+                      <strong
+                        ><a href="https://www.frontendmentor.io/"
+                          >"Frontend Mentor"</a
+                        ></strong
+                      >
+                      begonnen. Ich werde alle Aufgaben hier mit React
+                      bearbeiten um meine Fähigkeiten zu verbessern.
+                    </li>
+                    <li>
+                      Mit
+                      <strong>The Odin Project</strong>
+                    </li>
+                    fortgefahren.
+                    <li>
+                      Mit der vorliegenden Seite begonnen. Ich plane mit dem
+                      Bewerbungsprozess zu beginnen wenn sie fertiggestellt ist.
+                    </li>
+                  </ul>
+                </div>
+                <div class="timeline success">
+                  <h5>Erste "challenge" auf Frontend Mentor abgeschlossen</h5>
+                  <div>
+                    <span class="date-range">16. September 2022</span>
+                  </div>
+                  <div class="success-detail">
+                    <strong>
+                      <em>
+                        <a
+                          href="https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt"
+                          >"Job listings with filtering"</a
+                        >
+                      </em>
+                    </strong>
+                    -challenge abgeschlossen.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="workplan__future flex">
+          <h2>Zeitplan Zukunft</h2>
+          <div class="workplan__content ff-serif2">
+            <h3>Nächste Schritte</h3>
+            <div class="workplan__future__from-present">
+              <div>
+                <div class="timeline process">
+                  <h5>
+                    Vertiefung von React und Vorbereitungen für die Bewerbung
+                  </h5>
+                  <div>
+                    <span class="date-range">present - January 2023</span>
+                  </div>
+                  <ul>
+                    <li>The Odin Project bis zum Backend-Teil fortsetzen.</li>
+                    <li>
+                      Mindestens zwei weitere "challenges" auf Frontend Mentor
+                      abschliessen.
+                    </li>
+                    <li>
+                      "Front End Development Libraries Certification" auf
+                      freeCodeCamp abschliessen.
+                    </li>
+                    <li>Bewerbungsprozess starten.</li>
+                  </ul>
+                </div>
+                <div class="timeline process">
+                  <h5>Arbeit am Backend</h5>
+                  <div>
+                    <span class="date-range">Januar 2023 - März 2022</span>
+                  </div>
+                  <ul>
+                    <li>
+                      Mit dem Backend-Teil vom "The Odin Project" beginnen
+                    </li>
+                    <li>
+                      Einen Node.js-Kurs auf Udemy beginnen, in dem der ganze
+                      MERN-Stack abgebildet wird.
+                      <br />
+                      Wahrscheinlich diesen:
+                      <strong
+                        ><em
+                          ><a
+                            href="https://www.udemy.com/course/complete-nodejs-developer-zero-to-mastery/"
+                            >Complete NodeJS Developer in 2022</a
+                          ></em
+                        ></strong
+                      >
+                    </li>
+                    <li>
+                      Weiteren Udemy-Kurs zur diversifizierung machen.
+                      <br />
+                      Wahrscheinlich:
+                      <strong
+                        ><em
+                          ><a
+                            href="https://www.udemy.com/course/react-nodejs-express-mongodb-the-mern-fullstack-guide/"
+                            >"React, NodeJS, Express & MongoDB - The MERN
+                            Fullstack Guide"</a
+                          ></em
+                        ></strong
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="timeline process">
+                  <h5>MERN-Stack vertiefen</h5>
+                  <div>
+                    <span class="date-range">April 2022 - May 2022</span>
+                  </div>
+                  <ul>
+                    <li>
+                      An challenges und Anwendungen, die den gesamten MERN-Stack
+                      beinhalten arbeiten.
+                    </li>
+                  </ul>
+                </div>
+                <div class="timeline process">
+                  <h5>Kontinuierliche Verbesserung</h5>
+                  <div><span class="date-range">May 2022 - open end</span></div>
+                  <ul>
+                    <li>Typescript lernen</li>
+                    <li>
+                      Arbeit mit einer sequentiellen Datenbanksprache(SQL)
+                      lernen
+                    </li>
+                    <li>Vertiefung der Kenntnisse mit "command-line"</li>
+                    <li>
+                      Zweite Programmiersprache lernen, da es in vielen
+                      Stellenanzeigen für das Backend gefordert wird.
+                      <br>
+                      Wahrscheinlich Java oder Python.
+                    </li>
+                    <li>...</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
