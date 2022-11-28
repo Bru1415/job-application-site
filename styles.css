@@ -1231,7 +1231,7 @@ article div[class*="half"] {
 }
 
 .personality-graphic {
-  background-image: url("/src/assets/personality.svg");
+  background-image: url("/assets/personality.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: top;
