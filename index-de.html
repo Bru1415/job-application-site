@@ -52,7 +52,9 @@
         <span class="sr-only" aria-expanded="false">Menü</span>
       </button>
       <div class="logo">
-        <img src="./assets/coding.png" alt="coding-symbol as logo" />
+        <object data="/job-application-site/assets/coding.png" type="image/png">
+          <img src="./assets/coding.png" alt="coding-symbol as logo" />
+        </object>
       </div>
       <nav>
         <ul
@@ -74,58 +76,90 @@
     <main id="main" class="main-grid grid">
       <div class="presentation-wrapper">
         <picture class="profile-photo" data-screen="full"
-          ><img
+          ><source
+            srcset="./assets/Bildschirmfoto vom 2022-07-23 14-48-55.png" />
+          <img
             src="/job-application-site/assets/Bildschirmfoto vom 2022-07-23 14-48-55.png"
             alt="picture of bruno-martin schuster"
         /></picture>
         <ul id="topics" class="topics" data-screen="full">
           <li data-position="1" data-title="Über mich">
             <span>Über mich</span
-            ><img
-              data-topicarea="personal"
-              src="./assets/about-me.svg"
-              alt="graphic showing outline of a person with in i representing information"
-            />
+            ><object
+              data="/job-application-site/assets/about-me.svg"
+              type="image/svg+xml"
+            >
+              <img
+                data-topicarea="personal"
+                src="./assets/about-me.svg"
+                alt="graphic showing outline of a person with in i representing information"
+              />
+            </object>
           </li>
           <li data-position="2" data-title="Kenntnisse">
             <span>Kenntnisse</span>
-            <img
-              data-topicarea="technical"
-              src="./assets/repair-fix-repairing.svg"
-              alt="graphic showing a gearwheel and a hand holding a spanner"
-            />
+            <object
+              data="/job-application-site/assets/repair-fix-repairing.svg"
+              type="image/svg+xml"
+            >
+              <img
+                data-topicarea="technical"
+                src="./assets/repair-fix-repairing.svg"
+                alt="graphic showing a gearwheel and a hand holding a spanner"
+              />
+            </object>
           </li>
           <li data-position="3" data-title="Portfolio">
             <span>Portfolio</span
-            ><img
-              data-topicarea="technical"
-              src="./assets/work-experience.svg"
-              alt="graphic showing a gearwheel and a briefcase"
-            />
+            ><object
+              data="/job-application-site/assets/work-experience.svg"
+              type="image/svg+xml"
+            >
+              <img
+                data-topicarea="technical"
+                src="./assets/work-experience.svg"
+                alt="graphic showing a gearwheel and a briefcase"
+              />
+            </object>
           </li>
           <li data-position="4" data-title="Zeitplan">
             <span>Zeitplan</span
-            ><img
-              data-topicarea="technical"
-              src="./assets/stair-climbing.svg"
-              alt="graphic showing a person climbing up stairs"
-            />
+            ><object
+              data="/job-application-site/assets/stair-climbing.svg"
+              type="image/svg+xml"
+            >
+              <img
+                data-topicarea="technical"
+                src="./assets/stair-climbing.svg"
+                alt="graphic showing a person climbing up stairs"
+              />
+            </object>
           </li>
           <li data-position="5" data-title="Lebenslauf">
             <span>Lebenslauf</span
-            ><img
-              data-topicarea="personal"
-              src="./assets/resume-cv.svg"
-              alt="graphic showing a resume"
-            />
+            ><object
+              data="/job-application-site/assets/resume-cv.svg"
+              type="image/svg+xml"
+            >
+              <img
+                data-topicarea="personal"
+                src="./assets/resume-cv.svg"
+                alt="graphic showing a resume"
+              />
+            </object>
           </li>
           <li data-position="6" data-title="Kontakt">
             <span>Kontakt</span
-            ><img
-              data-topicarea="personal"
-              src="./assets/contact-us.svg"
-              alt="graphic showing a phone and a envelope"
-            />
+            ><object
+              data="/job-application-site/assets/contact-us.svg"
+              type="image/svg+xml"
+            >
+              <img
+                data-topicarea="personal"
+                src="./assets/contact-us.svg"
+                alt="graphic showing a phone and a envelope"
+              />
+            </object>
           </li>
         </ul>
       </div>
@@ -144,10 +178,16 @@
             tabindex="-1"
           >
             <button data-topicarea="personal">
-              <img
-                src="./assets/about-me.svg"
-                alt="graphic showing outline of a person with in i representing information"
-              />
+              <object
+                data="/job-application-site/assets/about-me.svg"
+                type="image/svg+xml"
+              >
+                <img
+                  data-topicarea="personal"
+                  src="./assets/about-me.svg"
+                  alt="graphic showing outline of a person with in i representing information"
+                />
+              </object>
             </button>
             <span class="sr-only">Über mich</span>
           </div>
@@ -159,10 +199,16 @@
             tabindex="-1"
           >
             <button data-topicarea="technical">
-              <img
-                src="./assets/repair-fix-repairing.svg"
-                alt="graphic showing a gearwheel and a hand holding a spanner"
-              />
+              <object
+                data="/job-application-site/assets/repair-fix-repairing.svg"
+                type="image/svg+xml"
+              >
+                <img
+                  data-topicarea="technical"
+                  src="./assets/repair-fix-repairing.svg"
+                  alt="graphic showing a gearwheel and a hand holding a spanner"
+                />
+              </object>
             </button>
             <span class="sr-only">Fähigkeiten</span>
           </div>
@@ -174,10 +220,16 @@
             tabindex="-1"
           >
             <button data-topicarea="technical">
-              <img
-                src="./assets/work-experience.svg"
-                alt="graphic showing a gearwheel and a briefcase"
-              />
+              <object
+                data="/job-application-site/assets/work-experience.svg"
+                type="image/svg+xml"
+              >
+                <img
+                  data-topicarea="technical"
+                  src="./assets/work-experience.svg"
+                  alt="graphic showing a gearwheel and a briefcase"
+                />
+              </object>
             </button>
             <span class="sr-only">Portfolio</span>
           </div>
@@ -189,10 +241,16 @@
             tabindex="0"
           >
             <button data-topicarea="technical">
-              <img
-                src="./assets/stair-climbing.svg"
-                alt="graphic showing a person climbing up stairs"
-              />
+              <object
+                data="/job-application-site/assets/stair-climbing.svg"
+                type="image/svg+xml"
+              >
+                <img
+                  data-topicarea="technical"
+                  src="./assets/stair-climbing.svg"
+                  alt="graphic showing a person climbing up stairs"
+                />
+              </object>
             </button>
             <span class="sr-only">Zeitplan</span>
           </div>
@@ -204,10 +262,16 @@
             tabindex="-1"
           >
             <button data-topicarea="personal">
-              <img
-                src="./assets/resume-cv.svg"
-                alt="graphic showing a resume"
-              />
+              <object
+                data="/job-application-site/assets/resume-cv.svg"
+                type="image/svg+xml"
+              >
+                <img
+                  data-topicarea="personal"
+                  src="./assets/resume-cv.svg"
+                  alt="graphic showing a resume"
+                />
+              </object>
             </button>
             <span class="sr-only">Lebenslauf</span>
           </div>
@@ -219,10 +283,16 @@
             tabindex="-1"
           >
             <button data-topicarea="personal">
-              <img
-                src="./assets/contact-us.svg"
-                alt="graphic showing a phone and a envelope"
-              />
+              <object
+                data="/job-application-site/assets/contact-us.svg"
+                type="image/svg+xml"
+              >
+                <img
+                  data-topicarea="personal"
+                  src="./assets/contact-us.svg"
+                  alt="graphic showing a phone and a envelope"
+                />
+              </object>
             </button>
             <span class="sr-only">Kontakt</span>
           </div>
@@ -422,10 +492,12 @@
                   href="https://bru1415.github.io/fementor-job-listings/"
                   class="portfolio_a-tag"
                   ><figure class="pos-relative">
-                    <img
-                      src="/job-application-site/assets/fementor-job-listings.png"
-                      alt="screenshot of job listings project"
-                    />
+                    <object data="/job-application-site/assets/fementor-job-listings.png" type="image/png">
+                      <img
+                        src="./assets/fementor-job-listings.png"
+                        alt="screenshot of job listings project"
+                      />
+                    </object>
                     <figcaption>
                       <p>React / JavaScript / CSS / HTML</p>
                       <h5>fementor-job-listings</h5>
@@ -443,10 +515,12 @@
                   href="https://codepen.io/BrCoWeb/pen/ExbvEqm?editors=1111"
                   class="portfolio_a-tag"
                   ><figure class="pos-relative">
-                    <img
-                      src="/job-application-site/assets/fcc-random-quote-machine.png"
-                      alt="screenshot of random quote machine project"
-                    />
+                    <object data="/job-application-site/assets/fcc-random-quote-machine.png" type="image/png">
+                      <img
+                        src="./assets/fcc-random-quote-machine.png"
+                        alt="screenshot of random quote machine project"
+                      />
+                    </object>
                     <figcaption>
                       <p>React / JavaScript / CSS / HTML</p>
                       <h5>fcc-random-quote-machine</h5>
@@ -459,10 +533,12 @@
                   href="https://bru1415.github.io/odin-calculator/"
                   class="portfolio_a-tag"
                   ><figure class="pos-relative">
-                    <img
-                      src="/job-application-site/assets/odin-calculator.png"
-                      alt="screenshot of calculator project"
-                    />
+                    <object data="/job-application-site/assets/odin-calculator.png" type="image/png">
+                      <img
+                        src="./assets/odin-calculator.png"
+                        alt="screenshot of calculator project"
+                      />
+                    </object>
                     <figcaption>
                       <p>JavaScript / HTML / CSS</p>
                       <h5>odin-calculator</h5>
@@ -481,10 +557,12 @@
                   href="https://bru1415.github.io/odin-etch-a-sketch/"
                   class="portfolio_a-tag portfolio__odin_odin-etch-a-sketch"
                   ><figure class="pos-relative">
-                    <img
-                      src="/job-application-site/assets/odin-etch-a-sketch.png"
-                      alt="screenshot of etch a sketch project"
-                    />
+                    <object data="/job-application-site/assets/odin-etch-a-sketch.png" type="image/png">
+                      <img
+                        src="./assets/odin-etch-a-sketch.png"
+                        alt="screenshot of etch a sketch project"
+                      />
+                    </object>
                     <figcaption>
                       <p>JavaScript / HTML / CSS</p>
                       <h5>odin-etch-a-sketch</h5>
