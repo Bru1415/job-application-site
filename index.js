@@ -10,9 +10,10 @@ const shortDescNavItems = document.querySelectorAll(
   ".short-description-nav > div"
 );
 const shortDescNav = document.querySelector(".short-description-nav");
+const shortDescNavWrapper = document.querySelector(".short-desc-nav-wrapper");
 const middleDescNavItem = document.querySelector('div[data-position = "4"]');
 const shortNavArrows = document.querySelectorAll(".navigation__arrow");
-const descriptionHeading = document.querySelector(".description-heading");
+const descriptionHeading = document.querySelectorAll(".description-heading");
 const mobileNavToggle = document.querySelector(".mobile-nav-toggle");
 const primaryNav = document.querySelector(".primary-navigation");
 const primaryNavChildren = primaryNav.querySelectorAll("li");
@@ -20,6 +21,8 @@ const shortDescHeading = document.querySelector(".description-heading");
 const shortContent = document.querySelector(".short-content");
 
 const headerPhoto = document.querySelector(".header_photo img");
+
+const shortDescToggle = document.querySelector(".short-desc-nav-toggle");
 
 const manipulateCustomProperties = () => {
   for (let i = 0; i <= topicsItems.length / 2; i++) {
@@ -159,7 +162,9 @@ const showHeadingOfFocused = () => {
     '.short-description-nav div[data-position="4"]'
   );
   focusedDiv.focus();
-  descriptionHeading.textContent = focusedTopic.textContent;
+  descriptionHeading.forEach(
+    (item) => (item.textContent = focusedTopic.textContent)
+  );
 };
 
 const assignNewDataPosition = (eventTrigger) => {
@@ -236,6 +241,8 @@ let isGreater720 = null;
 let shortDescData = null;
 let layoutKeyData = null;
 
+let mediaMaxHeight900 = window.matchMedia("(max-height: 900px)");
+
 window.addEventListener("load", async () => {
   let screenWidth =
     window.innerWidth ||
@@ -250,6 +257,10 @@ window.addEventListener("load", async () => {
   if (screenWidth < 720) {
     isGreater720 = false;
     orderListItems(120, 300);
+  }
+
+  if (mediaMaxHeight900.matches) {
+    shortDescNavWrapper.setAttribute("data-is-expanded", "false");
   }
 
   manipulateCustomProperties();
@@ -282,6 +293,10 @@ window.addEventListener("resize", () => {
   ) {
     isGreater720 = false;
     orderListItems(120, 300);
+  }
+
+  if (mediaMaxHeight900.matches) {
+    shortDescNavWrapper.setAttribute("data-is-expanded", "false");
   }
 });
 
@@ -327,19 +342,26 @@ shortDescNavItems.forEach((item) => {
   });
 });
 
-mobileNavToggle.addEventListener("click", (event) => {
+const toggleFunc = (event, controledElement) => {
   event.preventDefault();
-
-  let isPrimaryNavExpanded = primaryNav.getAttribute("data-is-expanded");
-
-  if (isPrimaryNavExpanded === "true") {
-    mobileNavToggle.setAttribute("aria-expanded", "false");
-    primaryNav.setAttribute("data-is-expanded", "false");
-  } else if (isPrimaryNavExpanded === "false") {
-    mobileNavToggle.setAttribute("aria-expanded", "true");
-    primaryNav.setAttribute("data-is-expanded", "true");
+  const target = event.target;
+  let isNavExpanded = controledElement.getAttribute("data-is-expanded");
+  if (isNavExpanded === "true") {
+    target.setAttribute("aria-expanded", "false");
+    controledElement.setAttribute("data-is-expanded", "false");
+  } else if (isNavExpanded === "false") {
+    target.setAttribute("aria-expanded", "true");
+    controledElement.setAttribute("data-is-expanded", "true");
   }
   // mobileNavToggle.setAttribute("data-close-icon", `${!isToggleExpanded}`);
+};
+
+shortDescToggle.addEventListener("click", (event) =>
+  toggleFunc(event, shortDescNavWrapper)
+);
+
+mobileNavToggle.addEventListener("click", (event) => {
+  toggleFunc(event, primaryNav);
 });
 
 primaryNavChildren.forEach((item) =>
@@ -347,7 +369,5 @@ primaryNavChildren.forEach((item) =>
     event.target.firstElementChild.click();
   })
 );
-
-
 
 // console.log('primaryNavs children: ' + primaryNav.children );

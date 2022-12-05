@@ -81,7 +81,7 @@
             type=""
           >
             <img
-              src="/job-application-site/assets/Bildschirmfoto vom 2022-07-23 14-48-55.png"
+              src="./assets/Bildschirmfoto vom 2022-07-23 14-48-55.png"
               alt="picture of bruno-martin schuster"
             /></object
         ></picture>
@@ -168,144 +168,162 @@
       </div>
       <!-- short-description --------------------------------------------------------------------------------------- -->
       <div class="short-description">
-        <div
-          class="grid short-description-nav"
-          role="tablist"
-          aria-label="topics list"
-        >
-          <div
-            data-position="1"
-            role="tab"
-            aria-controls="about_me-tab"
-            aria-selected="false"
-            tabindex="-1"
+        <div class="short-desc-nav-wrapper" data-is-expanded="true">
+          <button
+            data-close-icon="false"
+            class="short-desc-nav-toggle burger-icon"
+            aria-controls="short-desc-nav-wrapper"
+            aria-expanded="false"
           >
-            <button data-topicarea="personal">
-              <object
-                data="/job-application-site/assets/about-me.svg"
-                type="image/svg+xml"
-              >
-                <img
-                  data-topicarea="personal"
-                  src="./assets/about-me.svg"
-                  alt="graphic showing outline of a person with in i representing information"
-                />
-              </object>
-            </button>
-            <span class="sr-only">About me</span>
+            <span class="sr-only" aria-expanded="false"
+              >Menu short-description</span
+            >
+          </button>
+          <div
+            class="grid short-description-nav"
+            role="tablist"
+            aria-label="topics list"
+          >
+            <div
+              data-position="1"
+              role="tab"
+              aria-controls="about_me-tab"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              <button data-topicarea="personal">
+                <object
+                  data="/job-application-site/assets/about-me.svg"
+                  type="image/svg+xml"
+                >
+                  <img
+                    data-topicarea="personal"
+                    src="./assets/about-me.svg"
+                    alt="graphic showing outline of a person with in i representing information"
+                  />
+                </object>
+              </button>
+              <span class="sr-only">About me</span>
+            </div>
+            <div
+              data-position="2"
+              role="tab"
+              aria-controls="skills-tab"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              <button data-topicarea="technical">
+                <object
+                  data="/job-application-site/assets/repair-fix-repairing.svg"
+                  type="image/svg+xml"
+                >
+                  <img
+                    data-topicarea="technical"
+                    src="./assets/repair-fix-repairing.svg"
+                    alt="graphic showing a gearwheel and a hand holding a spanner"
+                  />
+                </object>
+              </button>
+              <span class="sr-only">Skills</span>
+            </div>
+            <div
+              data-position="3"
+              role="tab"
+              aria-controls="portfolio-tab"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              <button data-topicarea="technical">
+                <object
+                  data="/job-application-site/assets/repair-fix-repairing.svg"
+                  type="image/svg+xml"
+                >
+                  <img
+                    data-topicarea="technical"
+                    src="./assets/repair-fix-repairing.svg"
+                    alt="graphic showing a gearwheel and a hand holding a spanner"
+                  />
+                </object>
+              </button>
+              <span class="sr-only">Portfolio</span>
+            </div>
+            <div
+              data-position="4"
+              role="tab"
+              aria-controls="workplan-tab"
+              aria-selected="true"
+              tabindex="0"
+            >
+              <button data-topicarea="technical">
+                <object
+                  data="/job-application-site/assets/stair-climbing.svg"
+                  type="svg+xml"
+                >
+                  <img
+                    data-topicarea="technical"
+                    src="./assets/stair-climbing.svg"
+                    alt="graphic showing a person climbing up stairs"
+                  />
+                </object>
+              </button>
+              <span class="sr-only">Workplan</span>
+            </div>
+            <div
+              data-position="5"
+              role="tab"
+              aria-controls="cv-tab"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              <button data-topicarea="personal">
+                <object
+                  data="/job-application-site/assets/resume-cv.svg"
+                  type="svg+xml"
+                >
+                  <img
+                    data-topicarea="personal"
+                    src="./assets/resume-cv.svg"
+                    alt="graphic showing a resume"
+                  />
+                </object>
+              </button>
+              <span class="sr-only">CV</span>
+            </div>
+            <div
+              data-position="6"
+              role="tab"
+              aria-controls="contact-tab"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              <button data-topicarea="personal">
+                <object
+                  data="/job-application-site/assets/contact-us.svg"
+                  type="svg+xml"
+                >
+                  <img
+                    data-topicarea="personal"
+                    src="./assets/contact-us.svg"
+                    alt="graphic showing a phone and a envelope"
+                  />
+                </object>
+              </button>
+              <span class="sr-only">Contact</span>
+            </div>
           </div>
-          <div
-            data-position="2"
-            role="tab"
-            aria-controls="skills-tab"
-            aria-selected="false"
-            tabindex="-1"
-          >
-            <button data-topicarea="technical">
-              <object
-                data="/job-application-site/assets/repair-fix-repairing.svg"
-                type="image/svg+xml"
-              >
-                <img
-                  data-topicarea="technical"
-                  src="./assets/repair-fix-repairing.svg"
-                  alt="graphic showing a gearwheel and a hand holding a spanner"
-                />
-              </object>
-            </button>
-            <span class="sr-only">Skills</span>
-          </div>
-          <div
-            data-position="3"
-            role="tab"
-            aria-controls="portfolio-tab"
-            aria-selected="false"
-            tabindex="-1"
-          >
-            <button data-topicarea="technical">
-              <object
-                data="/job-application-site/assets/repair-fix-repairing.svg"
-                type="image/svg+xml"
-              >
-                <img
-                  data-topicarea="technical"
-                  src="./assets/repair-fix-repairing.svg"
-                  alt="graphic showing a gearwheel and a hand holding a spanner"
-                />
-              </object>
-            </button>
-            <span class="sr-only">Portfolio</span>
-          </div>
-          <div
-            data-position="4"
-            role="tab"
-            aria-controls="workplan-tab"
-            aria-selected="true"
-            tabindex="0"
-          >
-            <button data-topicarea="technical">
-              <object
-                data="/job-application-site/assets/stair-climbing.svg"
-                type="svg+xml"
-              >
-                <img
-                  data-topicarea="technical"
-                  src="./assets/stair-climbing.svg"
-                  alt="graphic showing a person climbing up stairs"
-                />
-              </object>
-            </button>
-            <span class="sr-only">Workplan</span>
-          </div>
-          <div
-            data-position="5"
-            role="tab"
-            aria-controls="cv-tab"
-            aria-selected="false"
-            tabindex="-1"
-          >
-            <button data-topicarea="personal">
-              <object
-                data="/job-application-site/assets/resume-cv.svg"
-                type="svg+xml"
-              >
-                <img
-                  data-topicarea="personal"
-                  src="./assets/resume-cv.svg"
-                  alt="graphic showing a resume"
-                />
-              </object>
-            </button>
-            <span class="sr-only">CV</span>
-          </div>
-          <div
-            data-position="6"
-            role="tab"
-            aria-controls="contact-tab"
-            aria-selected="false"
-            tabindex="-1"
-          >
-            <button data-topicarea="personal">
-              <object
-                data="/job-application-site/assets/contact-us.svg"
-                type="svg+xml"
-              >
-                <img
-                  data-topicarea="personal"
-                  src="./assets/contact-us.svg"
-                  alt="graphic showing a phone and a envelope"
-                />
-              </object>
-            </button>
-            <span class="sr-only">Contact</span>
+          <div class="short-description-nav__head flex inside-wrapper">
+            <button class="navigation__arrow arrow-left">⬅</button>
+            <h2 class="description-heading"></h2>
+            <button class="navigation__arrow arrow-right">➡</button>
           </div>
         </div>
-        <!-- ShortContent ------------------------------------------------------------------- -->
-        <div class="short-description-nav__head flex">
+        <div class="short-description-nav__head flex outside-wrapper">
           <button class="navigation__arrow arrow-left">⬅</button>
           <h2 class="description-heading"></h2>
           <button class="navigation__arrow arrow-right">➡</button>
         </div>
+        <!-- ShortContent ------------------------------------------------------------------- -->
+
         <section class="short-content">
           <!-- About me  ------------------------------------------------------------->
           <article
@@ -516,7 +534,7 @@
                       type="image/png"
                     >
                       <img
-                        src="/job-application-site/assets/fcc-random-quote-machine.png"
+                        src="./assets/fcc-random-quote-machine.png"
                         alt="screenshot of random quote machine project"
                       />
                     </object>
@@ -537,7 +555,7 @@
                       type="image/png"
                     >
                       <img
-                        src="/job-application-site/assets/odin-calculator.png"
+                        src="./assets/odin-calculator.png"
                         alt="screenshot of calculator project"
                       />
                     </object>
