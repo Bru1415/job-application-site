@@ -37,7 +37,7 @@
     <script src="./pages.js" defer></script>
   </head>
   <body class="personal basic">
-    <header class="sticky" style="position: relative;">
+    <header class="SiteHeader sticky">
       <div class="header_photo">
         <object
           data="/job-application-site/assets/Bildschirmfoto vom 2022-07-23 14-48-55.png"
@@ -51,87 +51,45 @@
         <span>Bruno-Martin Schuster</span>
       </div>
       <div class="header_bg"></div>
-      <button
-        data-close-icon="false"
-        class="mobile-nav-toggle burger-icon"
-        aria-controls="primary-navigation"
-      >
-        <span class="sr-only" aria-expanded="false">Menu</span>
-      </button>
-      <div class="logo">
-        <object data="/job-application-site/assets/coding.png" type="image/png">
-          <img
-            src="../assets/coding.png"
-            alt="coding-symbol as logo"
-          />
-        </object>
-      </div>
-      <nav style="display: inline-block; position: absolute; right: 20px; top: 20px">
-        <div class="lang-dropdown" style="display: inline-block;">
-          <div class="dropdown-current">EN</div>
-          <div class="dropdown-content">
-            <div><a href="./personal-de.html"> DE</a></div>
+
+      <div class="SiteHeader__navAndLogoContainer flex just-between">
+        <div class="logo">
+          <object
+            data="/job-application-site/assets/coding.png"
+            type="image/png"
+          >
+            <img src="../assets/coding.png" alt="coding-symbol as logo" />
+          </object>
+        </div>
+        <div class="SiteHeader__navContainer flex just-between">
+          <nav>
+            <ul
+              class="primary-navigation underline-indicators"
+              data-is-expanded="false"
+            >
+              <li><a href="../index.html">overview</a></li>
+              <li><a href="./technical.html">job-relevant</a></li>
+              <li class="active"><a href="./personal.html">personal</a></li>
+            </ul>
+          </nav>
+          <div class="SiteHeader__navContainer_sideElements flex">
+            <div class="lang-dropdown">
+              <div class="dropdown-current">EN</div>
+              <div class="dropdown-content">
+                <div><a href="./personal-de.html"> DE</a></div>
+              </div>
+            </div>
+            <button
+              data-close-icon="false"
+              class="mobile-nav-toggle burger-icon"
+              aria-controls="primary-navigation"
+            >
+              <span class="sr-only" aria-expanded="false">Menu</span>
+            </button>
           </div>
         </div>
-        <ul
-          class="primary-navigation underline-indicators"
-          data-is-expanded="false"
-          style="display:inline-flex;"
-        >
-          <li><a href="../index.html">overview</a></li>
-          <li><a href="./technical.html">job-relevant</a></li>
-          <li class="active"><a href="./personal.html">personal</a></li>
-        </ul>
-        
-      </nav>
-     
+      </div>
     </header>
-    <!-- <header class="flex sticky">
-      <div class="header_photo">
-        <object
-          data="/job-application-site/assets/Bildschirmfoto vom 2022-07-23 14-48-55.png"
-          type="image/png"
-        >
-          <img
-            src="../assets/Bildschirmfoto vom 2022-07-23 14-48-55.png"
-            alt="picture of bruno-martin schuster"
-          />
-        </object>
-        <span>Bruno-Martin Schuster</span>
-      </div>
-      <div class="header_bg"></div>
-      <button
-        data-close-icon="false"
-        class="mobile-nav-toggle burger-icon"
-        aria-controls="primary-navigation"
-      >
-        <span class="sr-only" aria-expanded="false">Menu</span>
-      </button>
-      <div class="logo">
-        <object data="/job-application-site/assets/coding.png" type="image/png">
-          <img
-            src="../assets/coding.png"
-            alt="coding-symbol as logo"
-          />
-        </object>
-      </div>
-      <nav>
-        <ul
-          class="primary-navigation underline-indicators"
-          data-is-expanded="false"
-        >
-          <li><a href="../index.html">overview</a></li>
-          <li><a href="./technical.html">job-relevant</a></li>
-          <li class="active"><a href="./personal.html">personal</a></li>
-        </ul>
-      </nav>
-      <div class="lang-dropdown">
-        <div class="dropdown-current">EN</div>
-        <div class="dropdown-content">
-          <div><a href="./personal-de.html"> DE</a></div>
-        </div>
-      </div>
-    </header> -->
     <main>
       <section class="resume flex" data-title="resume">
         <article class="about flex col-row col-row-md">
