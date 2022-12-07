@@ -560,7 +560,7 @@ header {
 }
 
 .overview .underline-indicators > * {
-  padding-bottom: .8em;
+  padding-bottom: 0.8em;
 }
 
 .underline-indicators > *:hover,
