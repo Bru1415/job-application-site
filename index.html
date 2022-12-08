@@ -13,7 +13,7 @@
     <title>overview application</title>
     <!-- BASE -->
     <!-- for github pages -->
-    <base href="/bru1415.github.io/job-application-site/">
+    <base href="/bru1415.github.io/job-application-site/" />
     <!-- for localhost -->
     <!-- <base href="" /> -->
     <!-- GOOGLE FONTS -->
@@ -51,7 +51,11 @@
     <header class="SiteHeader sticky">
       <div class="SiteHeader__navAndLogoContainer flex just-between">
         <div class="logo">
-          <img src="/assets/coding.png" alt="coding-symbol as logo" />
+          <img
+            src="/assets/coding.png"
+            alt="coding-symbol as logo"
+            onerror="if(this.src != '/job-application-site/assets/coding.png') this.src = '/job-application-site/assets/coding.png'"
+          />
         </div>
         <div class="SiteHeader__navContainer flex just-between">
           <nav>
