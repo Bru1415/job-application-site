@@ -42,9 +42,17 @@
       rel="stylesheet"
     />
     <!-- Custom css -->
-    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="/styles.css"
+      onerror="if(this.href != '/job-application-site/styles.css') this.href='/job-application-site/styles.css';"
+    />
     <!-- JS -->
-    <script src="./index.js" defer></script>
+    <script
+      src="/index.js"
+      onerror="if(this.href != '/job-application-site/index.js') this.href='/job-application-site/index.js';"
+      defer
+    ></script>
     <!-- <script src="../jsonData.js" type="module" defer></script> -->
   </head>
   <body class="overview">
@@ -54,7 +62,7 @@
           <img
             src="/assets/coding.png"
             alt="coding-symbol as logo"
-            onerror="if(this.src != '/job-application-site/assets/coding.png') this.src = '/job-application-site/assets/coding.png'"
+            onerror="if(this.src != '/job-application-site/assets/coding.png') this.src = '/job-application-site/assets/coding.png';"
           />
         </div>
         <div class="SiteHeader__navContainer flex just-between">
