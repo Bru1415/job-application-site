@@ -24,21 +24,23 @@ const headerPhoto = document.querySelector(".header_photo img");
 
 const shortDescToggle = document.querySelector(".short-desc-nav-toggle");
 
-
-const hrefElements = document.querySelectorAll('*[href]');
-const srcElements = document.querySelectorAll('*[src]');
-
+const hrefElements = document.querySelectorAll("*[href]");
+const srcElements = document.querySelectorAll("*[src]");
 
 srcElements.forEach((item) => {
-  item.addEventListener('error', () => {
-    let srcValue = this.src;
-    if(!srcValue.startsWidth('/job-application-site')) {
-      this.src = `/job-application-site${srcValue}`;
+  item.addEventListener("error", (event) => {
+    let srcValue = event.target.src;
+    console.log("srcs: " + srcValue);
+    const splittedSrc = srcValue.split("/");
+
+    const neededSrcPart = splittedSrc.slice(3).join("/");
+
+    console.log(`/job-application-site/${neededSrcPart}`);
+    if (!srcValue.startsWith("/job-application-site")) {
+      // event.target.src = `/job-application-site/${neededSrcPart}`;
     }
-  })
-})
-
-
+  });
+});
 
 const manipulateCustomProperties = () => {
   for (let i = 0; i <= topicsItems.length / 2; i++) {
