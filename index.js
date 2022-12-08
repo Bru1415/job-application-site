@@ -24,6 +24,22 @@ const headerPhoto = document.querySelector(".header_photo img");
 
 const shortDescToggle = document.querySelector(".short-desc-nav-toggle");
 
+
+const hrefElements = document.querySelectorAll('*[href]');
+const srcElements = document.querySelectorAll('*[src]');
+
+
+srcElements.forEach((item) => {
+  item.addEventListener('error', () => {
+    let srcValue = this.src;
+    if(!srcValue.startsWidth('/job-application-site')) {
+      this.src = `/job-application-site${srcValue}`;
+    }
+  })
+})
+
+
+
 const manipulateCustomProperties = () => {
   for (let i = 0; i <= topicsItems.length / 2; i++) {
     topicsItems[i].style.setProperty(
