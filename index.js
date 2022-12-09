@@ -30,14 +30,12 @@ const srcElements = document.querySelectorAll("*[src]");
 srcElements.forEach((item) => {
   item.addEventListener("error", (event) => {
     let srcValue = event.target.src;
-    console.log("srcs: " + srcValue);
     const splittedSrc = srcValue.split("/");
 
     const neededSrcPart = splittedSrc.slice(3).join("/");
 
-    console.log(`/job-application-site/${neededSrcPart}`);
-    if (!srcValue.startsWith("/job-application-site")) {
-      // event.target.src = `/job-application-site/${neededSrcPart}`;
+    if (!srcValue.startsWith("https://bru1415.github.io/job-application-site")) {
+      event.target.src = `https://bru1415.github.io/job-application-site/${neededSrcPart}`;
     }
   });
 });

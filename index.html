@@ -50,7 +50,7 @@
     <!-- JS -->
     <script
       src="/index.js"
-      onerror="if(this.href != '/job-application-site/index.js') this.href='/job-application-site/index.js';"
+      onerror="if(this.src != '/job-application-site/index.js') this.src='/job-application-site/index.js';"
       defer
     ></script>
     <!-- <script src="../jsonData.js" type="module" defer></script> -->
@@ -71,16 +71,41 @@
               class="primary-navigation underline-indicators"
               data-is-expanded="false"
             >
-              <li class="active"><a href="/index.html">overview</a></li>
-              <li><a href="/pages/technical.html">job-relevant</a></li>
-              <li><a href="/pages/personal.html">personal</a></li>
+              <li class="active">
+                <a
+                  href="/index.html"
+                  onerror="if(this.href != '/job-application-site/index.html') this.href='/job-application-site/index.html';"
+                  >overview</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/pages/technical.html"
+                  onerror="if(this.href != '/job-application-site/pages/technical.html') this.href='/job-application-site/pages/technical.html';"
+                  >job-relevant</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/pages/personal.html"
+                  onerror="if(this.href != '/job-application-site/pages/personal.html') this.href='/job-application-site/pages/personal.html';"
+                  >personal</a
+                >
+              </li>
             </ul>
           </nav>
           <div class="SiteHeader__navContainer_sideElements flex">
             <div class="lang-dropdown">
               <div class="dropdown-current">EN</div>
               <div class="dropdown-content">
-                <div><a href="/index-de.html"> DE</a></div>
+                <div>
+                  <a
+                    href="/index-de.html"
+                    onerror="if(this.href != '/job-application-site/index-de.htm') this.href='/job-application-site/index-de.htm';"
+                  >
+                    DE</a
+                  >
+                </div>
               </div>
             </div>
             <button
@@ -100,6 +125,7 @@
           <img
             src="/assets/Bildschirmfoto vom 2022-07-23 14-48-55.png"
             alt="picture of bruno-martin schuster"
+            onerror="if(this.src != '/job-application-site/assets/Bildschirmfoto vom 2022-07-23 14-48-55.png') this.src = '/job-application-site/assets/Bildschirmfoto vom 2022-07-23 14-48-55.png';"
         /></picture>
         <ul id="topics" class="topics" data-screen="full">
           <li data-position="1" data-title="About me">
