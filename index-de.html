@@ -8,6 +8,7 @@
       rel="icon"
       type="image/png"
       href="./assets/Bildschirmfoto vom 2022-07-23 14-48-55.png"
+      onerror="if(this.href != '/job-application-site/assets/Bildschirmfoto vom 2022-07-23 14-48-55.png') this.href='/job-application-site/assets/Bildschirmfoto vom 2022-07-23 14-48-55.png';"
       style="border-radius: 60%"
     />
     <title>überblick Bewerbung</title>
@@ -42,16 +43,28 @@
       rel="stylesheet"
     />
     <!-- CUSTOM CSS -->
-    <link rel="stylesheet" href="/styles.css" />
+    <link
+      rel="stylesheet"
+      href="/styles.css"
+      onerror="if(this.href != '/job-application-site/styles.css') this.href='/job-application-site/styles.css';"
+    />
     <!-- JS -->
-    <script src="/index.js" defer></script>
+    <script
+      src="/index.js"
+      onerror="if(this.src != '/job-application-site/index.js') this.src='/job-application-site/index.js';"
+      defer
+    ></script>
     <!-- <script src="../jsonData.js" type="module" defer></script> -->
   </head>
   <body id="english-version" class="overview">
     <header class="SiteHeader sticky">
       <div class="SiteHeader__navAndLogoContainer flex just-between">
         <div class="logo">
-          <img src="../assets/coding.png" alt="coding-symbol as logo" />
+          <img
+            src="../assets/coding.png"
+            alt="coding-symbol as logo"
+            onerror="if(this.src != '/job-application-site/assets/coding.png') this.src = '/job-application-site/assets/coding.png';"
+          />
         </div>
         <div class="SiteHeader__navContainer flex just-between">
           <nav>
@@ -59,16 +72,40 @@
               class="primary-navigation underline-indicators"
               data-is-expanded="false"
             >
-              <li class="active"><a href="/index-de.html">überblick</a></li>
-              <li><a href="/pages/technical-de.html">job-relevant</a></li>
-              <li><a href="/pages/personal-de.html">persönlich</a></li>
+              <li class="active">
+                <a
+                  href="/index-de.html"
+                  onerror="if(this.href != '/job-application-site/index-de.html') this.href='/job-application-site/index-de.html';"
+                  >überblick</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/pages/technical-de.html"
+                  onerror="if(this.href != '/job-application-site/pages/technical-de.html') this.href='/job-application-site/pages/technical-de.html';"
+                  >job-relevant</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/pages/personal-de.html"
+                  onerror="if(this.href != '/job-application-site/pages/personal-de.html') this.href='/job-application-site/pages/personal-de.html';"
+                  >persönlich</a
+                >
+              </li>
             </ul>
           </nav>
           <div class="SiteHeader__navContainer_sideElements flex">
             <div class="lang-dropdown">
               <div class="dropdown-current">DE</div>
               <div class="dropdown-content">
-                <div><a href="/index.html">EN</a></div>
+                <div>
+                  <a
+                    href="/index.html"
+                    onerror="if(this.href != '/job-application-site/index.htm') this.href='/job-application-site/index.htm';"
+                    >EN</a
+                  >
+                </div>
               </div>
             </div>
             <button
@@ -86,10 +123,12 @@
       <div class="presentation-wrapper">
         <picture class="profile-photo" data-screen="full"
           ><source
-            srcset="/job-application-site/assets/Bildschirmfoto vom 2022-07-23 14-48-55.png" />
+            srcset="/assets/Bildschirmfoto vom 2022-07-23 14-48-55.png"
+            onerror="if(this.src != '/job-application-site/assets/Bildschirmfoto vom 2022-07-23 14-48-55.png') this.src = '/job-application-site/assets/Bildschirmfoto vom 2022-07-23 14-48-55.png';" />
           <img
             src="/assets/Bildschirmfoto vom 2022-07-23 14-48-55.png"
             alt="picture of bruno-martin schuster"
+            onerror="if(this.src != '/job-application-site/assets/Bildschirmfoto vom 2022-07-23 14-48-55.png') this.src = '/job-application-site/assets/Bildschirmfoto vom 2022-07-23 14-48-55.png';"
         /></picture>
         <ul id="topics" class="topics" data-screen="full">
           <li data-position="1" data-title="Über mich">
@@ -98,6 +137,7 @@
               data-topicarea="personal"
               src="/assets/about-me.svg"
               alt="graphic showing outline of a person with in i representing information"
+              onerror="if(this.src != '/job-application-site/assets/about-me.svg') this.src = '/job-application-site/assets/about-me.svg';"
             />
           </li>
           <li data-position="2" data-title="Kenntnisse">
@@ -107,6 +147,7 @@
               data-topicarea="technical"
               src="/assets/repair-fix-repairing.svg"
               alt="graphic showing a gearwheel and a hand holding a spanner"
+              onerror="if(this.src != '/job-application-site/assets/repair-fix-repairing.svg') this.src = '/job-application-site/assets/repair-fix-repairing.svg';"
             />
           </li>
           <li data-position="3" data-title="Portfolio">
@@ -115,6 +156,7 @@
               data-topicarea="technical"
               src="/assets/work-experience.svg"
               alt="graphic showing a gearwheel and a briefcase"
+              onerror="if(this.src != '/job-application-site/assets/work-experience.svg') this.src = '/job-application-site/assets/work-experience.svg';"
             />
           </li>
           <li data-position="4" data-title="Zeitplan">
@@ -123,6 +165,7 @@
               data-topicarea="technical"
               src="./assets/stair-climbing.svg"
               alt="graphic showing a person climbing up stairs"
+              onerror="if(this.src != '/job-application-site/assets/stair-climbing.svg') this.src = '/job-application-site/assets/stair-climbing.svg';"
             />
           </li>
           <li data-position="5" data-title="Lebenslauf">
@@ -131,6 +174,7 @@
               data-topicarea="personal"
               src="/assets/resume-cv.svg"
               alt="graphic showing a resume"
+              onerror="if(this.src != '/job-application-site/assets/resume-cv.svg') this.src = '/job-application-site/assets/resume-cv.svg';"
             />
           </li>
           <li data-position="6" data-title="Kontakt">
@@ -139,6 +183,7 @@
               data-topicarea="personal"
               src="/assets/contact-us.svg"
               alt="graphic showing a phone and a envelope"
+              onerror="if(this.src != '/job-application-site/assets/contact-us.svg') this.src = '/job-application-site/assets/contact-us.svg';"
             />
           </li>
         </ul>
@@ -162,6 +207,7 @@
                 data-topicarea="personal"
                 src="/assets/about-me.svg"
                 alt="graphic showing outline of a person with in i representing information"
+                onerror="if(this.src != '/job-application-site/assets/about-me.svg') this.src = '/job-application-site/assets/about-me.svg';"
               />
             </button>
             <span class="sr-only">Über mich</span>
@@ -178,6 +224,7 @@
                 data-topicarea="technical"
                 src="/assets/repair-fix-repairing.svg"
                 alt="graphic showing a gearwheel and a hand holding a spanner"
+                onerror="if(this.src != '/job-application-site/assets/repair-fix-repairing.svg') this.src = '/job-application-site/assets/repair-fix-repairing.svg';"
               />
             </button>
             <span class="sr-only">Fähigkeiten</span>
@@ -194,6 +241,7 @@
                 data-topicarea="technical"
                 src="/assets/work-experience.svg"
                 alt="graphic showing a gearwheel and a briefcase"
+                onerror="if(this.src != '/job-application-site/assets/work-experience.svg') this.src = '/job-application-site/assets/work-experience.svg';"
               />
             </button>
             <span class="sr-only">Portfolio</span>
@@ -210,6 +258,7 @@
                 data-topicarea="technical"
                 src="/assets/stair-climbing.svg"
                 alt="graphic showing a person climbing up stairs"
+                onerror="if(this.src != '/job-application-site/assets/stair-climbing.svg') this.src = '/job-application-site/assets/stair-climbing.svg';"
               />
             </button>
             <span class="sr-only">Zeitplan</span>
@@ -226,6 +275,7 @@
                 data-topicarea="personal"
                 src="/assets/resume-cv.svg"
                 alt="graphic showing a resume"
+                onerror="if(this.src != '/job-application-site/assets/resume-cv.svg') this.src = '/job-application-site/assets/resume-cv.svg';"
               />
             </button>
             <span class="sr-only">Lebenslauf</span>
@@ -242,6 +292,7 @@
                 data-topicarea="personal"
                 src="/assets/contact-us.svg"
                 alt="graphic showing a phone and a envelope"
+                onerror="if(this.src != '/job-application-site/assets/contact-us.svg') this.src = '/job-application-site/assets/contact-us.svg';"
               />
             </button>
             <span class="sr-only">Kontakt</span>
@@ -282,7 +333,11 @@
               </p>
               <div class="short-info">
                 Das ist eine kurzer Überblick. Für mehr Details besuchen Sie
-                <a href="./pages/personal.html">personal</a>
+                <a
+                  href="./pages/personal-de.html"
+                  onerror="if(this.href != '/job-application-site/pages/personal-de.html') this.href='/job-application-site/pages/personal-de.html';"
+                  >personal</a
+                >
               </div>
               <br />
               <br />
@@ -302,7 +357,11 @@
             </div>
             <div class="short-info">
               Das ist eine kurzer Überblick. Für mehr Details besuchen Sie
-              <a href="./pages/personal.html">job-relevant</a>
+              <a
+                href="./pages/personal-de.html"
+                onerror="if(this.href != '/job-application-site/pages/personal-de.html') this.href='/job-application-site/pages/personal-de.html';"
+                >job-relevant</a
+              >
             </div>
           </article>
           <!-- Skills  ----------------------------------------------------------------->
@@ -367,7 +426,11 @@
             </div>
             <div class="short-info">
               Das ist eine kurzer Überblick. Für mehr Details besuchen Sie
-              <a href="/pages/personal.html">personal</a>
+              <a
+                href="/pages/personal-de.html"
+                onerror="if(this.href != '/job-application-site/pages/personal-de.html') this.href='/job-application-site/pages/personal-de.html';"
+                >personal</a
+              >
             </div>
             <h3>Kenntnisse</h3>
             <div class="skills__coding">
@@ -422,7 +485,11 @@
             </div>
             <div class="short-info">
               Das ist eine kurzer Überblick. Für mehr Details besuchen Sie
-              <a href="/pages/technical.html">job-relevant</a>
+              <a
+                href="/pages/technical-de.html"
+                onerror="if(this.href != '/job-application-site/pages/technical-de.html') this.href='/job-application-site/pages/technical-de.html';"
+                >job-relevant</a
+              >
             </div>
           </article>
           <!-- Portfolio  --------------------------------------------------------------->
@@ -445,6 +512,7 @@
                     <img
                       src="/assets/fementor-job-listings.png"
                       alt="screenshot of job listings project"
+                      onerror="if(this.src != '/job-application-site/assets/fementor-job-listings.png') this.src = '/job-application-site/assets/fementor-job-listings.png';"
                     />
                     <figcaption>
                       <p>React / JavaScript / CSS / HTML</p>
@@ -466,6 +534,7 @@
                     <img
                       src="/assets/fcc-random-quote-machine.png"
                       alt="screenshot of random quote machine project"
+                      onerror="if(this.src != '/job-application-site/assets/fcc-random-quote-machine.png') this.src = '/job-application-site/assets/fcc-random-quote-machine.png';"
                     />
                     <figcaption>
                       <p>React / JavaScript / CSS / HTML</p>
@@ -482,6 +551,7 @@
                     <img
                       src="/assets/odin-calculator.png"
                       alt="screenshot of calculator project"
+                      onerror="if(this.src != '/job-application-site/assets/odin-calculator.png') this.src = '/job-application-site/assets/odin-calculator.png';"
                     />
                     <figcaption>
                       <p>JavaScript / HTML / CSS</p>
@@ -504,6 +574,7 @@
                     <img
                       src="/assets/odin-etch-a-sketch.png"
                       alt="screenshot of etch a sketch project"
+                      onerror="if(this.src != '/job-application-site/assets/odin-etch-a-sketch.png') this.src = '/job-application-site/assets/odin-etch-a-sketch.png';"
                     />
                     <figcaption>
                       <p>JavaScript / HTML / CSS</p>
@@ -522,7 +593,11 @@
             </div>
             <div class="short-info">
               Das ist eine kurzer Überblick. Für mehr Details besuchen Sie
-              <a href="/pages/technical.html">job-relevant</a>
+              <a
+                href="/pages/technical.html"
+                onerror="if(this.href != '/job-application-site/pages/technical.html') this.href='/job-application-site/pages/technical.html';"
+                >job-relevant</a
+              >
             </div>
           </article>
           <!-- Workplan  ---------------------------------------------------------------->
@@ -672,7 +747,11 @@
             </article>
             <div class="short-info">
               Das ist eine kurzer Überblick. Für mehr Details besuchen Sie
-              <a href="/pages/technical.html">job-relevant</a>
+              <a
+                href="/pages/technical-de.html"
+                onerror="if(this.href != '/job-application-site/pages/technical-de.html') this.href='/job-application-site/pages/technical-de.html';"
+                >job-relevant</a
+              >
             </div>
           </article>
           <!-- CV  ------------------------------------------------------------------------->
@@ -782,7 +861,11 @@
             </article>
             <div class="short-info">
               Das ist eine kurzer Überblick. Für mehr Details besuchen Sie
-              <a href="/pages/personal.html">personal</a>
+              <a
+                href="/pages/personal-de.html"
+                onerror="if(this.href != '/job-application-site/pages/personal-de.html') this.href='/job-application-site/pages/personal-de.html';"
+                >personal</a
+              >
             </div>
           </article>
           <!-- Contact  ------------------------------------------------------------------------->
@@ -807,7 +890,11 @@
             </div>
             <div class="short-info">
               Das ist eine kurzer Überblick. Für mehr Details besuchen Sie
-              <a href="/pages/personal.html">personal</a>
+              <a
+                href="/pages/personal-de.html"
+                onerror="if(this.href != '/job-application-site/pages/personal-de.html') this.href='/job-application-site/pages/personal-de.html';"
+                >personal</a
+              >
             </div>
           </article>
         </section>

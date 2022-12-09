@@ -36,10 +36,18 @@
       rel="stylesheet"
     />
     <!-- custom css -->
-    <link rel="stylesheet" href="/styles.css" />
+    <link
+      rel="stylesheet"
+      href="/styles.css"
+      onerror="if(this.href != '/job-application-site/styles.css') this.href='/job-application-site/styles.css';"
+    />
     <!-- JS -->
     <!-- <script src="../index.js"></script> -->
-    <script src="/pages/pages.js" defer></script>
+    <script
+      src="/pages/pages.js"
+      onerror="if(this.src != '/job-application-site/pages/pages.js') this.src='/job-application-site/pages/pages.js';"
+      defer
+    ></script>
   </head>
   <body class="technical basic">
     <header class="SiteHeader sticky">
@@ -47,6 +55,7 @@
         <img
           src="/assets/Bildschirmfoto vom 2022-07-23 14-48-55.png"
           alt="picture of bruno-martin schuster"
+          onerror="if(this.src != '/job-application-site/assets/Bildschirmfoto vom 2022-07-23 14-48-55.png') this.src='/job-application-site/assets/Bildschirmfoto vom 2022-07-23 14-48-55.png';"
         />
         <span>Bruno-Martin Schuster</span>
       </div>
@@ -54,7 +63,11 @@
 
       <div class="SiteHeader__navAndLogoContainer flex just-between">
         <div class="logo">
-          <img src="/assets/coding.png" alt="coding-symbol as logo" />
+          <img
+            src="/assets/coding.png"
+            alt="coding-symbol as logo"
+            onerror="if(this.src != '/job-application-site/assets/coding.png') this.src = '/job-application-site/assets/coding.png';"
+          />
         </div>
         <div class="SiteHeader__navContainer flex just-between">
           <nav>
@@ -62,18 +75,40 @@
               class="primary-navigation underline-indicators"
               data-is-expanded="false"
             >
-              <li><a href="/index-de.html">überblick</a></li>
-              <li class="active">
-                <a href="/pages/technical-de.html">job-relevant</a>
+              <li>
+                <a
+                  href="/index-de.html"
+                  onerror="if(this.href != '/job-application-site/index-de.html') this.href='/job-application-site/index-de.html';"
+                  >überblick</a
+                >
               </li>
-              <li><a href="/pages/personal-de.html">persönlich</a></li>
+              <li class="active">
+                <a
+                  href="/pages/technical-de.html"
+                  onerror="if(this.href != '/job-application-site/pages/technical-de.html') this.href='/job-application-site/pages/technical-de.html';"
+                  >job-relevant</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/pages/personal-de.html"
+                  onerror="if(this.href != '/job-application-site/pages/personal-de.html') this.href='/job-application-site/pages/personal-de.html';"
+                  >persönlich</a
+                >
+              </li>
             </ul>
           </nav>
           <div class="SiteHeader__navContainer_sideElements flex">
             <div class="lang-dropdown">
               <div class="dropdown-current">DE</div>
               <div class="dropdown-content">
-                <div><a href="/pages/technical.html">EN</a></div>
+                <div>
+                  <a
+                    href="/pages/technical.html"
+                    onerror="if(this.href != '/job-application-site/pages/technical.html') this.href='/job-application-site/pages/technical.html';"
+                    >EN</a
+                  >
+                </div>
               </div>
             </div>
             <button
@@ -225,6 +260,7 @@
                       <img
                         src="/assets/odin-rock-paper-scissor.png"
                         alt="screenshot of rock paper scissor project"
+                        onerror="if(this.src != '/job-application-site/assets/odin-rock-paper-scissor.png') this.src = '/job-application-site/assets/odin-rock-paper-scissor.png';"
                       />
                       <figcaption>
                         <p>JavaScript / HTML</p>
@@ -246,6 +282,7 @@
                       <img
                         src="/assets/odin-etch-a-sketch.png"
                         alt="screenshot of etch a sketch project"
+                        onerror="if(this.src != '/job-application-site/assets/odin-etch-a-sketch.png') this.src = '/job-application-site/assets/odin-etch-a-sketch.png';"
                       />
                       <figcaption>
                         <p>JavaScript / HTML / CSS</p>
@@ -269,6 +306,7 @@
                       <img
                         src="/assets/odin-calculator.png"
                         alt="screenshot of calculator project"
+                        onerror="if(this.src != '/job-application-site/assets/odin-calculator.png') this.src = '/job-application-site/assets/odin-calculator.png';"
                       />
                       <figcaption>
                         <p>JavaScript / HTML / CSS</p>
@@ -303,6 +341,7 @@
                     <img
                       src="/assets/FCC_profile.png"
                       alt="picture of free code camp profile page"
+                      onerror="if(this.src != '/job-application-site/assets/FCC_profile.png') this.src = '/job-application-site/assets/FCC_profile.png';"
                   /></a>
                 </div>
               </div>
@@ -319,6 +358,7 @@
                     <img
                       src="/assets/FCC_JSAlgorCert.png"
                       alt="picture of Algorithms and Data Structures Certification"
+                      onerror="if(this.src != '/job-application-site/assets/FCC_JSAlgorCert.png') this.src = '/job-application-site/assets/FCC_JSAlgorCert.png';"
                   /></a>
                 </div>
               </div>
@@ -335,6 +375,7 @@
                       <img
                         src="/assets/fcc-random-quote-machine.png"
                         alt="screenshot of random quote machine project"
+                        onerror="if(this.src != '/job-application-site/assets/fcc-random-quote-machine.png') this.src = '/job-application-site/assets/fcc-random-quote-machine.png';"
                       />
                       <figcaption>
                         <p>React / JavaScript / CSS / HTML</p>
@@ -364,6 +405,7 @@
                       <img
                         src="/assets/fementor-job-listings.png"
                         alt="screenshot of job listings project"
+                        onerror="if(this.src != '/job-application-site/assets/fementor-job-listings.png') this.src = '/job-application-site/assets/fementor-job-listings.png';"
                       />
                       <figcaption>
                         <p>React / JavaScript / CSS / HTML</p>
@@ -394,10 +436,12 @@
                 <div class="gallery__element col-row col-row-md">
                   <a
                     href="/assets/UC-5e672d27-8a9f-40ba-9baa-8ff1384c9f01.pdf"
+                    onerror="if(this.href != '/job-application-site/assets/UC-5e672d27-8a9f-40ba-9baa-8ff1384c9f01.pdf') this.href='/job-application-site/assets/UC-5e672d27-8a9f-40ba-9baa-8ff1384c9f01.pdf';"
                   >
                     <img
                       src="/assets/ColtSteele_WebDevBootCert.png"
                       alt="picture of course certification"
+                      onerror="if(this.src != '/job-application-site/assets/ColtSteele_WebDevBootCert.png') this.src = '/job-application-site/assets/ColtSteele_WebDevBootCert.png';"
                   /></a>
                 </div>
               </div>
