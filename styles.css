@@ -460,8 +460,8 @@ header {
 }
 
 .dropdown-current::after {
-  content: url(/job-application-site/assets/arrow-thin-chevron-bottom-icon.svg);
-  content: url(/assets/arrow-thin-chevron-bottom-icon.svg);
+  /* content: url(/job-application-site/assets/arrow-thin-chevron-bottom-icon.svg); */
+  content: url(./assets/arrow-thin-chevron-bottom-icon.svg);
   position: absolute;
   left: 66%;
   bottom: 15%;
