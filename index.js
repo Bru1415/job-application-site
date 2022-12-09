@@ -27,18 +27,18 @@ const shortDescToggle = document.querySelector(".short-desc-nav-toggle");
 const hrefElements = document.querySelectorAll("*[href]");
 const srcElements = document.querySelectorAll("*[src]");
 
-srcElements.forEach((item) => {
-  item.addEventListener("error", (event) => {
-    let srcValue = event.target.src;
-    const splittedSrc = srcValue.split("/");
+// srcElements.forEach((item) => {
+//   item.addEventListener("error", (event) => {
+//     let srcValue = event.target.src;
+//     const splittedSrc = srcValue.split("/");
 
-    const neededSrcPart = splittedSrc.slice(3).join("/");
+//     const neededSrcPart = splittedSrc.slice(3).join("/");
 
-    if (!srcValue.startsWith("https://bru1415.github.io/job-application-site")) {
-      event.target.src = `https://bru1415.github.io/job-application-site/${neededSrcPart}`;
-    }
-  });
-});
+//     if (!srcValue.startsWith("https://bru1415.github.io/job-application-site")) {
+//       event.target.src = `https://bru1415.github.io/job-application-site/${neededSrcPart}`;
+//     }
+//   });
+// });
 
 const manipulateCustomProperties = () => {
   for (let i = 0; i <= topicsItems.length / 2; i++) {
@@ -281,10 +281,10 @@ window.addEventListener("load", async () => {
 
   manipulateCustomProperties();
 
-  const response = await fetch("../data.json");
-  const data = await response.json();
-  shortDescData = data.englishVersion.shortDescription;
-  layoutKeyData = data.layoutKeys;
+  // const response = await fetch("../data.json");
+  // const data = await response.json();
+  // shortDescData = data.englishVersion.shortDescription;
+  // layoutKeyData = data.layoutKeys;
 });
 
 window.addEventListener("resize", () => {
